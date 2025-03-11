@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ecommerce.Areas.Admin.Models;
+namespace ecommerce.Models;
 
 public partial class product
 {

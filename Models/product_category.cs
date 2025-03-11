@@ -17,7 +17,5 @@ public partial class product_category
 
     public decimal price { get; set; }
 
-    public int stock_quantity { get; set; }
-
     public int category_id { get; set; }
 }

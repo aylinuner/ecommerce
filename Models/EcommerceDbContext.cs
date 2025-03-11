@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using ecommerce.Areas.Admin.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Models;
@@ -34,11 +33,12 @@ public partial class EcommerceDbContext : DbContext
     {
         modelBuilder.Entity<category>(entity =>
         {
-            entity.HasKey(e => e.category_id);
-
             entity.ToTable("category");
 
             entity.Property(e => e.create_date).HasColumnType("datetime");
+            entity.Property(e => e.name)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.update_date).HasColumnType("datetime");
         });
 
