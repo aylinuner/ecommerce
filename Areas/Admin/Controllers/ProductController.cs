@@ -1,11 +1,14 @@
-﻿using ecommerce.Models;
-using ecommerce.Models.View;
+﻿using ecommerce.Areas.Admin.Models;
+using ecommerce.Areas.Admin.Models.View;
+using ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 //sayfada kullanılan kodların ait olduğu kütüphaneler yukarıdaki gibi sayfaya dahil edilir.
 
-namespace ecommerce.Controllers
+namespace ecommerce.Areas.Admin.Controllers
 {
+[Area("Admin")]
+
     public class ProductController : Controller
     //Controller'dan Product Controller'a miras verdik. (Yani Controller'ı soyadı gibi düşün.
     //O soyadına sahip olunca bütün her şeyden yararlanabiliyosun.

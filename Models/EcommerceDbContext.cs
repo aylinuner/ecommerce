@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ecommerce.Areas.Admin.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Models;

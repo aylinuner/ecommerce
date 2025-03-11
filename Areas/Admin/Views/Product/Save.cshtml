@@ -1,7 +1,8 @@
-﻿@model ecommerce.Models.View.ProductViewModel 
+﻿@using ecommerce.Areas.Admin.Models.View
+@model ProductViewModel 
     <div class="container mt-5">
     <h2 class="mb-4">Ürün Ekle</h2>
-    <form method="post" action="@Url.Action("Save", "Product")">
+    <form method="post" action="@Url.Action("Save", "Product", new { area = "Admin" })">
         <div class="mb-3 row">
             <label for="name" class="col-sm-2 col-form-label">Ürün Adı:</label>
             <div class="col-sm-10">

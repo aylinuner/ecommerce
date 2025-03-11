@@ -41,12 +41,13 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// Area desteði saðlamak için:
+//Area desteði saðlamak için:
 app.MapControllerRoute(
     name: "admin",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
 
 
 

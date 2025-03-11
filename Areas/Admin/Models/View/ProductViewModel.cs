@@ -1,4 +1,4 @@
-﻿namespace ecommerce.Models.View
+﻿namespace ecommerce.Areas.Admin.Models.View
 {
     public class ProductViewModel
     {
