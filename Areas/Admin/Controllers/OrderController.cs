@@ -5,10 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+
     public class OrderController : Controller
     {
         private readonly EcommerceDbContext _context;
-        private int id;
+      
 
         public OrderController(EcommerceDbContext context)
         {
@@ -21,7 +23,7 @@ namespace ecommerce.Areas.Admin.Controllers
         {
             try
             {
-                List<order> orders = await _context.orders.OrderByDescending(x => x.id).ToListAsync();
+                List<order> orders = await _context.orders.OrderBy(x => x.id).ToListAsync();
                 ViewBag.orders = orders;
             }
             catch (Exception x)
@@ -39,7 +41,6 @@ namespace ecommerce.Areas.Admin.Controllers
 
             if (id > 0)
             {
-
                 order o = _context.orders.FirstOrDefault(x => x.id == id);
                 model.id = o.id;
                 model.order_id = o.order_id;

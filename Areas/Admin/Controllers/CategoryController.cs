@@ -20,7 +20,7 @@ namespace ecommerce.Areas.Admin.Controllers
         {
             try
             {
-                List<category> categories = await _context.categories.OrderByDescending(x => x.id).ToListAsync();
+                List<category> categories = await _context.categories.OrderBy(x => x.id).ToListAsync();
                 ViewBag.categories = categories;
             }
 
@@ -54,6 +54,7 @@ namespace ecommerce.Areas.Admin.Controllers
             c.name = data.name;
             c.sort_no = data.sort_no;
             c.create_date = DateTime.Now;
+            
 
             if (c.id == 0)
             {

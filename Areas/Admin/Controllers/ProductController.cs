@@ -31,7 +31,7 @@ namespace ecommerce.Areas.Admin.Controllers
             // Veritabanından ürünleri çek
             try
             {
-                List<product> products = await _context.products.OrderByDescending(x => x.id).ToListAsync();
+                List<product> products = await _context.products.OrderBy(x => x.id).ToListAsync();
                 ViewBag.products = products;
             }
             catch (Exception x)
