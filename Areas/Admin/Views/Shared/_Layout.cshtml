@@ -31,11 +31,34 @@
         <!-- Sidebar -->
         <div class="bg-dark text-white p-3 vh-100 sidebar" style="width: 250px;">
             <ul class="nav flex-column mt-4">
-                <li class="nav-item"><a href="#" class="nav-link text-white">Ürünler</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-white">Kullanıcılar</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-white">Müşteriler</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-white">Stok Giriş</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-white">Stok Çıkış</a></li>
+
+                <li class="nav-item"><a href="/Admin/Category/Index" class="nav-link text-white">Kategoriler</a></li>
+                <li class="nav-item"><a href="/Admin/Product/Index" class="nav-link text-white">Ürünler</a></li>
+                <li class="nav-item"><a href="/Admin/Customer/Index" class="nav-link text-white">Müşteriler</a></li>
+                <li class="nav-item"><a href="/Admin/Order/Index" class="nav-link text-white">Siparişler</a></li>
+                <li class="nav-item"><a href="/Admin/StockEntry/Index" class="nav-link text-white">Stok Giriş</a></li>
+                <li class="nav-item"><a href="/Admin/StockExit/Index" class="nav-link text-white">Stok Çıkış</a></li>
+                @*  <li class="nav-item">
+                        @Html.ActionLink("Ana Sayfa", "Index", "Home", null, new { @class = "nav-link text-white " })
+                    </li>
+                    <li class="nav-item">
+                    @Html.ActionLink("Kategoriler", "Index", "Category", null, new { @class = "nav-link text-white" })
+                    </li>  <li class="nav-item">
+                    @Html.ActionLink("Ürünler", "Index", "Product", null, new { @class = "nav-link text-white " })
+                    </li> 
+                    <li class="nav-item">
+                    @Html.ActionLink("Kullanıcılar", "Index", "User", null, new { @class = "nav-link text-white" })
+                    </li>
+                    <li class="nav-item">
+                    @Html.ActionLink("Müşteriler", "Index", "Customer", null, new { @class = "nav-link text-white" })
+                    </li>
+                    <li class="nav-item">
+                    @Html.ActionLink("Stok Giriş", "Index", "StockEntry", null, new { @class = "nav-link text-white" })
+                    </li>
+                    <li class="nav-item">
+                    @Html.ActionLink("Stok Çıkış", "Index", "StockExit", null, new { @class = "nav-link text-white " })
+                    </li>
+                 *@
             </ul>
         </div>
 
@@ -44,6 +67,5 @@
             @RenderBody()
         </div>
     </div>
-
 </body>
 </html>

@@ -14,7 +14,6 @@ namespace ecommerce.Areas.Admin.Controllers
     //O soyadına sahip olunca bütün her şeyden yararlanabiliyosun.
 
     {
-
         #region dipendency injection(DI)
         private readonly EcommerceDbContext _context;
 

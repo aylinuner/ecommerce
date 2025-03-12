@@ -44,8 +44,6 @@ public partial class EcommerceDbContext : DbContext
 
         modelBuilder.Entity<order>(entity =>
         {
-            entity.HasKey(e => e.order_id);
-
             entity.ToTable("order");
 
             entity.Property(e => e.create_date).HasColumnType("datetime");
