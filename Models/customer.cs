@@ -3,15 +3,23 @@ using System.Collections.Generic;
 
 namespace ecommerce.Models;
 
-public partial class user
+public partial class customer
 {
     public int id { get; set; }
 
-    public DateTime create_time { get; set; }
+    public int user_id { get; set; }
+
+    public string type { get; set; } = null!;
 
     public string name { get; set; } = null!;
 
     public string surname { get; set; } = null!;
+
+    public string email { get; set; } = null!;
+
+    public string password { get; set; } = null!;
+
+    public DateTime birth_date { get; set; }
 
     public string gender { get; set; } = null!;
 
@@ -23,13 +31,11 @@ public partial class user
 
     public string phone_number { get; set; } = null!;
 
-    public DateTime? update_date { get; set; }
+    public DateTime? update__date { get; set; }
 
-    public string email { get; set; } = null!;
+    public DateTime create_date { get; set; }
 
-    public string password { get; set; } = null!;
+    public DateTime save_date { get; set; }
 
-    public DateTime birth_date { get; set; }
-
-    public virtual ICollection<customer> customers { get; set; } = new List<customer>();
+    public virtual user user { get; set; } = null!;
 }

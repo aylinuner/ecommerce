@@ -48,7 +48,6 @@ namespace ecommerce.Areas.Admin.Controllers
         public async Task <IActionResult> Save(int id)
         {
             ProductViewModel model = new ProductViewModel();
-             
             
             if (id >0 )
             {

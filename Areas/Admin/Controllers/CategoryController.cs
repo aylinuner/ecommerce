@@ -9,12 +9,14 @@ namespace ecommerce.Areas.Admin.Controllers
     [Area("Admin")]
     public class CategoryController : Controller
     {
+        #region Dependency Enjection (DI)
         private readonly EcommerceDbContext _context;
 
         public CategoryController(EcommerceDbContext context)
         {
             _context = context;
         }
+        #endregion
         [HttpGet]
         public async Task<IActionResult> Index()
         {

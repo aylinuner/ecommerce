@@ -17,6 +17,8 @@ public partial class EcommerceDbContext : DbContext
 
     public virtual DbSet<category> categories { get; set; }
 
+    public virtual DbSet<customer> customers { get; set; }
+
     public virtual DbSet<order> orders { get; set; }
 
     public virtual DbSet<product> products { get; set; }
@@ -40,6 +42,33 @@ public partial class EcommerceDbContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.update_date).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<customer>(entity =>
+        {
+            entity.ToTable("customer");
+
+            entity.Property(e => e.birth_date).HasColumnType("datetime");
+            entity.Property(e => e.create_date).HasColumnType("datetime");
+            entity.Property(e => e.email).HasMaxLength(100);
+            entity.Property(e => e.gender).HasMaxLength(50);
+            entity.Property(e => e.name).HasMaxLength(100);
+            entity.Property(e => e.password).HasMaxLength(200);
+            entity.Property(e => e.phone_area).HasMaxLength(5);
+            entity.Property(e => e.phone_number).HasMaxLength(10);
+            entity.Property(e => e.save_date).HasColumnType("datetime");
+            entity.Property(e => e.surname).HasMaxLength(100);
+            entity.Property(e => e.tckn).HasMaxLength(11);
+            entity.Property(e => e.type).HasMaxLength(10);
+            entity.Property(e => e.update__date)
+                .HasColumnType("datetime")
+                .HasColumnName("update_ date");
+            entity.Property(e => e.vkn).HasMaxLength(10);
+
+            entity.HasOne(d => d.user).WithMany(p => p.customers)
+                .HasForeignKey(d => d.user_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_customer_user");
         });
 
         modelBuilder.Entity<order>(entity =>

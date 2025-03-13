@@ -1,0 +1,61 @@
+﻿@using ecommerce.Areas.Admin.Models
+
+<table class="table table-striped table-bordered mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Müşteri Rolü</th>
+            @* <th>Telefon Alan kodu</th> *@
+            <th>Telefon Numarası</th>
+            <th>Cinsiyet</th>
+            <th>Doğum Tarihi</th>
+            <th>Kayıt Tarihi</th>
+           @*  <th>E posta</th>
+            <th>Parola</th> *@
+
+            <th class="text-center">
+                @Html.ActionLink("Yeni", "Save", "Customer", null, new { @class = "btn btn-primary" })
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @*   ViewBag içinde müşteriler varsa *@
+        @if (ViewBag.customers != null)
+        {
+            @*  ViewBag'daki müşteriler içerisinde dön' *@
+            foreach (customer item in ViewBag.customers)
+            {
+                <tr>
+                    <td class="">@item.name</td>
+                    <td class="">@item.surname</td>
+                    <td class="">@item.type</td>
+                    @* <td class="">@item.type</td> *@
+                    @* <td class="">@item.phone_area</td> *@
+                    <td class="">@item.phone_number</td>
+                    <td class="">@item.gender</td>
+                    <td class="">@item.birth_date</td>
+                     <td class="">@item.save_date</td> 
+                   @*  <td class="">@item.email</td>
+                    <td class="">@item.password</td> *@
+                    <td style="width:90px">
+                        @Html.ActionLink("Güncelle", "Save", "Customer", new { id = item.id }, new { @class = "btn btn-primary" })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+

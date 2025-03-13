@@ -45,11 +45,15 @@
 
         <div class="mb-3 row">
             <div class="col-sm-10 offset-sm-2">
-                @Html.ActionLink("Geri", "Index", "Category", null, new { @class = "btn btn-dark text-white" })
+                <a href="Admin/Category/Save" class="btn btn-dark text-white">Geri</a>
+
+                @* @Html.ActionLink("Geri", "Index", "Category", null, new { @class = "btn btn-dark text-white" }) *@
                 @* Silme butonu *@
                 @if (Model.id != 0)
                 {
-                    @Html.ActionLink("Sil", "Delete", "Category", new { id = Model.id }, new { @class = "btn btn-danger" })
+                    <a href="Admin/Category/Index" class="btn btn-danger">Sil</a>
+
+                    @* @Html.ActionLink("Sil", "Delete", "Category", new { id = Model.id }, new { @class = "btn btn-danger" }) *@
 
                 }
                 <button type="submit" class="btn btn-primary">Kaydet</button>
