@@ -51,7 +51,6 @@ namespace ecommerce.Areas.Admin.Controllers
             
             if (id >0 )
             {
-
                 product p = _context.products.FirstOrDefault(x => x.id == id);
                 model.name =p.name;
                 model.price = p.price;

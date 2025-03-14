@@ -42,13 +42,13 @@ namespace ecommerce.Areas.Admin.Controllers
                 customer c = _context.customers.FirstOrDefault(x => x.id == id);
                 model.name = c.name;
                 model.surname = c.surname;
-                model.phone_area = c.phone_area;
+                //model.phone_area = c.phone_area;
                 model.phone_number = c.phone_number;
                 model.gender = c.gender;
                 model.create_date = DateTime.Now;
                 model.birth_date = c.birth_date;
                 //model.email = c.email;
-                model.password = c.password;
+                //model.password = c.password;
                 model.type = c.type;
                 model.save_date = c.save_date;
             }
@@ -60,13 +60,13 @@ namespace ecommerce.Areas.Admin.Controllers
             customer c = new customer();
             c.name = data.name;
             c.surname = data.surname;
-            c.phone_area = data.phone_area;
+            //c.phone_area = data.phone_area;
             c.phone_number = data.phone_number;
             c.gender = data.gender;
             c.create_date = DateTime.Now;
             c.birth_date = data.birth_date;
             //c.email = data.email;
-            c.password = data.password;
+            //c.password = data.password;
             c.type = data.type;
             c.save_date = data.save_date;
 

@@ -6,6 +6,8 @@ namespace ecommerce.Models;
 
 public partial class EcommerceDbContext : DbContext
 {
+    internal object entries;
+
     public EcommerceDbContext()
     {
     }
@@ -50,12 +52,9 @@ public partial class EcommerceDbContext : DbContext
 
             entity.Property(e => e.birth_date).HasColumnType("datetime");
             entity.Property(e => e.create_date).HasColumnType("datetime");
-            entity.Property(e => e.email).HasMaxLength(100);
             entity.Property(e => e.gender).HasMaxLength(50);
             entity.Property(e => e.name).HasMaxLength(100);
-            entity.Property(e => e.password).HasMaxLength(200);
-            entity.Property(e => e.phone_area).HasMaxLength(5);
-            entity.Property(e => e.phone_number).HasMaxLength(10);
+            entity.Property(e => e.phone_number).HasMaxLength(11);
             entity.Property(e => e.save_date).HasColumnType("datetime");
             entity.Property(e => e.surname).HasMaxLength(100);
             entity.Property(e => e.tckn).HasMaxLength(11);
@@ -90,19 +89,19 @@ public partial class EcommerceDbContext : DbContext
         {
             entity.ToTable("product");
 
-            entity.Property(e => e.color).HasMaxLength(50);
+            entity.Property(e => e.code).HasMaxLength(50);
             entity.Property(e => e.create_date)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.image_url).HasMaxLength(500);
             entity.Property(e => e.name).HasMaxLength(250);
             entity.Property(e => e.price).HasColumnType("decimal(10, 2)");
-            entity.Property(e => e.rating)
-                .HasDefaultValue(0m)
-                .HasColumnType("decimal(3, 2)");
-            entity.Property(e => e.size).HasMaxLength(50);
-            entity.Property(e => e.sku).HasMaxLength(50);
             entity.Property(e => e.update_date).HasColumnType("datetime");
+
+            entity.HasOne(d => d.category).WithMany(p => p.products)
+                .HasForeignKey(d => d.category_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_product_category");
         });
 
         modelBuilder.Entity<product_category>(entity =>

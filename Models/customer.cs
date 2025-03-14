@@ -15,10 +15,6 @@ public partial class customer
 
     public string surname { get; set; } = null!;
 
-    public string email { get; set; } = null!;
-
-    public string password { get; set; } = null!;
-
     public DateTime birth_date { get; set; }
 
     public string gender { get; set; } = null!;
@@ -26,8 +22,6 @@ public partial class customer
     public string? tckn { get; set; }
 
     public string? vkn { get; set; }
-
-    public string phone_area { get; set; } = null!;
 
     public string phone_number { get; set; } = null!;
 
