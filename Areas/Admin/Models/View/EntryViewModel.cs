@@ -2,6 +2,7 @@
 {
     public class EntryViewModel
     {
+        public int id { get; set; }
         public int waybill_no { get; set; }
         public DateTime waybill_date { get; set; }
         public int waybill_total { get; set; }

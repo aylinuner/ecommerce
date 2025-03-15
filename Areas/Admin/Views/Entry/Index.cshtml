@@ -10,8 +10,31 @@
                 <a href="/Admin/Entry/Save" class="btn btn-primary"> Yeni </a>
             </th>
         </tr>
+
     </thead>
     <tbody>
-      
+        @*   @*   ViewBag içinde stok giriş detay varsa *@
+        @if (ViewBag.entry_details != null)
+        {
+            @*  ViewBag'daki stok giriş içerisinde dön' *@
+            foreach (entry_detail item in ViewBag.entry_details)
+            {
+                @*  <tr>
+                    <td class="">
+                        <a href="@item.image_url" target="_blank">
+                            <img src="@item.image_url" alt="@item.name" height="70" />
+                        </a>
+                    </td>
+                    <td class="">@item.name</td>
+                    <td class="">@item.code</td>
+                    <td class="">@item.description</td>
+                    <td class="">@item.price</td>
+                    <td class="">@item.create_date</td>
+                    <td style="width:90px">
+                        @Html.ActionLink("Güncelle", "Save", "Product", new { id = item.id }, new { @class = "btn btn-primary" })
+                    </td>
+                </tr> *@
+            }
+        }
     </tbody>
 </table>

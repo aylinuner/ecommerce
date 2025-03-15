@@ -6,8 +6,6 @@ namespace ecommerce.Models;
 
 public partial class EcommerceDbContext : DbContext
 {
-    internal object entries;
-
     public EcommerceDbContext()
     {
     }
@@ -20,6 +18,10 @@ public partial class EcommerceDbContext : DbContext
     public virtual DbSet<category> categories { get; set; }
 
     public virtual DbSet<customer> customers { get; set; }
+
+    public virtual DbSet<entry_detail> entry_details { get; set; }
+
+    public virtual DbSet<entry_master> entry_masters { get; set; }
 
     public virtual DbSet<order> orders { get; set; }
 
@@ -68,6 +70,30 @@ public partial class EcommerceDbContext : DbContext
                 .HasForeignKey(d => d.user_id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_customer_user");
+        });
+
+        modelBuilder.Entity<entry_detail>(entity =>
+        {
+            entity.HasKey(e => e.id).HasName("PK_entry_detail_1");
+
+            entity.ToTable("entry_detail");
+
+            entity.Property(e => e.category_name).HasMaxLength(50);
+            entity.Property(e => e.create_date).HasColumnType("datetime");
+            entity.Property(e => e.product_name).HasMaxLength(50);
+            entity.Property(e => e.update_date).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<entry_master>(entity =>
+        {
+            entity.HasKey(e => e.id).HasName("PK_entry_detail");
+
+            entity.ToTable("entry_master");
+
+            entity.Property(e => e.create_date).HasColumnType("datetime");
+            entity.Property(e => e.supplier).HasMaxLength(50);
+            entity.Property(e => e.update_date).HasColumnType("datetime");
+            entity.Property(e => e.waybill_date).HasColumnType("datetime");
         });
 
         modelBuilder.Entity<order>(entity =>

@@ -6,15 +6,17 @@
         <div class="mb-3 row">
             <label for="waybill_name" class="col-sm-2 col-form-label">İrsaliye No:</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="waybill_name" placeholder="İrsaliye no girin">
+                <input type="number" class="form-control" id="waybill_name" placeholder="İrsaliye no girin" asp-for="waybill_no">
             </div>
         </div>
+
         <div class="mb-3 row">
             <label for="waybill_date" class="col-sm-2 col-form-label">İrsaliye Tarihi:</label>
             <div class="col-sm-10">
-                <input type="datetime" class="form-control" id="waybill_date">
+                <input type="date" class="form-control" id="waybill_date">
             </div>
         </div>
+
         <div class="mb-3 row">
             <label for="supplier" class="col-sm-2 col-form-label">Tedarikçi Firma:</label>
             <div class="col-sm-10">
@@ -28,6 +30,7 @@
                 <input type="number" class="form-control" id="waybill_total" placeholder="İrsaliye tutarını girin">
             </div>
         </div>
+
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Teslim Alan Kişi</label>
             <div class="col-sm-10">
@@ -36,13 +39,13 @@
                 </select>
             </div>
         </div>
+
         <hr />
-        
 
         <table class="table table-striped table-bordered mt-3">
             <thead class="table-dark">
                 <tr>
-                    <th>Ürün Kodu</th>
+                    <th></th>
                     <th>Ürün Adı</th>
                     <th>Adet</th>
                     <th>Tutar</th>
@@ -55,48 +58,35 @@
             <tbody>
                 <tr>
                     <th></th>
-                    <th>Ürün Adı</th>
-                    <th>Adet</th>
-                    <th>Tutar</th>
-                    <th>Toplam Tutar</th>
-                    <th>Ağırlık</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
-               
-                @*   ViewBag içinde müşteriler varsa *@
-                @if (ViewBag.customers != null)
+
+                @*   ViewBag içinde stok giriş varsa *@
+                @if (ViewBag.entry_details != null)
                 {
-                    @*  ViewBag'daki müşteriler içerisinde dön' *@
-                    foreach (customer item in ViewBag.customers)
+                    @*  ViewBag'daki stok giriş içerisinde dön' *@
+                    foreach (entry_master item in ViewBag.entry_masters)
                     {
                         <tr>
-                            <td class="">@item.name</td>
-                            <td class="">@item.surname</td>
-                            <td class="">@item.type</td>
-                            @* <td class="">@item.type</td> *@
-                            @* <td class="">@item.phone_area</td> *@
-                            <td class="">@item.phone_number</td>
-                            <td class="">@item.gender</td>
-                            <td class="">@item.birth_date</td>
-                            <td class="">@item.save_date</td>
-                            @*  <td class="">@item.email</td>
-                    <td class="">@item.password</td> *@
+                            <td class="">@item.waybill_no</td>
+                            <td class="">@item.waybill_date</td>
+                            <td class="">@item.waybill_total</td>
+                            <td class="">@item.supplier</td>
                             <td style="width:90px">
-                                @Html.ActionLink("Güncelle", "Save", "Customer", new { id = item.id }, new { @class = "btn btn-primary" })
+                                @* @Html.ActionLink("Güncelle", "Save", "Entry", new { id = item.id }, new { @class = "btn btn-primary" }) *@
+                                <a href="/Admin/Entry/Save/@item.id" class="btn btn-primary">Güncelle</a>
+
+
                             </td>
                         </tr>
                     }
                 }
             </tbody>
         </table>
-
-
-
-
-
-
-
-
-
 
         <div class="mb-3 row">
             <div class="col-sm-10 offset-sm-2">
@@ -105,12 +95,12 @@
                 @* @Html.ActionLink("Geri", "Index", "Category", null, new { @class = "btn btn-dark text-white" }) *@
                 @* Silme butonu *@
                 @* @if (Model.id != 0) *@
-                
+
                 <a href="/Admin/Entry/Index" class="btn btn-danger">Sil</a>
 
                 @* @Html.ActionLink("Sil", "Delete", "Category", new { id = Model.id }, new { @class = "btn btn-danger" }) *@
 
-                
+
                 <button type="submit" class="btn btn-primary">Kaydet</button>
             </div>
         </div>
