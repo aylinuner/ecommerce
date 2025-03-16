@@ -71,11 +71,11 @@ namespace ecommerce.Areas.Admin.Controllers
                 }
             }
             //Tedarikçi firmaları getir.
-            List<product> suppliers = await _context.products.ToListAsync();
+            List<company> suppliers = await _context.companies.ToListAsync();
             ViewBag.suppliers = suppliers.Select(s => new SelectListItem
             {
                 Value = s.id.ToString(),
-                Text = s.name
+                Text = s.company_name
             }).ToList();
 
             //Kullanıcıları Getir

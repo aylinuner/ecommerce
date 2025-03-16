@@ -17,6 +17,8 @@ public partial class EcommerceDbContext : DbContext
 
     public virtual DbSet<category> categories { get; set; }
 
+    public virtual DbSet<company> companies { get; set; }
+
     public virtual DbSet<customer> customers { get; set; }
 
     public virtual DbSet<entry_detail> entry_details { get; set; }
@@ -46,6 +48,16 @@ public partial class EcommerceDbContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.update_date).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<company>(entity =>
+        {
+            entity.ToTable("company");
+
+            entity.Property(e => e.VKN).HasMaxLength(10);
+            entity.Property(e => e.company_name).HasMaxLength(100);
+            entity.Property(e => e.create_date).HasColumnType("datetime");
+            entity.Property(e => e.uptade_date).HasColumnType("datetime");
         });
 
         modelBuilder.Entity<customer>(entity =>
