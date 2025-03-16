@@ -9,11 +9,7 @@ public partial class entry_detail
 
     public int category_id { get; set; }
 
-    public string category_name { get; set; } = null!;
-
     public int product_id { get; set; }
-
-    public string product_name { get; set; } = null!;
 
     public int quantity { get; set; }
 
@@ -26,4 +22,8 @@ public partial class entry_detail
     public DateTime create_date { get; set; }
 
     public DateTime? update_date { get; set; }
+
+    public int entry_master_id { get; set; }
+
+    public virtual entry_master entry_master { get; set; } = null!;
 }

@@ -6,28 +6,28 @@
         <div class="mb-3 row">
             <label for="waybill_name" class="col-sm-2 col-form-label">İrsaliye No:</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="waybill_name" placeholder="İrsaliye no girin" asp-for="waybill_no">
+                <input type="text" class="form-control" id="waybill_name" placeholder="İrsaliye no girin" asp-for="waybill_no">
             </div>
         </div>
 
         <div class="mb-3 row">
             <label for="waybill_date" class="col-sm-2 col-form-label">İrsaliye Tarihi:</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="waybill_date">
+                <input type="date" class="form-control" id="waybill_date" asp-for="waybill_date">
             </div>
         </div>
 
         <div class="mb-3 row">
-            <label for="supplier" class="col-sm-2 col-form-label">Tedarikçi Firma:</label>
+            <label for="supplier_id" class="col-sm-2 col-form-label">Tedarikçi Firma:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="supplier">
+                <input type="text" class="form-control" id="supplier_id" asp-for="supplier_id" >
             </div>
         </div>
 
         <div class="mb-3 row">
             <label for="waybill_total" class="col-sm-2 col-form-label">İrsaliye Tutarı</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="waybill_total" placeholder="İrsaliye tutarını girin">
+                <input type="number" class="form-control" id="waybill_total" placeholder="İrsaliye tutarını girin" asp-for="waybill_total">
             </div>
         </div>
 
@@ -36,6 +36,7 @@
             <div class="col-sm-10">
                 <select>
                     <option value="value">-</option>
+                    
                 </select>
             </div>
         </div>
@@ -75,7 +76,7 @@
                             <td class="">@item.waybill_no</td>
                             <td class="">@item.waybill_date</td>
                             <td class="">@item.waybill_total</td>
-                            <td class="">@item.supplier</td>
+                            <td class="">@item.supplier_id</td>
                             <td style="width:90px">
                                 @* @Html.ActionLink("Güncelle", "Save", "Entry", new { id = item.id }, new { @class = "btn btn-primary" }) *@
                                 <a href="/Admin/Entry/Save/@item.id" class="btn btn-primary">Güncelle</a>

@@ -78,10 +78,15 @@ public partial class EcommerceDbContext : DbContext
 
             entity.ToTable("entry_detail");
 
-            entity.Property(e => e.category_name).HasMaxLength(50);
-            entity.Property(e => e.create_date).HasColumnType("datetime");
-            entity.Property(e => e.product_name).HasMaxLength(50);
+            entity.Property(e => e.create_date)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.update_date).HasColumnType("datetime");
+
+            entity.HasOne(d => d.entry_master).WithMany(p => p.entry_details)
+                .HasForeignKey(d => d.entry_master_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_entry_detail_entry_master");
         });
 
         modelBuilder.Entity<entry_master>(entity =>
@@ -90,10 +95,12 @@ public partial class EcommerceDbContext : DbContext
 
             entity.ToTable("entry_master");
 
-            entity.Property(e => e.create_date).HasColumnType("datetime");
-            entity.Property(e => e.supplier).HasMaxLength(50);
+            entity.Property(e => e.create_date)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.update_date).HasColumnType("datetime");
             entity.Property(e => e.waybill_date).HasColumnType("datetime");
+            entity.Property(e => e.waybill_no).HasMaxLength(50);
         });
 
         modelBuilder.Entity<order>(entity =>
