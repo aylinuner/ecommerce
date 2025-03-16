@@ -75,7 +75,7 @@ namespace ecommerce.Areas.Admin.Controllers
             ViewBag.suppliers = suppliers.Select(s => new SelectListItem
             {
                 Value = s.id.ToString(),
-                Text = s.company_name
+                Text = s.name
             }).ToList();
 
             //Kullanıcıları Getir
@@ -157,8 +157,27 @@ namespace ecommerce.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Entry");
         }
+        [HttpGet]
 
-        // SİLME İŞLEMİ EKLENECEK
+        public IActionResult Delete(int id)
+        {
+            //silerken entry_master ı silceksin detayı silmekle uğraşma,
+            //ilişki kurduğun için, direkt detaylar kendisi sinilir otomatik
+            entry_master ed = _context.entry_masters.FirstOrDefault(x => x.id == id);
+
+            if (ed != null)
+            {
+            _context.entry_masters.Remove(ed);
+            _context.SaveChanges();
+            }
+            return RedirectToAction("Index", "Entry");
+        }
+
+        public IActionResult List()
+        {
+            return View();
+        }
+
 
     }
 }

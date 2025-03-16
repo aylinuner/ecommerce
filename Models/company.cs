@@ -7,11 +7,9 @@ public partial class company
 {
     public int id { get; set; }
 
-    public int company_id { get; set; }
+    public string name { get; set; } = null!;
 
-    public string company_name { get; set; } = null!;
-
-    public string VKN { get; set; } = null!;
+    public string vkn { get; set; } = null!;
 
     public DateTime create_date { get; set; }
 

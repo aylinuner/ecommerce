@@ -54,10 +54,10 @@ public partial class EcommerceDbContext : DbContext
         {
             entity.ToTable("company");
 
-            entity.Property(e => e.VKN).HasMaxLength(10);
-            entity.Property(e => e.company_name).HasMaxLength(100);
             entity.Property(e => e.create_date).HasColumnType("datetime");
+            entity.Property(e => e.name).HasMaxLength(100);
             entity.Property(e => e.uptade_date).HasColumnType("datetime");
+            entity.Property(e => e.vkn).HasMaxLength(10);
         });
 
         modelBuilder.Entity<customer>(entity =>
