@@ -42,19 +42,20 @@ namespace ecommerce.Areas.Admin.Controllers
             if (id > 0)
             {
                 //veritabanındaki giriş kaydı
-                entry_master db_entry = _context.entry_masters.Include(x => x.entry_details).FirstOrDefault(x => x.id == id);
+                entry_master em = _context.entry_masters.Include(x => x.entry_details).FirstOrDefault(x => x.id == id);
 
-                if (db_entry != null) // Eğer kayıt bulunursa
+                if (em != null) // Eğer kayıt bulunursa
                 {
                     // ViewModel'e DB'deki ana verileri aktar
-                    vm.id = db_entry.id;
-                    vm.waybill_no = db_entry.waybill_no;
-                    vm.waybill_date = db_entry.waybill_date;
-                    vm.waybill_total = db_entry.waybill_total;
-                    vm.supplier_id = db_entry.supplier_id;
+                    vm.id = em.id;
+                    vm.waybill_no = em.waybill_no;
+                    vm.waybill_date = em.waybill_date;
+                    vm.waybill_total = em.waybill_total;
+                    vm.supplier_id = em.supplier_id;
+                    vm.receiver_id = em.receiver_id;
 
                     // entry_details'i EntryDetailViewModel listesi olarak doldur
-                    vm.entry_details = db_entry.entry_details.Select(d => new EntryDetailViewModel
+                    vm.entry_details = em.entry_details.Select(d => new EntryDetailViewModel
                     {
                         id = d.id,
                         category_id = d.category_id,
@@ -94,24 +95,24 @@ namespace ecommerce.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Save(EntryViewModel data)
         {
-            entry_master ed = new entry_master();
-            ed.id = data.id;
-            ed.waybill_no = data.waybill_no;
-            ed.waybill_date = data.waybill_date;
-            ed.supplier_id = data.supplier_id;//Tedarikçi firma
-            ed.receiver_id = data.receiver_id; //Teslim alan kişi
+            entry_master em = new entry_master();
+            em.id = data.id;
+            em.waybill_no = data.waybill_no;
+            em.waybill_date = data.waybill_date;
+            em.supplier_id = data.supplier_id;//Tedarikçi firma
+            em.receiver_id = data.receiver_id; //Teslim alan kişi
 
-            if (ed.id == 0)//Yeni kayıt
+            if (em.id == 0)//Yeni kayıt
             {
                 //ed.update_date = null;
-                //_context.entry_masters.Add(ed);//Veritabanındaki stok giriş detail sayfasına ekle.
-                ed.create_date = DateTime.Now;
-                _context.entry_masters.Add(ed);
+                //_context.entry_masters.Add(ed);//Veritabanındaki stok giriş detail sayfasına ekle. Bunu yorum satırına aldım çünkü update demişim yanlışlık olabilir.
+                em.create_date = DateTime.Now;
+                _context.entry_masters.Add(em);
             }
             else//Güncelleme
             {
-                ed.update_date = DateTime.Now;
-                _context.entry_masters.Update(ed);//Veritabanındaki ürünü günceller.
+                em.update_date = DateTime.Now;
+                _context.entry_masters.Update(em);//Veritabanındaki ürünü günceller.
             }
 
             //EntryDetail işlemleri
@@ -136,18 +137,18 @@ namespace ecommerce.Areas.Admin.Controllers
                     }
                     else //mevcut EntryDetail güncelleme
                     {
-                        entry_detail d = await _context.entry_details.FirstOrDefaultAsync(x => x.id == detail.id);
+                        entry_detail e = await _context.entry_details.FirstOrDefaultAsync(x => x.id == detail.id);
 
-                        if (d != null)
+                        if (e != null)
                         {
-                            d.category_id = detail.category_id;
-                            d.product_id = detail.product_id;
-                            d.quantity = detail.quantity;
-                            d.total = detail.total;
-                            d.total_amount = detail.total_amount;
-                            d.weight = detail.weight;
+                            e.category_id = detail.category_id;
+                            e.product_id = detail.product_id;
+                            e.quantity = detail.quantity;
+                            e.total = detail.total;
+                            e.total_amount = detail.total_amount;
+                            e.weight = detail.weight;
 
-                            _context.entry_details.Update(d);
+                            _context.entry_details.Update(e);
                         }
                     }
 
@@ -163,13 +164,11 @@ namespace ecommerce.Areas.Admin.Controllers
         {
             //silerken entry_master ı silceksin detayı silmekle uğraşma,
             //ilişki kurduğun için, direkt detaylar kendisi sinilir otomatik
-            entry_master ed = _context.entry_masters.FirstOrDefault(x => x.id == id);
+            entry_master em = _context.entry_masters.FirstOrDefault(x => x.id == id);
 
-            if (ed != null)
-            {
-            _context.entry_masters.Remove(ed);
+            _context.entry_masters.Remove(em);
             _context.SaveChanges();
-            }
+            
             return RedirectToAction("Index", "Entry");
         }
 

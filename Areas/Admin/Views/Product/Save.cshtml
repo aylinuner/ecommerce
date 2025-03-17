@@ -46,11 +46,13 @@
 
         <div class="mb-3 row">
             <div class="col-sm-10 offset-sm-2">
+
                 @Html.ActionLink("Geri", "Index", "Product", new { area = "Admin" }, new { @class = "btn btn-dark text-white" })
+
                 @* Silme butonu *@
                 @if (Model.id != 0)
                 {
-                    @Html.ActionLink("Sil", "Delete", "Product", new {id=Model.id}, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Sil", "Delete", "Product", new { area = "Admin", id = Model.id }, new { @class = "btn btn-danger" })
 
                 }
                 <button type="submit" class="btn btn-primary">Kaydet</button>
