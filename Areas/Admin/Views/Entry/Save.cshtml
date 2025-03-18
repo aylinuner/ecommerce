@@ -59,7 +59,7 @@
 
         <hr />
 
-        <table class="table table-striped table-bordered mt-3">
+        <table class="table table-striped table-bordered mt-3" id="productTable">
             <thead class="table-dark">
                 <tr>
                     <th>Ürün Adı</th>
@@ -68,26 +68,18 @@
                     <th>Toplam Tutar</th>
                     <th>Ağırlık</th>
                     <th class="text-center">
-                        @Html.ActionLink("Yeni", "Save", "Entry", null, new { @class = "btn btn-primary" })
+                        <button id="addRowBtn" class="btn btn-primary">Yeni</button>
                     </th>
+                </tr>
             </thead>
             <tbody>
-                @if (Model.entry_details != null && Model.entry_details.Any())
-                {
-                    foreach (var item in Model.entry_details)
-                    {
-                        <tr>
-                            <td>@item.product_id</td>
-                            <td>@item.quantity</td>
-                            <td>@item.total</td>
-                            <td>@item.total_amount</td>
-                            <td>@item.weight</td>
-                            <td>
-                                <a href="/Admin/Entry/Save/@item.id" class="btn btn-primary">Güncelle</a>
-                            </td>
-                        </tr>
-                    }
-                }
+                <tr id="inputRow">
+                    <td><input type="text" id="productId" placeholder="Ürün Adı" /></td>
+                    <td><input type="number" id="quantity" placeholder="Adet" /></td>
+                    <td><input type="number" id="total" placeholder="Tutar" /></td>
+                    <td><input type="number" id="totalAmount" placeholder="Toplam Tutar" /></td>
+                    <td><input type="number" id="weight" placeholder="Ağırlık" /></td>
+                </tr>
             </tbody>
         </table>
 
@@ -104,6 +96,42 @@
                 }
 
                 <script>
+                      document.getElementById('addRowBtn').addEventListener('click', function(e) {
+                        e.preventDefault();
+
+                        //Giriş değerlerini alın
+                        var productId = document.getElementById('productId').value;
+                        var quantity = document.getElementById('quantity').value;
+                        var total = document.getElementById('total').value;
+                        var totalAmount = document.getElementById('totalAmount').value;
+                        var weight = document.getElementById('weight').value;
+
+                        // Herhangi bir girdinin boş olup olmadığını kontrol edin
+                        if (productId && quantity && total && totalAmount && weight) {
+                            var table = document.getElementById('productTable').getElementsByTagName('tbody')[0];
+                            var newRow = table.insertRow(table.rows.length);
+
+                            newRow.innerHTML = `
+                                <td>${productId}</td>
+                                <td>${quantity}</td>
+                                <td>${total}</td>
+                                <td>${totalAmount}</td>
+                                <td>${weight}</td>
+                                <td><button class="btn btn-primary">Güncelle</button></td>
+                            `;
+
+                            // Satırı ekledikten sonra giriş alanlarını temizleyin
+                            document.getElementById('productId').value = '';
+                            document.getElementById('quantity').value = '';
+                            document.getElementById('total').value = '';
+                            document.getElementById('totalAmount').value = '';
+                            document.getElementById('weight').value = '';
+                        } else {
+                            alert("Lütfen tüm alanları doldurun.");
+                        }
+                    });
+
+
                     function deleteEntry(id) {
                         if (confirm('Bu kaydı silmek istediğinize emin misiniz?')) {
                             fetch(`/Admin/Entry/Delete/${id}`, {
