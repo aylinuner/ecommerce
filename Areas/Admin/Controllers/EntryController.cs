@@ -99,6 +99,7 @@ namespace ecommerce.Areas.Admin.Controllers
             em.id = data.id;
             em.waybill_no = data.waybill_no;
             em.waybill_date = data.waybill_date;
+            em.waybill_total = data.waybill_total;
             em.supplier_id = data.supplier_id;//Tedarikçi firma
             em.receiver_id = data.receiver_id; //Teslim alan kişi
 
@@ -158,19 +159,19 @@ namespace ecommerce.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Entry");
         }
-        [HttpGet]
-
+        [HttpDelete]  // API çağrıları için DELETE desteği ekliyoruz
         public IActionResult Delete(int id)
         {
-            //silerken entry_master ı silceksin detayı silmekle uğraşma,
-            //ilişki kurduğun için, direkt detaylar kendisi sinilir otomatik
             entry_master em = _context.entry_masters.FirstOrDefault(x => x.id == id);
-
-            _context.entry_masters.Remove(em);
-            _context.SaveChanges();
-            
-            return RedirectToAction("Index", "Entry");
+            if (em != null)
+            {
+                _context.entry_masters.Remove(em);
+                _context.SaveChanges();
+                return Json(new { success = true, message = "Kayıt başarıyla silindi." });
+            }
+            return Json(new { success = false, message = "Kayıt bulunamadı." });
         }
+
 
         public IActionResult List()
         {
