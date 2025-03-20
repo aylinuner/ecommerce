@@ -15,6 +15,8 @@ public partial class EcommerceDbContext : DbContext
     {
     }
 
+    public virtual DbSet<brand> brands { get; set; }
+
     public virtual DbSet<category> categories { get; set; }
 
     public virtual DbSet<company> companies { get; set; }
@@ -39,6 +41,17 @@ public partial class EcommerceDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<brand>(entity =>
+        {
+            entity.ToTable("brand");
+
+            entity.Property(e => e.create_date)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.name).HasMaxLength(50);
+            entity.Property(e => e.update_time).HasColumnType("datetime");
+        });
+
         modelBuilder.Entity<category>(entity =>
         {
             entity.ToTable("category");
