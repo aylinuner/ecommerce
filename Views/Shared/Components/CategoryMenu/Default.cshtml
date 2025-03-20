@@ -1,0 +1,8 @@
+﻿<ul class="navbar-nav d-flex flex-row">
+    @foreach (var category in Model)
+    {
+        <li class="nav-item mx-2">
+            <a class="nav-link text-dark" href="/Category/@category.id">@category.name</a>
+        </li>
+    }
+</ul>

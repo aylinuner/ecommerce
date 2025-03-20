@@ -94,72 +94,71 @@
                 {
                     <button type="button" class="btn btn-danger" onclick="deleteEntry(@Model.id)">Sil</button>
                 }
-
-                <script>
-                      document.getElementById('addRowBtn').addEventListener('click', function(e) {
-                        e.preventDefault();
-
-                        //Giriş değerlerini alın
-                        var productId = document.getElementById('productId').value;
-                        var quantity = document.getElementById('quantity').value;
-                        var total = document.getElementById('total').value;
-                        var totalAmount = document.getElementById('totalAmount').value;
-                        var weight = document.getElementById('weight').value;
-
-                        // Herhangi bir girdinin boş olup olmadığını kontrol edin
-                        if (productId && quantity && total && totalAmount && weight) {
-                            var table = document.getElementById('productTable').getElementsByTagName('tbody')[0];
-                            var newRow = table.insertRow(table.rows.length);
-
-                            newRow.innerHTML = `
-                                <td>${productId}</td>
-                                <td>${quantity}</td>
-                                <td>${total}</td>
-                                <td>${totalAmount}</td>
-                                <td>${weight}</td>
-                                <td><button class="btn btn-primary">Güncelle</button></td>
-                            `;
-
-                            // Satırı ekledikten sonra giriş alanlarını temizleyin
-                            document.getElementById('productId').value = '';
-                            document.getElementById('quantity').value = '';
-                            document.getElementById('total').value = '';
-                            document.getElementById('totalAmount').value = '';
-                            document.getElementById('weight').value = '';
-                        } else {
-                            alert("Lütfen tüm alanları doldurun.");
-                        }
-                    });
-
-
-                    function deleteEntry(id) {
-                        if (confirm('Bu kaydı silmek istediğinize emin misiniz?')) {
-                            fetch(`/Admin/Entry/Delete/${id}`, {
-                                method: 'DELETE',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                }
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.success) {
-                                    alert("Kayıt başarıyla silindi.");
-                                    window.location.href = "/Admin/Entry/Index"; // Silme işlemi sonrası listeye yönlendirme
-                                } else {
-                                    alert("Silme işlemi başarısız.");
-                                }
-                            })
-                            .catch(error => {
-                                console.error("Hata:", error);
-                                alert("Bir hata oluştu.");
-                            });
-                        }
-                    }
-                </script>
-
-
                 <button type="submit" class="btn btn-primary">Kaydet</button>
             </div>
         </div>
     </form>
-</div>
+
+
+    <script>
+          document.getElementById('addRowBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            //Giriş değerlerini alın
+            var productId = document.getElementById('productId').value;
+            var quantity = document.getElementById('quantity').value;
+            var total = document.getElementById('total').value;
+            var totalAmount = document.getElementById('totalAmount').value;
+            var weight = document.getElementById('weight').value;
+
+            // Herhangi bir girdinin boş olup olmadığını kontrol edin
+            if (productId && quantity && total && totalAmount && weight) {
+                var table = document.getElementById('productTable').getElementsByTagName('tbody')[0];
+                var newRow = table.insertRow(table.rows.length);
+
+                newRow.innerHTML = `
+                    <td>${productId}</td>
+                    <td>${quantity}</td>
+                    <td>${total}</td>
+                    <td>${totalAmount}</td>
+                    <td>${weight}</td>
+                    <td><button class="btn btn-primary">Güncelle</button></td>
+                `;
+
+                // Satırı ekledikten sonra giriş alanlarını temizleyin
+                document.getElementById('productId').value = '';
+                document.getElementById('quantity').value = '';
+                document.getElementById('total').value = '';
+                document.getElementById('totalAmount').value = '';
+                document.getElementById('weight').value = '';
+            } else {
+                alert("Lütfen tüm alanları doldurun.");
+            }
+        });
+
+
+        function deleteEntry(id) {
+            if (confirm('Bu kaydı silmek istediğinize emin misiniz?')) {
+                fetch(`/Admin/Entry/Delete/${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Kayıt başarıyla silindi.");
+                        window.location.href = "/Admin/Entry/Index"; // Silme işlemi sonrası listeye yönlendirme
+                    } else {
+                        alert("Silme işlemi başarısız.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Hata:", error);
+                    alert("Bir hata oluştu.");
+                });
+            }
+        }
+    </script>
+
