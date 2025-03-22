@@ -15,6 +15,8 @@ public partial class EcommerceDbContext : DbContext
     {
     }
 
+    public virtual DbSet<basket> baskets { get; set; }
+
     public virtual DbSet<brand> brands { get; set; }
 
     public virtual DbSet<category> categories { get; set; }
@@ -41,6 +43,15 @@ public partial class EcommerceDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<basket>(entity =>
+        {
+            entity.ToTable("basket");
+
+            entity.Property(e => e.id).ValueGeneratedNever();
+            entity.Property(e => e.create_date).HasColumnType("datetime");
+            entity.Property(e => e.update_time).HasColumnType("datetime");
+        });
+
         modelBuilder.Entity<brand>(entity =>
         {
             entity.ToTable("brand");

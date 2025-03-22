@@ -1,12 +1,40 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ecommerce.Areas.Admin.Models.View;
+using ecommerce.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace ecommerce.Controllers
 {
     public class ProductDetailController : Controller
     {
-        public IActionResult Index()
+        private readonly EcommerceDbContext _context;
+
+        public ProductDetailController(EcommerceDbContext context)
         {
-            return View();
+            _context = context;
         }
+        public async Task<IActionResult> Index(int? id)
+        {
+            ProductViewModel model = new ProductViewModel();
+
+            if (id.HasValue && id > 0)
+            {
+                product p = await _context.products.FirstOrDefaultAsync(x => x.id == id);
+
+                if (p != null)
+                {
+                    model.id = p.id;
+                    model.name = p.name;
+                    model.price = p.price;
+                    model.image_url = p.image_url;
+                    model.description = p.description;
+                }
+            }
+
+            return View(model);
+        }
+
+
     }
 }

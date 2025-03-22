@@ -1,0 +1,68 @@
+﻿
+<div class="container mt-4">
+    <div class="row">
+        <!-- Sol Bölüm - Teslimat Adresi ve Kargo -->
+        <div class="col-md-8">
+            <div class="card p-3 mb-3">
+                <h5 class="fw-bold">Teslimat Adresi</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="border p-3 text-center">
+                            <span class="fw-bold">+</span>
+                            <p>Yeni adres ekle</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border p-3">
+                            <input type="radio" checked>
+                            <span class="fw-bold">Aylin Üner</span>
+                            <p class="m-0">Mimar Sinan mah.</p>
+                            <p class="fw-bold">İSTANBUL / TUZLA</p>
+                            <a href="#">Düzenle</a> | <a href="#">Sil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-3">
+                <h5 class="fw-bold">Teslimat</h5>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="kargo" checked>
+                    <label class="form-check-label">
+                        Kolay Gelsin Kargo <span class="text-success">Ücretsiz</span>
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="kargo">
+                    <label class="form-check-label">
+                        Yurtiçi Kargo <span class="text-danger">49,90 TL</span>
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="kargo">
+                    <label class="form-check-label">
+                        Mağaza Teslim <span class="text-success">Ücretsiz</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="kargo">
+                    <label class="form-check-label">
+                        HepsiJET Standart Kargo <span class="text-success">Ücretsiz</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sağ Bölüm - Sipariş Özeti -->
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h5 class="fw-bold">Sipariş Özeti</h5>
+                <p>Ara Toplam: <span class="float-end">38.165,83 TL</span></p>
+                <p>KDV: <span class="float-end">7.633,17 TL</span></p>
+                <p>Kargo: <span class="float-end text-success">Bedava</span></p>
+                <h5 class="fw-bold text-primary">TOPLAM: <span class="float-end">45.799,00 TL</span></h5>
+                <a href="/Order/Payment" class="btn btn-primary w-100 mt-3">Teslimatı Onayla &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>

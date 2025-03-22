@@ -6,6 +6,9 @@
     <title>Nera - E-Ticaret</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="//code.jivosite.com/widget/H5HKBPvNwZ" async></script>
+
+
     <style>
 
         /* Filtre kutuları için stil */
@@ -35,6 +38,8 @@
             .thumbnail img:hover {
                 opacity: 1;
             }
+
+      
     </style>
 </head>
 <body class="bg-light">
@@ -68,16 +73,10 @@
                         @Html.ActionLink("Giriş Yap", "Login", "User", null, new { @class = "btn btn-outline-dark me-2" })
 
                         <a href="/Admin/Category/Index" class="btn btn-dark me-2">Admin Girişi</a>
-                        <div class="dropdown">
-                            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                <i class="bi bi-person-circle"></i> Kullanıcı
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="#">Profil</a></li>
-                                <li><a class="dropdown-item" href="#">Siparişlerim</a></li>
-                                <li><a class="dropdown-item" href="#">Çıkış Yap</a></li>
-                            </ul>
-                        </div>
+                            <a href="/UserPanel/Membership" class="btn btn-dark">
+                                Kullanıcı
+                            </a>
+                            
                     </div>
                 </div>
             </div>
