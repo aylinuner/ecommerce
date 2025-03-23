@@ -38,8 +38,6 @@
             .thumbnail img:hover {
                 opacity: 1;
             }
-
-      
     </style>
 </head>
 <body class="bg-light">
@@ -73,17 +71,26 @@
                         @Html.ActionLink("Giriş Yap", "Login", "User", null, new { @class = "btn btn-outline-dark me-2" })
 
                         <a href="/Admin/Category/Index" class="btn btn-dark me-2">Admin Girişi</a>
-                            <a href="/UserPanel/Membership" class="btn btn-dark">
-                                Kullanıcı
-                            </a>
-                            
+                        <a href="/UserPanel/Membership" class="btn btn-dark">
+                            Kullanıcı
+                        </a>
+
                     </div>
                 </div>
             </div>
         </nav>
-        <div class="container  d-flex justify-content-center mt-3">
-            @await Component.InvokeAsync("CategoryMenu")
-        </div>
+        @* Url'deki controller bilgisi UserPanel ve User değilse kategori componentini ekranda göster. Kategoriler kısmı user ve userpanelde ekranda gösterme' *@
+        @if (
+        !(ViewContext.RouteData.Values["controller"]?.ToString() == "UserPanel")
+        && !(ViewContext.RouteData.Values["controller"]?.ToString() == "User")
+        )
+        {
+            <div class="container d-flex justify-content-center mt-3">
+                @await Component.InvokeAsync("CategoryMenu")
+            </div>
+        }
+
+
     </header>
 
     <div class="container">

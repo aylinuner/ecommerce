@@ -4,7 +4,6 @@ namespace ecommerce.Areas.Admin.Models.View
 {
     public class EntryViewModel
     {
-
         public int id { get; set; }
 
         public string waybill_no { get; set; } = null!;
@@ -51,6 +50,7 @@ namespace ecommerce.Areas.Admin.Models.View
 
         public int entry_master_id { get; set; }
 
+        public product product { get; set; }
     }
 
 }

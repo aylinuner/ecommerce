@@ -1,12 +1,13 @@
 ﻿@using ecommerce.Areas.Admin.Models.View
 @model EntryViewModel
+
 <div class="container mt-5">
     <h2 class="mb-4">Stok Giriş</h2>
     <form method="post" action="/Admin/Entry/Save">
         <div class="mb-3 row">
-            <label for="waybill_name" class="col-sm-2 col-form-label">İrsaliye No:</label>
+            <label for="waybill_no" class="col-sm-2 col-form-label">İrsaliye No:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="waybill_name" placeholder="İrsaliye no girin" asp-for="waybill_no">
+                <input type="text" class="form-control" id="waybill_no" placeholder="İrsaliye no girin" asp-for="waybill_no">
             </div>
         </div>
 
@@ -20,15 +21,11 @@
         <div class="mb-3 row">
             <label for="supplier_id" class="col-sm-2 col-form-label">Tedarikçi Firma:</label>
             <div class="col-sm-10">
-                @* <input type="text" class="form-control" id="supplier_id" asp-for="supplier_id" > *@
                 <select class="form-control" id="supplier_id" asp-for="supplier_id">
                     <option value="">Seçiniz</option>
-                    @if (ViewBag.suppliers != null)
+                    @foreach (var supplier in ViewBag.suppliers ?? new List<SelectListItem>())
                     {
-                        foreach (var supplier in ViewBag.suppliers)
-                        {
-                            <option value="@supplier.Value">@supplier.Text</option>
-                        }
+                        <option value="@supplier.Value">@supplier.Text</option>
                     }
                 </select>
             </div>
@@ -37,21 +34,18 @@
         <div class="mb-3 row">
             <label for="waybill_total" class="col-sm-2 col-form-label">İrsaliye Tutarı</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="waybill_total" placeholder="İrsaliye tutarını girin" asp-for="waybill_total">
+                <input type="number" step="0.01" class="form-control" id="waybill_total" placeholder="İrsaliye tutarını girin" asp-for="waybill_total">
             </div>
         </div>
 
         <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Teslim Alan Kişi</label>
+            <label for="receiver_id" class="col-sm-2 col-form-label">Teslim Alan Kişi</label>
             <div class="col-sm-10">
                 <select class="form-control" id="receiver_id" asp-for="receiver_id">
                     <option value="">Seçiniz</option>
-                    @if (ViewBag.users != null)
+                    @foreach (var user in ViewBag.users ?? new List<SelectListItem>())
                     {
-                        foreach (var user in ViewBag.users)
-                        {
-                            <option value="@user.Value">@user.Text</option>
-                        }
+                        <option value="@user.Value">@user.Text</option>
                     }
                 </select>
             </div>
@@ -68,28 +62,35 @@
                     <th>Toplam Tutar</th>
                     <th>Ağırlık</th>
                     <th class="text-center">
-                        <button id="addRowBtn" class="btn btn-primary">Yeni</button>
+                        <button id="addRowBtn" type="button" class="btn btn-primary">Yeni</button>
                     </th>
                 </tr>
             </thead>
-            <tbody>
-                <tr id="inputRow">
-                    <td><input type="text" id="productId" placeholder="Ürün Adı" /></td>
-                    <td><input type="number" id="quantity" placeholder="Adet" /></td>
-                    <td><input type="number" id="total" placeholder="Tutar" /></td>
-                    <td><input type="number" id="totalAmount" placeholder="Toplam Tutar" /></td>
-                    <td><input type="number" id="weight" placeholder="Ağırlık" /></td>
-                </tr>
+            <tbody id="entryDetailsBody">
+
+                @foreach (var item in Model.entry_details)
+                {
+                    <tr>
+                        <td class="">@item.product.name</td>
+                        <td class="">@item.quantity</td>
+                        <td class="">@item.total</td>
+                        <td class="">@item.total_amount</td>
+                        <td class="">@item.weight</td>
+                        <td>
+                            <button type="button" class="btn btn-danger" onclick="deleteEntryDetail(@item.id)">Sil</button>
+
+                        </td>
+                    </tr>
+
+                }
+
             </tbody>
+
         </table>
 
         <div class="mb-3 row">
             <div class="col-sm-10 offset-sm-2">
-
-
                 @Html.ActionLink("Geri", "Index", "Entry", new { area = "Admin" }, new { @class = "btn btn-dark text-white" })
-
-                @* Silme butonu *@
                 @if (Model.id != 0)
                 {
                     <button type="button" class="btn btn-danger" onclick="deleteEntry(@Model.id)">Sil</button>
@@ -98,67 +99,103 @@
             </div>
         </div>
     </form>
+</div>
+
+<script>
+      function deleteEntry(id) {
+                        if (confirm('Bu kaydı silmek istediğinize emin misiniz?')) {
+                            fetch(`/Admin/Entry/Delete/${id}`, {
+                                method: 'DELETE',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    alert("Kayıt başarıyla silindi.");
+                                    window.location.href = "/Admin/Entry/Index"; // Silme işlemi sonrası listeye yönlendirme
+                                } else {
+                                    alert("Silme işlemi başarısız.");
+                                }
+                            })
+                            .catch(error => {
+                                console.error("Hata:", error);
+                                alert("Bir hata oluştu.");
+                            });
+                        }
+                    }
+                        // entry_details listesini JavaScript dizisi olarak tanımla
+                        let entryDetailsList = @Html.Raw(Json.Serialize(Model.entry_details));
+                       function deleteEntryDetail(index) {
+
+                            if (confirm("Bu kaydı silmek istediğinize emin misiniz?")) {
+                                // Modeldeki entry_details listesinden elemanı sil
+                                entryDetailsList.splice(index, 1);
+
+                                // Tabloyu güncelle
+                                updateTable();
+                            }
+                        }
+                                // Tabloyu güncelleyen fonksiyon
+                        function updateTable() {
+                            let tableBody = document.getElementById("entryDetailsBody");
+                            tableBody.innerHTML = "";
+
+                            entryDetailsList.forEach((item, i) => {
+                                let row = `
+                                    <tr data-index="${i}">
+                                        <td>${i + 1}</td>
+                                        <td>${item.product_id}</td>
+                                        <td>${item.quantity}</td>
+                                        <td>
+                                            <button onclick="deleteEntryDetail(${i})">Sil</button>
+                                        </td>
+                                    </tr>
+                                `;
+                                tableBody.innerHTML += row;
+                            });
+                        }
 
 
-    <script>
-          document.getElementById('addRowBtn').addEventListener('click', function(e) {
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("addRowBtn").addEventListener("click", function (e) {
             e.preventDefault();
-
-            //Giriş değerlerini alın
-            var productId = document.getElementById('productId').value;
-            var quantity = document.getElementById('quantity').value;
-            var total = document.getElementById('total').value;
-            var totalAmount = document.getElementById('totalAmount').value;
-            var weight = document.getElementById('weight').value;
-
-            // Herhangi bir girdinin boş olup olmadığını kontrol edin
-            if (productId && quantity && total && totalAmount && weight) {
-                var table = document.getElementById('productTable').getElementsByTagName('tbody')[0];
-                var newRow = table.insertRow(table.rows.length);
-
-                newRow.innerHTML = `
-                    <td>${productId}</td>
-                    <td>${quantity}</td>
-                    <td>${total}</td>
-                    <td>${totalAmount}</td>
-                    <td>${weight}</td>
-                    <td><button class="btn btn-primary">Güncelle</button></td>
-                `;
-
-                // Satırı ekledikten sonra giriş alanlarını temizleyin
-                document.getElementById('productId').value = '';
-                document.getElementById('quantity').value = '';
-                document.getElementById('total').value = '';
-                document.getElementById('totalAmount').value = '';
-                document.getElementById('weight').value = '';
-            } else {
-                alert("Lütfen tüm alanları doldurun.");
-            }
+            let index = document.querySelectorAll("#productTable tbody tr").length;
+            let newRow = `
+                <tr>
+                    <td>
+                        <select class="form-control" name="entry_details[${index}].product_id" required>
+                            <option value="">Ürün Seçiniz</option>
+    @foreach (var product in ViewBag.products ?? new List<SelectListItem>())
+    {
+                                                <option value="@product.Value">@product.Text</option>
+    }
+                        </select>
+                    </td>
+                    <td><input type="number" class="form-control" name="entry_details[${index}].quantity" required oninput="calculateTotal(this)"/></td>
+                    <td><input type="number" step="0.01" class="form-control" name="entry_details[${index}].unit_price" required oninput="calculateTotal(this)"/></td>
+                    <td><input type="number" step="0.01" class="form-control" name="entry_details[${index}].total_price" readonly /></td>
+                    <td><input type="number" step="0.01" class="form-control" name="entry_details[${index}].weight" required /></td>
+                    <td class="text-center"><button type="button" class="btn btn-danger btn-sm" onclick="removeRow(this)">Sil</button></td>
+                </tr>
+            `;
+            document.querySelector("#productTable tbody").insertAdjacentHTML("beforeend", newRow);
         });
+    });
 
+    function removeRow(button) {
+        button.closest("tr").remove();
+    }
 
-        function deleteEntry(id) {
-            if (confirm('Bu kaydı silmek istediğinize emin misiniz?')) {
-                fetch(`/Admin/Entry/Delete/${id}`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert("Kayıt başarıyla silindi.");
-                        window.location.href = "/Admin/Entry/Index"; // Silme işlemi sonrası listeye yönlendirme
-                    } else {
-                        alert("Silme işlemi başarısız.");
-                    }
-                })
-                .catch(error => {
-                    console.error("Hata:", error);
-                    alert("Bir hata oluştu.");
-                });
-            }
-        }
-    </script>
-
+    function calculateTotal(input) {
+        let row = input.closest("tr");
+        let quantity = row.querySelector("[name*='quantity']").value;
+        let unitPrice = row.querySelector("[name*='unit_price']").value;
+        let totalPriceInput = row.querySelector("[name*='total_price']");
+        let total = (quantity * unitPrice).toFixed(2);
+        totalPriceInput.value = isNaN(total) ? "" : total;
+    }
+</script>

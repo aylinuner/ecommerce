@@ -123,6 +123,11 @@ public partial class EcommerceDbContext : DbContext
                 .HasForeignKey(d => d.entry_master_id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_entry_detail_entry_master");
+
+            entity.HasOne(d => d.product).WithMany(p => p.entry_details)
+                .HasForeignKey(d => d.product_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_entry_detail_product");
         });
 
         modelBuilder.Entity<entry_master>(entity =>

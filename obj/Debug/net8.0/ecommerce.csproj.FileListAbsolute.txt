@@ -909,3 +909,4 @@ C:\Projects\ersoy\ecommerce\obj\Debug\net8.0\refint\ecommerce.dll
 C:\Projects\ersoy\ecommerce\obj\Debug\net8.0\ecommerce.pdb
 C:\Projects\ersoy\ecommerce\obj\Debug\net8.0\ecommerce.genruntimeconfig.cache
 C:\Projects\ersoy\ecommerce\obj\Debug\net8.0\ref\ecommerce.dll
+C:\projeler\ecommerce\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -24,4 +24,6 @@ public partial class product
     public DateTime? update_date { get; set; }
 
     public virtual category category { get; set; } = null!;
+
+    public virtual ICollection<entry_detail> entry_details { get; set; } = new List<entry_detail>();
 }

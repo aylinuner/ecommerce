@@ -1,11 +1,9 @@
 ﻿<div class="container mt-4">
     <div class="row">
         <div class="col-md-3">
-            <ul class="list-group">
-                <li class="list-group-item"><a href="/UserPanel/Membership"> Üyelik Bilgilerim</a></li>
-                <li class="list-group-item"> <a href="/UserPanel/Order">Siparişlerim</a> </li>
-                <li class="list-group-item"><a href="/" class="text-danger text-decoration-none">Çıkış</a></li>
-            </ul>
+            <div class="container  d-flex justify-content-center mt-3">
+                @await Component.InvokeAsync("UserPanel")
+            </div>
         </div>
         <div class="col-md-9">
             <div id="uyelik" class="content">

@@ -26,4 +26,6 @@ public partial class entry_detail
     public int entry_master_id { get; set; }
 
     public virtual entry_master entry_master { get; set; } = null!;
+
+    public virtual product product { get; set; } = null!;
 }
