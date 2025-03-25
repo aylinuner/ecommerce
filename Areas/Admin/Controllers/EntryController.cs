@@ -104,7 +104,7 @@ namespace ecommerce.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Save(EntryViewModel data)
+        public async Task<IActionResult> Save(EntryViewModel data, EntryDetailViewModel item)
         {
             // entry_master nesnesini oluştur
             entry_master em = new entry_master
@@ -117,32 +117,34 @@ namespace ecommerce.Areas.Admin.Controllers
                 receiver_id = data.receiver_id,
                 create_date = DateTime.Now
             };
-            foreach (var item in data.entry_details)
-            {
-                entry_detail ed = new entry_detail
-                {
-                    entry_master_id = em.id, // entry_master ile ilişkilendir
-                    id = item.id,
-                    category_id = item.category_id,
-                    product_id = item.product_id,
-                    quantity = item.quantity,
-                    total = item.total,
-                    total_amount = item.total_amount,
-                    weight = item.weight,
-                    create_date = item.create_date,
-                    update_date = item.update_date
-                };
 
-                // entry_master'a entry_detail'leri ekle
-                em.entry_details.Add(ed);
-            }
-
-            // entry_master'ı veritabanına ekle
             _context.entry_masters.Add(em);
+
+            entry_detail ed = new entry_detail
+            {
+                entry_master_id = em.id, // entry_master ile ilişkilendir
+                id = item.id,
+                category_id = item.category_id,
+                //product_id = item.product_id,
+                quantity = item.quantity,
+                total = item.total,
+                total_amount = item.total_amount,
+                weight = item.weight,
+                create_date = item.create_date,
+                update_date = item.update_date
+            };
+
+            // entry_master'a entry_detail'leri ekle
+            em.entry_details.Add(ed);
+
             await _context.SaveChangesAsync(); // Asenkron olarak kaydet
 
-            return Ok(); // İşlem başarılı
+            return View(em); // İşlem başarılı
         }
+
+        // entry_master'ı veritabanına ekle
+
+
         [HttpDelete]
         public IActionResult Delete(int id)
         {
