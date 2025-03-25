@@ -7,12 +7,7 @@
             <th>İrsaliye Tarihi</th>
             <th>Tedarikçi Firma</th>
             <th>İrsaliye Tutarı</th>
-
-            <th class="text-center">
-                <a href="/Admin/Entry/Save" class="btn btn-primary"> Yeni </a>
-            </th>
         </tr>
-
     </thead>
     <tbody>
         @*   @*   ViewBag içinde stok giriş detay varsa *@
@@ -21,19 +16,25 @@
             @*  ViewBag'daki stok giriş içerisinde dön' *@
             foreach (entry_master item in ViewBag.entry_masters)
             {
-                 <tr>
+                 <tr class="entry-row" data-id="@item.id">
                    
                     <td class="">@item.waybill_no</td>
                     <td class="">@item.waybill_date</td>
                     <td class="">@item.supplier_id</td>
                     <td class="">@item.waybill_total</td>
                     @* <td class="">@item.create_date</td> *@
-                    <td style="width:90px">
-                        @* @Html.ActionLink("Güncelle", "Save", "Product", new { id = item.id }, new { @class = "btn btn-primary" }) *@
-                        <a href="/Admin/Entry/Save?id=@item.id" class="btn btn-primary"> Güncelle </a>
-                    </td>
                 </tr>
             }
         }
     </tbody>
 </table>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+         document.querySelectorAll(".entry-row").forEach(row => {
+             row.addEventListener("dblclick", function () {
+                 var entryId = this.getAttribute("data-id");
+                 window.location.href = "/Admin/Entry/Save?id=" + entryId;
+             });
+         });
+     });
+ </script>
