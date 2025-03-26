@@ -1,8 +1,12 @@
 ﻿@using ecommerce.Areas.Admin.Models
+
+<div class="text-center">
+    @Html.ActionLink("Yeni", "Save", "Entry", null, new { @class = "btn btn-primary" })
+</div>
+
 <table class="table table-striped table-bordered mt-3">
     <thead class="table-dark">
         <tr>
-
             <th>İrsaliye Numarası</th>
             <th>İrsaliye Tarihi</th>
             <th>Tedarikçi Firma</th>

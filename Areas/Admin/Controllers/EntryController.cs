@@ -104,7 +104,9 @@ namespace ecommerce.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Save(EntryViewModel data, EntryDetailViewModel item)
+
+        //Save parametresi olarak tek bir parametre ekliyoruz. Port methodunda iki tane parametre gönderemeyiz.
+        public async Task<IActionResult> Save(EntryViewModel data)
         {
             // entry_master nesnesini oluştur
             entry_master em = new entry_master
@@ -115,31 +117,56 @@ namespace ecommerce.Areas.Admin.Controllers
                 waybill_total = data.waybill_total,
                 supplier_id = data.supplier_id,
                 receiver_id = data.receiver_id,
-                create_date = DateTime.Now
+                create_date = DateTime.Now,
+                //  entry_details=data.entry_details
             };
-
-            _context.entry_masters.Add(em);
-
-            entry_detail ed = new entry_detail
+            foreach (var item in data.entry_details)
             {
-                entry_master_id = em.id, // entry_master ile ilişkilendir
-                id = item.id,
-                category_id = item.category_id,
-                //product_id = item.product_id,
-                quantity = item.quantity,
-                total = item.total,
-                total_amount = item.total_amount,
-                weight = item.weight,
-                create_date = item.create_date,
-                update_date = item.update_date
-            };
+                //em (entry_master) 'ye entry_details'i ekliyoruz. ve entry_details property'lerini tek tek giriyoruz. 
+                em.entry_details.Add(new entry_detail
+                {
+                    entry_master_id = em.id,
+                    id = item.id,
+                    product_id = item.product_id,
+                    quantity = item.quantity,
+                    total = item.total,
+                    total_amount = item.total_amount,
+                    weight = item.weight,
+                    update_date = DateTime.Now,
+                    create_date = DateTime.Now
+                });
+            }
+            if (em.id == 0)
+            {
 
-            // entry_master'a entry_detail'leri ekle
-            em.entry_details.Add(ed);
+                _context.entry_masters.Add(em);
+            }
+            else
+            {
+                _context.entry_masters.Update(em);
+
+            }
+
+            //entry_detail ed = new entry_detail
+            //{
+            //    entry_master_id = em.id, // entry_master ile ilişkilendir
+            //    id = item.id,
+            //    category_id = item.category_id,
+            //    //product_id = item.product_id,
+            //    quantity = item.quantity,
+            //    total = item.total,
+            //    total_amount = item.total_amount,
+            //    weight = item.weight,
+            //    create_date = item.create_date,
+            //    update_date = item.update_date
+            //};
+
+            //// entry_master'a entry_detail'leri ekle
+            //em.entry_details.Add(ed);
 
             await _context.SaveChangesAsync(); // Asenkron olarak kaydet
+            return RedirectToAction("Save", "Entry", new { id = em.id });
 
-            return View(em); // İşlem başarılı
         }
 
         // entry_master'ı veritabanına ekle

@@ -1,9 +1,12 @@
 ﻿@using ecommerce.Areas.Admin.Models.View
 @model EntryViewModel
 
+
+
 <div class="container mt-5">
     <h2 class="mb-4">Stok Giriş</h2>
     <form method="post" action="/Admin/Entry/Save">
+        <input type="text" id="id" asp-for="id" hidden>
         <div class="mb-3 row">
             <label for="waybill_no" class="col-sm-2 col-form-label">İrsaliye No:</label>
             <div class="col-sm-10">
@@ -58,28 +61,31 @@
                 <tr>
                     <th>Ürün Adı</th>
                     <th>Adet</th>
-                    <th>Tutar</th>
+                    <th>Birim Fiyat</th>
                     <th>Toplam Tutar</th>
                     <th>Ağırlık</th>
-
+                    <th>İşlem</th>
                 </tr>
             </thead>
             <tbody id="entryDetailsBody">
-
-                @foreach (var item in Model.entry_details)
+                @for (var i = 0; i < Model.entry_details.Count; i++)
                 {
-                    <tr class="entry-row" data-id="@item.id">
-                        <td class="" >@item.product.name</td>
-                        <td class="" id="quantity" asp-for="quantity">@item.quantity</td>
-                        <td class="">@item.total</td>
-                        <td class="">@item.total_amount</td>
-                        <td class="">@item.weight</td>
-
+                    <tr>
+                        <td>
+                            @Model.entry_details[i].product.name
+                            <input type="hidden" name="entry_details[@i].product_id" value="@Model.entry_details[i].product_id" />
+                            <input type="hidden" name="entry_details[@i].id" value="@Model.entry_details[i].id" />
+                        </td>
+                        <td><input type="number" name="entry_details[@i].quantity" value="@Model.entry_details[i].quantity" class="form-control" /></td>
+                        <td><input type="number" step="0.01" name="entry_details[@i].total" value="@Model.entry_details[i].total" class="form-control" /></td>
+                        <td><input type="number" step="0.01" name="entry_details[@i].total_amount" value="@Model.entry_details[i].total_amount" class="form-control" /></td>
+                        <td><input type="number" step="0.01" name="entry_details[@i].weight" value="@Model.entry_details[i].weight" class="form-control" /></td>
+                        <td><button type="button" class="btn btn-danger" onclick="removeRow(this)">Sil</button></td>
                     </tr>
                 }
             </tbody>
-
         </table>
+
         <div class="mb-3 row">
             <div class="col-sm-10 offset-sm-2">
                 @Html.ActionLink("Geri", "Index", "Entry", new { area = "Admin" }, new { @class = "btn btn-dark text-white" })
@@ -125,7 +131,6 @@
                         <input type="number" step="0.01" class="form-control" id="weight" required>
                     </div>
                     <button type="button" class="btn btn-success" onclick="addProductToTable()">Ekle</button>
-                    <button type="button" class="btn btn-danger" onclick="RemoveProductToTable()">Sİl</button>
                 </form>
             </div>
         </div>
@@ -133,70 +138,55 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function(){
-        document.querySelectorAll(".entry-row").forEach(row=>{
-            row.addEventListener("dbclick", function(){
-                var entryId = this.getAttribute("data-id");
-                window.location.href = "/Admin/Entry/Save?id=" +entryId;
-
-            });
-        });
-    });
-
-    //Modal güncelleme yeri. productModal yukarıda oluşturuldu, updateModal oluşturulacak
-
-
-           document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".entry-row").forEach(row => {
-            row.addEventListener("dblclick", function () {
-                // Güncelleme modalını aç
-                var updateModal = new bootstrap.Modal(document.getElementById("updateModal"));
-                updateModal.show();
-
-                // Satırdan verileri al
-                var entryId = this.getAttribute("data-id");
-                var productName = this.children[0].innerText; // 1. sütun (Ürün Adı)
-                var quantity = this.children[1].innerText; // 2. sütun (Adet)
-                var total = this.children[2].innerText; // 3. sütun (Toplam)
-                var totalAmount = this.children[3].innerText; // 4. sütun (Toplam Tutar)
-                var weight = this.children[4].innerText; // 5. sütun (Ağırlık)
-
-                // Modal içindeki inputlara verileri doldur
-                document.getElementById("update_id").value = entryId;
-                document.getElementById("update_product_name").value = productName;
-                document.getElementById("update_quantity").value = quantity;
-                document.getElementById("update_total").value = total;
-                document.getElementById("update_total_amount").value = totalAmount;
-                document.getElementById("update_weight").value = weight;
-            });
-        });
-    });
-
         function addProductToTable() {
-        let product = document.getElementById("product_id");
-        let quantity = document.getElementById("quantity").value;
-        let amount = document.getElementById("amount").value;
-        let total_amount = (quantity * amount).toFixed(2);
-        let weight = document.getElementById("weight").value;
+            let product = document.getElementById("product_id");
+            let quantity = document.getElementById("quantity").value;
+            let amount = document.getElementById("amount").value;
+            let total_amount = (quantity * amount).toFixed(2);
+            let weight = document.getElementById("weight").value;
 
-        let tableBody = document.getElementById("entryDetailsBody");
-        let newRow = `
-            <tr>
-                <td>${product.options[product.selectedIndex].text}</td>
-                <td>${quantity}</td>
-                <td>${amount}</td>
-                <td>${total_amount}</td>
-                <td>${weight}</td>
-                <td><button type="button" class="btn btn-danger" onclick="removeRow(this)">Sil</button></td>
-            </tr>
-        `;
-        tableBody.insertAdjacentHTML("beforeend", newRow);
+            // Dinamik index için satır sayısını kontrol et
+            let index = document.querySelectorAll("#entryDetailsBody tr").length;
 
-        document.getElementById("productForm").reset();
-        bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
-    }
+            // Eğer ürün seçilmemişse uyarı ver
+            // if (!product.value) {
+            //     alert("Lütfen bir ürün seçin!");
+            //     return;
+            // }
 
-    function removeRow(button) {
-        button.closest("tr").remove();
-    }
+            // Yeni satır ekle
+            let newRow = `
+    <tr>
+    <td>
+                        ${product.options[product.selectedIndex].text}
+    <input type="hidden" name="entry_details[${index}].product_id" value="${product.value}" />
+    </td>
+    <td>
+    <input type="number" name="entry_details[${index}].quantity" value="${quantity}" class="form-control" />
+    </td>
+    <td>
+    <input type="number" step="0.01" name="entry_details[${index}].total" value="${amount}" class="form-control" />
+    </td>
+    <td>
+    <input type="number" step="0.01" name="entry_details[${index}].total_amount" value="${total_amount}" class="form-control" />
+    </td>
+    <td>
+    <input type="number" step="0.01" name="entry_details[${index}].weight" value="${weight}" class="form-control" />
+    </td>
+    <td>
+    <button type="button" class="btn btn-danger" onclick="removeRow(this)">Sil</button>
+    </td>
+    </tr>`;
+
+            document.getElementById("entryDetailsBody").insertAdjacentHTML("beforeend", newRow);
+            bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
+
+            // Formu temizle
+            document.getElementById("productForm").reset();
+        }
+
+
+        function removeRow(button) {
+            button.closest("tr").remove();
+        }
 </script>

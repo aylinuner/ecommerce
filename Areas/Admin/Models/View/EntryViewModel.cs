@@ -19,8 +19,10 @@ namespace ecommerce.Areas.Admin.Models.View
         public DateTime create_date { get; set; }
 
         public DateTime? update_date { get; set; }
+        public virtual List<EntryDetailViewModel> entry_details { get; set; } = new List<EntryDetailViewModel>();
 
-        public virtual ICollection<EntryDetailViewModel> entry_details { get; set; } = new List<EntryDetailViewModel>();
+
+        //public virtual ICollection<EntryDetailViewModel> entry_details { get; set; } = new List<EntryDetailViewModel>();
 
 
     }
