@@ -1,4 +1,8 @@
 ﻿@using ecommerce.Areas.Admin.Models
+
+<div class="text-center">
+    @Html.ActionLink("Yeni", "Save", "Product", null, new { @class = "btn btn-primary" })
+</div>
 <table class="table table-striped table-bordered mt-3">
     <thead class="table-dark">
         <tr>
@@ -8,9 +12,7 @@
             <th>Açıklama</th>
             <th>Fiyat</th>
             <th>Oluşturulma Tarihi</th>
-            <th class="text-center">
-                @Html.ActionLink("Yeni", "Save", "Product", null, new { @class = "btn btn-primary" })
-            </th>
+            
         </tr>
     </thead>
     <tbody>
@@ -20,7 +22,7 @@
             @*  ViewBag'daki ürünler içerisinde dön' *@
             foreach (product item in ViewBag.products)
             {
-                <tr>
+                <tr class="product-row" data-id="@item.id">
                     <td class="">
                         <a href="@item.image_url" target="_blank">
                             <img src="@item.image_url" alt="@item.name" height="70" />
@@ -31,11 +33,19 @@
                     <td class="">@item.description</td>
                     <td class="">@item.price</td>
                     <td class="">@item.create_date</td>
-                    <td style="width:90px">
-                        @Html.ActionLink("Güncelle", "Save", "Product", new { id = item.id }, new { @class = "btn btn-primary" })
-                    </td>
+                   
                 </tr>
             }
         }
     </tbody>
 </table>
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+         document.querySelectorAll(".product-row").forEach(row => {
+             row.addEventListener("dblclick", function () {
+                    var productId = this.getAttribute("data-id");
+                 window.location.href = "/Admin/product/Save?id=" + productId;
+             });
+         });
+    });
+    </script>

@@ -1,5 +1,8 @@
 ﻿@using ecommerce.Areas.Admin.Models
 
+<div class="text-center">
+    @Html.ActionLink("Yeni", "Save", "Customer", null, new { @class = "btn btn-primary" })
+</div>
 <table class="table table-striped table-bordered mt-3">
     <thead class="table-dark">
         <tr>
@@ -14,9 +17,7 @@
            @*  <th>E posta</th>
             <th>Parola</th> *@
 
-            <th class="text-center">
-                @Html.ActionLink("Yeni", "Save", "Customer", null, new { @class = "btn btn-primary" })
-            </th>
+            
         </tr>
     </thead>
     <tbody>
@@ -26,7 +27,7 @@
             @*  ViewBag'daki müşteriler içerisinde dön' *@
             foreach (customer item in ViewBag.customers)
             {
-                <tr>
+                <tr class="customer-row" data-id="@item.id">
                     <td class="">@item.name</td>
                     <td class="">@item.surname</td>
                     <td class="">@item.type</td>
@@ -38,14 +39,23 @@
                      <td class="">@item.save_date</td> 
                    @*  <td class="">@item.email</td>
                     <td class="">@item.password</td> *@
-                    <td style="width:90px">
-                        @Html.ActionLink("Güncelle", "Save", "Customer", new { id = item.id }, new { @class = "btn btn-primary" })
-                    </td>
+                    
                 </tr>
             }
         }
     </tbody>
 </table>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        document.querySelectorAll(".customer-row").forEach(row =>{
+            row.addEventListener("dbclick",function(){
+                var customerId= this.getAttribute("data-id");
+                 window.location.href = "/Admin/customer/Save?id=" + customerId;
+            });
+         });
+    });
+
+</script>
 
 
 

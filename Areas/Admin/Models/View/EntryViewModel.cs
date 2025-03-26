@@ -40,7 +40,7 @@ namespace ecommerce.Areas.Admin.Models.View
 
         public int quantity { get; set; }
 
-        public int total { get; set; }
+        public int amount { get; set; }
 
         public int total_amount { get; set; }
 

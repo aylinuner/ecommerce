@@ -1,17 +1,16 @@
 ﻿@using ecommerce.Areas.Admin.Models
+
+<div class="text-center">
+    @Html.ActionLink("Yeni", "Save", "Category", null, new { @class = "btn btn-primary" })
+</div>
+
 <table class="table table-striped table-bordered mt-3">
     <thead class="table-dark">
         <tr>
-            
             <th>Adı</th>
             <th>Sıra Numarası</th>
             <th>Güncellenme Tarihi</th>
             <th>Oluşturulma Tarihi</th>
-            <th class="text-center">
-                @Html.ActionLink("Yeni", "Save", "Category", null, new { @class = "btn btn-primary" })
-            </th>
-
-
         </tr>
     </thead>
     <tbody>
@@ -21,17 +20,25 @@
             @*  ViewBag'daki kategoriler içerisinde dön' *@
             foreach (category item in ViewBag.categories)
             {
-                <tr>
+                <tr class="category-row" data-id="@item.id">
                     <td class="">@item.name</td>
                     <td class="">@item.sort_no</td>
                     @* <td class="">@item.category_name</td> *@
                     <td class="">@item.update_date</td>
                     <td class="">@item.create_date</td>
-                    <td style="width:90px">
-                        @Html.ActionLink("Güncelle", "Save", "Category", new { id = item.id }, new { @class = "btn btn-primary" })
-                    </td>
                 </tr>
             }
         }
     </tbody>
 </table>
+
+<script>
+             document.addEventListener("DOMContentLoaded", function () {
+         document.querySelectorAll(".category-row").forEach(row => {
+             row.addEventListener("dblclick", function () {
+                    var categoryId = this.getAttribute("data-id");
+                 window.location.href = "/Admin/category/Save?id=" + categoryId;
+             });
+         });
+    });
+    </script>

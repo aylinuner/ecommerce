@@ -26,4 +26,6 @@ public partial class product
     public virtual category category { get; set; } = null!;
 
     public virtual ICollection<entry_detail> entry_details { get; set; } = new List<entry_detail>();
+
+    public virtual ICollection<stock_movement> stock_movements { get; set; } = new List<stock_movement>();
 }

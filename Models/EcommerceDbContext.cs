@@ -35,6 +35,8 @@ public partial class EcommerceDbContext : DbContext
 
     public virtual DbSet<product_category> product_categories { get; set; }
 
+    public virtual DbSet<stock_movement> stock_movements { get; set; }
+
     public virtual DbSet<user> users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -121,7 +123,6 @@ public partial class EcommerceDbContext : DbContext
 
             entity.HasOne(d => d.entry_master).WithMany(p => p.entry_details)
                 .HasForeignKey(d => d.entry_master_id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_entry_detail_entry_master");
 
             entity.HasOne(d => d.product).WithMany(p => p.entry_details)
@@ -190,6 +191,19 @@ public partial class EcommerceDbContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.price).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.update_date).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<stock_movement>(entity =>
+        {
+            entity.Property(e => e.create_date)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.type).HasMaxLength(50);
+            entity.Property(e => e.update_date).HasColumnType("datetime");
+
+            entity.HasOne(d => d.product).WithMany(p => p.stock_movements)
+                .HasForeignKey(d => d.product_id)
+                .HasConstraintName("FK_stock_movements_stock_movements");
         });
 
         modelBuilder.Entity<user>(entity =>
