@@ -62,7 +62,6 @@ namespace ecommerce.Areas.Admin.Controllers
                     vm.entry_details = em.entry_details.Select(d => new EntryDetailViewModel
                     {
                         id = d.id,
-                        category_id = d.category_id,
                         product_id = d.product_id,
                         product = d.product,
                         quantity = d.quantity,
@@ -176,13 +175,12 @@ namespace ecommerce.Areas.Admin.Controllers
         public IActionResult Delete(int id)
         {
             entry_master em = _context.entry_masters.FirstOrDefault(x => x.id == id);
-            if (em != null)
-            {
-                _context.entry_masters.Remove(em);
-                _context.SaveChanges();
-                return Json(new { success = true, message = "Kayıt başarıyla silindi." });
-            }
-            return Json(new { success = false, message = "Kayıt bulunamadı." });
+
+            _context.entry_masters.Remove(em);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Entry");
+
+
         }
 
 
