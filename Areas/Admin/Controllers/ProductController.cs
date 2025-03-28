@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Areas.Admin.Controllers
 {
-[Area("Admin")]
+    [Area("Admin")]
 
     public class ProductController : Controller
     //Controller'dan Product Controller'a miras verdik. (Yani Controller'ı soyadı gibi düşün.
@@ -45,17 +45,21 @@ namespace ecommerce.Areas.Admin.Controllers
         }
         [HttpGet]
 
-        public async Task <IActionResult> Save(int id)
+        public async Task<IActionResult> Save(int id)
         {
             ProductViewModel model = new ProductViewModel();
-            
-            if (id >0 )
+
+            if (id > 0)
             {
                 product p = _context.products.FirstOrDefault(x => x.id == id);
-                model.name =p.name;
-                model.price = p.price;
-                model.description = p.description;
-                model.id = id;
+                if (p != null) // Eğer kayıt bulunursa
+                {
+                    model.name = p.name;
+                    model.price = p.price;
+                    model.description = p.description;
+                    model.id = id;
+                }
+
             }
             return View(model);
         }
@@ -77,7 +81,7 @@ namespace ecommerce.Areas.Admin.Controllers
             p.id = data.id;
 
             //product entity'sini veritabanına kaydetme.
-            if (p.id==0 )
+            if (p.id == 0)
             {
                 _context.products.Add(p);//Veritabanındaki ürünler tablasona ekle.
 
@@ -90,7 +94,7 @@ namespace ecommerce.Areas.Admin.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Product");
-            
+
         }
         [HttpGet]
         public IActionResult Delete(int id)//parametre

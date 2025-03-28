@@ -3,6 +3,8 @@
 <div class="container mt-5">
     <h2 class="mb-4">Ürün Ekle</h2>
     <form method="post" action="/Admin/Category/Save">
+        <input type="text" id="id" asp-for="id" hidden>
+
         <div class="mb-3 row">
             <label for="name" class="col-sm-2 col-form-label">Ürün Adı:</label>
             <div class="col-sm-10">

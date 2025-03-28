@@ -33,42 +33,57 @@ namespace ecommerce.Areas.Admin.Controllers
             }
             return View();
         }
+
+     
         [HttpGet]
+
         public async Task<IActionResult> Save(int id)
         {
             CategoryViewModel model = new CategoryViewModel();
 
             if (id > 0)
             {
+               
                 category c = _context.categories.FirstOrDefault(x => x.id == id);
-                model.id = c.id;
-                model.name = c.name;
-                model.sort_no = c.sort_no;
+                if (c != null) // Eğer kayıt bulunursa
+                {
+                    model.id = c.id;
+                    model.name = c.name;
+                    model.sort_no = c.sort_no;
+                }
 
             }
             return View(model);
         }
+        
         [HttpPost]
-        public IActionResult Save(CategoryViewModel data)
+        public async Task<IActionResult> Save(CategoryViewModel data)
         {
-            category c = new category();
-            c.id = data.id;
-            c.name = data.name;
-            c.sort_no = data.sort_no;
-            c.create_date = DateTime.Now;
-            
+            category c = new category
+            {
+                id = data.id,
+                name = data.name,
+                sort_no = data.sort_no,
+                create_date = DateTime.Now
+            };
 
             if (c.id == 0)
             {
                 _context.categories.Add(c);
             }
-            else
+            else if (c.id > 0)
             {
                 _context.categories.Update(c);
             }
-            _context.SaveChanges();
-            return RedirectToAction("Index", "Category");
+            await _context.SaveChangesAsync(); // Asenkron olarak kaydet
+
+            return RedirectToAction("Index", "Category", new {id=c.id});
         }
+
+
+
+
+
         [HttpGet]
         public IActionResult Delete(int id)
         {
@@ -76,7 +91,7 @@ namespace ecommerce.Areas.Admin.Controllers
             _context.categories.Remove(c);
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "Category");
+            return RedirectToAction("Index", "Category" );
         }
         public IActionResult List()
         {

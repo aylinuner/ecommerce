@@ -65,6 +65,7 @@
                 </tr>
             </thead>
             <tbody id="entryDetailsBody">
+
                 @for (var i = 0; i < Model.entry_details.Count; i++)
                 {
                     <tr data-id="@Model.id" ondblclick="openUpdateModal(this)">
@@ -109,7 +110,7 @@
 </div>
 
 <!-- Ürün Ekle Modal -->
-<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="entry_detailModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg ">
         <div class="modal-content">
             <div class="modal-header">
@@ -117,7 +118,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body ">
-                <form id="productForm">
+                <form id="entry_detailForm">
                     <div class="mb-3">
                         <label class="form-label">Ürün</label>
                         <select class="form-control" id="product_id">
@@ -140,122 +141,49 @@
                         <label class="form-label">Ağırlık</label>
                         <input type="number" step="0.01" class="form-control" id="weight" required>
                     </div>
-                    <button type="button" class="btn btn-success" onclick="addProductToTable()">Ekle</button>
+                    <button type="button" class="btn btn-primary" onclick="addProductToTable()">Kaydet</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="updateModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Güncelle</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body ">
-                <form id="updateForm">
-                    <div class="mb-3">
-                        <label class="form-label">Ürün</label>
-                        <select class="form-control" id="update_id">
-                            <option value="">Ürün Seçiniz</option>
-                            @foreach (var product in ViewBag.products ?? new List<SelectListItem>())
-                            {
-                                <option value="@product.Value">@product.Text</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Adet</label>
-                        <input type="number" class="form-control" id="update_quantity" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Birim Fiyat</label>
-                        <input type="number" step="0.01" class="form-control" id="update_amount" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Ağırlık</label>
-                        <input type="number" step="0.01" class="form-control" id="update_weight" required>
-                    </div>
-                    <button type="button" class="btn btn-success" onclick="updateTable()">Güncelle</button>
 
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+<button onclick="showDetailModal()">Yeni</button>
 
-<script>
-        function addProductToTable() {
-            let product = document.getElementById("product_id");
-            let quantity = document.getElementById("quantity").value;
-            let amount = document.getElementById("amount").value;
-            let total_amount = (quantity * amount).toFixed(2);
-            let weight = document.getElementById("weight").value;
 
-            // Dinamik index için satır sayısını kontrol et
-            let index = document.querySelectorAll("#entryDetailsBody tr").length;
 
-            // Eğer ürün seçilmemişse uyarı ver
-            // if (!product.value) {
-            //     alert("Lütfen bir ürün seçin!");
-            //     return;
-            // }
 
-            // Yeni satır ekle
-            let newRow = `
-    <tr>
-    <td>
-                        ${product.options[product.selectedIndex].text}
-    <input type="hidden" name="entry_details[${index}].product_id" value="${product.value}" />
-    </td>
-    <td>
-     <span>${quantity}</span>
-    <input type="hidden" name="entry_details[${index}].quantity" value="${quantity}" class="form-control" />
-    </td>
-    <td>
-     <span>${amount}</span>
-    <input type="hidden" step="0.01" name="entry_details[${index}].total" value="${amount}" class="form-control" />
-    </td>
-    <td>
-     <span>${total_amount}</span>
-    <input type="hidden" step="0.01" name="entry_details[${index}].total_amount" value="${total_amount}" class="form-control" />
-    </td>
-    <td>
-     <span>${weight}</span>
-    <input type="hidden" step="0.01" name="entry_details[${index}].weight" value="${weight}" class="form-control" />
-    </td>
+    <script>
 
-    </tr>`;
-
-            document.getElementById("entryDetailsBody").insertAdjacentHTML("beforeend", newRow);
-            bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
-
-            // Formu temizle
-            document.getElementById("productForm").reset();
+        
+        function showDetailModal() {
+            alert("Merhaba"); // Alert kutusu açılır
         }
 
-            function openUpdateModal(row) {
-        let product = row.cells[0].querySelector("input").value;
-        let quantity = row.cells[1].querySelector("input").value;
-        let amount = row.cells[2].querySelector("input").value;
-        let total_amount = row.cells[3].querySelector("input").value;
-        let weight = row.cells[4].querySelector("input").value;
 
-        // Güncelleme modalındaki inputlara değerleri ata
-        document.getElementById("update_id").value = product;
-        document.getElementById("update_quantity").value = quantity;
-        document.getElementById("update_amount").value = amount;
-        document.getElementById("update_weight").value = weight;
+    // document.getElementById("showModalBtn").addEventListener("click", showDetailModal);
 
-        // Güncellenecek satırı sakla
-        document.getElementById("updateModal").setAttribute("data-row-index", row.rowIndex);
+    // function showDetailModal(detail_id) {
+    //       alert("Merhaba!"); // Ekrana "Merhaba" yazan bir alert göster
 
-        // Modalı aç
-        var updateModal = new bootstrap.Modal(document.getElementById("updateModal"));
-        updateModal.show();
+        // var modal = new bootstrap.Modal(document.getElementById('detailModal'));
+        //  document.getElementById("modalContent").innerHTML = message; // Modal içeriğini güncelle
 
+        // modal.show();
+        //  // Yeni butonuna tek tıklama olayı
+        // document.getElementById("newButton").addEventListener("click", function() {
+        //     showDetailModal("Yeni butonuna tıklandı.");
+        // });
 
-    }
+        // // Tablo satırlarına çift tıklama olayı
+        // document.querySelectorAll("#myTable tbody tr").forEach(row => {
+        //     row.addEventListener("dblclick", function() {
+        //         var id = this.cells[0].innerText; // İlk hücredeki ID'yi al
+        //         var ad = this.cells[1].innerText; // İkinci hücredeki adı al
+        //         var soyad = this.cells[2].innerText; // Üçüncü hücredeki soyadı al
+        //         showDetailModal(`Seçilen Kişi: ${ad} ${soyad} (ID: ${id})`);
+        //     });
+        // });
+    //}
 </script>

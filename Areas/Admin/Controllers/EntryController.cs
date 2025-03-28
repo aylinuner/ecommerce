@@ -140,36 +140,43 @@ namespace ecommerce.Areas.Admin.Controllers
 
                 _context.entry_masters.Add(em);
             }
-            else
+            else 
             {
                 _context.entry_masters.Update(em);
 
             }
-
-            //entry_detail ed = new entry_detail
-            //{
-            //    entry_master_id = em.id, // entry_master ile ilişkilendir
-            //    id = item.id,
-            //    category_id = item.category_id,
-            //    //product_id = item.product_id,
-            //    quantity = item.quantity,
-            //    total = item.total,
-            //    total_amount = item.total_amount,
-            //    weight = item.weight,
-            //    create_date = item.create_date,
-            //    update_date = item.update_date
-            //};
-
-            //// entry_master'a entry_detail'leri ekle
-            //em.entry_details.Add(ed);
+           
 
             await _context.SaveChangesAsync(); // Asenkron olarak kaydet
-            return RedirectToAction("Save", "Entry", new { id = em.id });
+
+            return RedirectToAction("Save", "Entry", new {  id=em.id,  });   
 
         }
 
-        // entry_master'ı veritabanına ekle
 
+        [HttpGet]
+        public IActionResult GetProductById(int id)
+        {
+            var product = _context.entry_details
+                .Where(p => p.id == id)
+                .Select(p => new
+                {
+                    id = p.id,
+                    product_id = p.product_id,
+                    quantity = p.quantity,
+                    amount = p.amount,
+                    total_amount = p.total_amount,
+                    weight = p.weight
+                })
+                .FirstOrDefault();
+
+            if (product == null)
+            {
+                return NotFound();  // Eğer ürün bulunamazsa 404 döndür
+            }
+
+            return new JsonResult(product);  // JSON olarak döndür
+        }
 
         [HttpDelete]
         public IActionResult Delete(int id)
