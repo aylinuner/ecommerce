@@ -49,9 +49,13 @@ public partial class EcommerceDbContext : DbContext
         {
             entity.ToTable("basket");
 
-            entity.Property(e => e.id).ValueGeneratedNever();
             entity.Property(e => e.create_date).HasColumnType("datetime");
-            entity.Property(e => e.update_time).HasColumnType("datetime");
+            entity.Property(e => e.image_url).HasMaxLength(200);
+            entity.Property(e => e.payment_method).HasMaxLength(50);
+            entity.Property(e => e.payment_status).HasMaxLength(50);
+            entity.Property(e => e.product_name).HasMaxLength(100);
+            entity.Property(e => e.shipping_address).HasMaxLength(50);
+            entity.Property(e => e.uptade_date).HasColumnType("datetime");
         });
 
         modelBuilder.Entity<brand>(entity =>

@@ -68,7 +68,7 @@
 
                 @for (var i = 0; i < Model.entry_details.Count; i++)
                 {
-                    <tr data-id="@Model.id" ondblclick="openUpdateModal(this)">
+                    <tr class="entry_detail-row" data-id="@Model.entry_details[i].id" ondblclick="dblclick">
                         <td>
                             @Model.entry_details[i].product.name
                             <input type="hidden" name="entry_details[@i].product_id" value="@Model.entry_details[i].product_id" />
@@ -100,7 +100,7 @@
         <div class="mb-3 row">
             <div class="col-sm-10 offset-sm-2">
                 @Html.ActionLink("Geri", "Index", "Entry", new { area = "Admin" }, new { @class = "btn btn-dark text-white" })
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#productModal">
+                <button type="button" class="btn btn-success" id="newProductButton" data-bs-toggle="modal" data-bs-target="#entry_detailModal">
                     Yeni Ürün Ekle
                 </button>
                 <button type="submit" class="btn btn-primary">Kaydet</button>
@@ -114,11 +114,13 @@
     <div class="modal-dialog modal-lg ">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Yeni Ürün Ekle</h5>
+                <h5 class="modal-title">Ürün ekle / Güncelle</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body ">
                 <form id="entry_detailForm">
+                    <input type="hidden" id="entry_detail_id">
+
                     <div class="mb-3">
                         <label class="form-label">Ürün</label>
                         <select class="form-control" id="product_id">
@@ -141,7 +143,8 @@
                         <label class="form-label">Ağırlık</label>
                         <input type="number" step="0.01" class="form-control" id="weight" required>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="addProductToTable()">Kaydet</button>
+                    <button type="button" class="btn btn-primary" onclick="saveEntryDetail()">Kaydet</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteProductToTable()">Sil</button>
                 </form>
             </div>
         </div>
@@ -149,41 +152,82 @@
 </div>
 
 
-<button onclick="showDetailModal()">Yeni</button>
 
+<script>
+        document.addEventListener("dblclick", function (event) {
+        var row = event.target.closest(".entry_detail-row");
+        if (row) {
+            var entryDetailId = row.getAttribute("data-id");
 
+            // AJAX ile entry_detail bilgilerini al
+            fetch(`/Admin/Entry/GetProductById?id=${entryDetailId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data) {
+                        document.getElementById("entry_detail_id").value = data.id;
+                        document.getElementById("product_id").value = data.product_id;
+                        document.getElementById("quantity").value = data.quantity;
+                        document.getElementById("amount").value = data.amount;
+                        document.getElementById("weight").value = data.weight;
+                    }
 
+                    // Modalı aç
+                    var modal = new bootstrap.Modal(document.getElementById('entry_detailModal'));
+                    modal.show();
+                })
+                .catch(error => console.error("Veri alınırken hata oluştu:", error));
+        }
+    });
 
-    <script>
+    // "Yeni Ürün Ekle" butonuna basılınca boş modal aç
+    document.getElementById("newProductButton").addEventListener("click", function () {
+        document.getElementById("entry_detail_id").value = "";
+        document.getElementById("product_id").value = "";
+        document.getElementById("quantity").value = "";
+        document.getElementById("amount").value = "";
+        document.getElementById("weight").value = "";
 
-        
-        function showDetailModal() {
-            alert("Merhaba"); // Alert kutusu açılır
+        var modal = new bootstrap.Modal(document.getElementById('entry_detailModal'));
+        modal.show();
+    });
+
+        function saveEntryDetail() {
+        let product_name = document.getElementById("product_id");
+        let quantity = document.getElementById("quantity").value;
+        let amount = document.getElementById("amount").value;
+        let total_amount = (quantity * amount).toFixed(2);
+        let weight = document.getElementById("weight").value;
+
+        if (!product_name.value || quantity <= 0 || amount <= 0 || weight <= 0) {
+            alert("Lütfen tüm alanları doğru şekilde doldurun!");
+            return;
         }
 
+        let tableBody = document.getElementById("entryDetailsBody");
+        if (!tableBody) {
+            alert("Tablo bulunamadı!");
+            return;
+        }
 
-    // document.getElementById("showModalBtn").addEventListener("click", showDetailModal);
+        let newRow = `
+            <tr>
+                <td>${product_name.options[product_name.selectedIndex].text}</td>
+                <td>${quantity}</td>
+                <td>${amount}</td>
+                <td>${total_amount}</td>
+                <td>${weight}</td>
+            </tr>
+        `;
+        tableBody.insertAdjacentHTML("beforeend", newRow);
 
-    // function showDetailModal(detail_id) {
-    //       alert("Merhaba!"); // Ekrana "Merhaba" yazan bir alert göster
+        document.getElementById("entry_detailForm").reset();
 
-        // var modal = new bootstrap.Modal(document.getElementById('detailModal'));
-        //  document.getElementById("modalContent").innerHTML = message; // Modal içeriğini güncelle
+        let modalElement = document.getElementById('entry_detailModal');
+        let modalInstance = bootstrap.Modal.getInstance(modalElement);
+        if (modalInstance) modalInstance.hide();
+    }
 
-        // modal.show();
-        //  // Yeni butonuna tek tıklama olayı
-        // document.getElementById("newButton").addEventListener("click", function() {
-        //     showDetailModal("Yeni butonuna tıklandı.");
-        // });
 
-        // // Tablo satırlarına çift tıklama olayı
-        // document.querySelectorAll("#myTable tbody tr").forEach(row => {
-        //     row.addEventListener("dblclick", function() {
-        //         var id = this.cells[0].innerText; // İlk hücredeki ID'yi al
-        //         var ad = this.cells[1].innerText; // İkinci hücredeki adı al
-        //         var soyad = this.cells[2].innerText; // Üçüncü hücredeki soyadı al
-        //         showDetailModal(`Seçilen Kişi: ${ad} ${soyad} (ID: ${id})`);
-        //     });
-        // });
-    //}
+   
+
 </script>

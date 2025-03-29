@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\projeler\\ecommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projeler\\ecommerce\\areas\\admin\\views\\entry\\save.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\views\\entry\\save.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projeler\\ecommerce\\models\\view\\basketviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\view\\basketviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projeler\\ecommerce\\areas\\admin\\controllers\\entrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\controllers\\entrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projeler\\ecommerce\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projeler\\ecommerce\\areas\\admin\\models\\view\\entryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\models\\view\\entryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projeler\\ecommerce\\views\\basket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\basket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,40 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EntryController.cs",
-              "DocumentMoniker": "C:\\projeler\\ecommerce\\Areas\\Admin\\Controllers\\EntryController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\EntryController.cs",
-              "ToolTip": "C:\\projeler\\ecommerce\\Areas\\Admin\\Controllers\\EntryController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\EntryController.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAkwHkAAAA0AAAAAAAAAA==",
+              "Title": "BasketController.cs",
+              "DocumentMoniker": "C:\\projeler\\ecommerce\\Controllers\\BasketController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BasketController.cs",
+              "ToolTip": "C:\\projeler\\ecommerce\\Controllers\\BasketController.cs",
+              "RelativeToolTip": "Controllers\\BasketController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T08:41:36.157Z",
+              "WhenOpened": "2025-03-29T16:17:23.817Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Save.cshtml",
-              "DocumentMoniker": "C:\\projeler\\ecommerce\\Areas\\Admin\\Views\\Entry\\Save.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Entry\\Save.cshtml",
-              "ToolTip": "C:\\projeler\\ecommerce\\Areas\\Admin\\Views\\Entry\\Save.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Entry\\Save.cshtml",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAkwLsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T13:00:11.401Z",
+              "Title": "BasketViewModel.cs",
+              "DocumentMoniker": "C:\\projeler\\ecommerce\\Models\\View\\BasketViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\View\\BasketViewModel.cs",
+              "ToolTip": "C:\\projeler\\ecommerce\\Models\\View\\BasketViewModel.cs",
+              "RelativeToolTip": "Models\\View\\BasketViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T16:03:08.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EntryViewModel.cs",
-              "DocumentMoniker": "C:\\projeler\\ecommerce\\Areas\\Admin\\Models\\View\\EntryViewModel.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Models\\View\\EntryViewModel.cs",
-              "ToolTip": "C:\\projeler\\ecommerce\\Areas\\Admin\\Models\\View\\EntryViewModel.cs",
-              "RelativeToolTip": "Areas\\Admin\\Models\\View\\EntryViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T11:42:51.16Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\projeler\\ecommerce\\Views\\Basket\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Basket\\Index.cshtml",
+              "ToolTip": "C:\\projeler\\ecommerce\\Views\\Basket\\Index.cshtml",
+              "RelativeToolTip": "Views\\Basket\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T15:19:01.953Z",
               "EditorCaption": ""
             }
           ]
