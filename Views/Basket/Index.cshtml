@@ -1,5 +1,5 @@
 ﻿@using ecommerce.Models.View
-@model BasketViewModel 
+@model BasketViewModel
 
 <div class="container mt-4">
     <div class="row">
@@ -9,30 +9,47 @@
                 <h2 class="mb-3">Sepetteki Ürünler</h2>
                 @foreach (basket item in ViewBag.basket)
                 {
-                    <div class="cart-item d-flex justify-content-between align-items-center border-bottom py-2">
-                        <img src="@item.image_url" alt="Ürün Resmi" class="img-fluid me-3">
-                        <span>@item.product_name</span>
-                        <span>@item.amount.ToString("0.00") TL</span>
+                    <div class="cart-item d-grid align-items-center border-bottom py-2" style="grid-template-columns: 60px 1fr 120px 120px 50px; gap: 10px;">
+                        <img src="@item.product.image_url" alt="@item.product.name" class="img-fluid" style="width: 50px; height: 50px;">
+                        <span>@item.product.name</span>
+                        <span>@item.product.price.ToString("0.00") TL</span>
+
                         <div class="quantity d-flex align-items-center">
                             <button class="btn btn-outline-secondary btn-sm" onclick="decreaseQuantity(this)">-</button>
                             <input type="text" class="form-control text-center mx-2" value="@item.quantity" readonly style="width: 50px;">
                             <button class="btn btn-outline-secondary btn-sm" onclick="increaseQuantity(this)">+</button>
                         </div>
-                        <button class="btn btn-danger btn-sm" onclick="removeItem(this)"><i class="fas fa-trash"></i></button>
+                        <button class="btn btn-danger btn-sm" onclick="removeItem(this)"><i class="fas fa-trash">Sil</i></button>
                     </div>
                 }
             </div>
         </div>
-
         <!-- Sipariş Özeti -->
-       @*  <div class="col-2">
+        <div class="col-2">
             <div class="card p-3">
                 <h4 class="mb-3">Sipariş Özeti</h4>
-                <p>Ara Toplam: <span id="subtotal">@Model.Sum(x => x.amount * x.quantity).ToString("0.00")</span> TL</p>
-                <p>KDV: <span id="tax">0</span> TL</p>
-                <p><strong>Toplam: <span id="total">@Model.Sum(x => x.Price * x.Quantity).ToString("0.00")</span> TL</strong></p>
-                <a href="/Order/Delivery" class="btn btn-outline-primary">Sepeti Onayla</a>
+
+                <div class="d-flex justify-content-between">
+                    <span>Ara Toplam:</span>
+                    <span id="subtotal" class="text-end">
+                       @*  @(item.basket != null && Model.basketItems.Any() ?
+                            Model.basketItems.Sum(x => x.amount * x.quantity).ToString("0.00") : "0.00") TL *@
+                    </span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <span>KDV:</span>
+                    <span id="tax" class="text-end">0 TL</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <strong>Toplam:</strong>
+                    <strong id="total" class="text-end">
+                       @*  @(Model.basketItems != null && Model.basketItems.Any() ?
+                            Model.basketItems.Sum(x => x.Price * x.Quantity).ToString("0.00") : "0.00") TL *@
+                    </strong>
+                </div>
+
+                <a href="/Order/Delivery" class="btn btn-outline-primary mt-3 w-100">Sepeti Onayla</a>
             </div>
-        </div> *@
-    </div>
-</div>
+        </div>

@@ -1,6 +1,7 @@
 ﻿using ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NuGet.ContentModel;
 
 namespace ecommerce.Controllers
 {
@@ -14,15 +15,21 @@ namespace ecommerce.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            // Veritabanından ürünleri çek
             try
             {
-                List<basket> baskets = await _context.baskets.OrderBy(x => x.id).ToListAsync();
-                ViewBag.basket = baskets;
-            }
-            catch (Exception x)
-            {
+                // Sepet verilerini çekerken User ve Product tablolarını dahil et
+                List<basket> baskets = await _context.baskets
+                    .Include(u => u.user)  // User tablosunu dahil et
+                    .Include(p => p.product)  // Product tablosunu dahil et
+                    .OrderBy(x => x.id)
+                    .ToListAsync();
 
+                ViewBag.Basket = baskets;
+            }
+            catch (Exception ex)
+            {
+                // Hata yönetimi için loglama ekleyebilirsin
+                Console.WriteLine(ex.Message);
                 throw;
             }
 

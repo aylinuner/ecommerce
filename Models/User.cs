@@ -31,5 +31,7 @@ public partial class user
 
     public DateTime birth_date { get; set; }
 
+    public virtual ICollection<basket> baskets { get; set; } = new List<basket>();
+
     public virtual ICollection<customer> customers { get; set; } = new List<customer>();
 }

@@ -50,12 +50,17 @@ public partial class EcommerceDbContext : DbContext
             entity.ToTable("basket");
 
             entity.Property(e => e.create_date).HasColumnType("datetime");
-            entity.Property(e => e.image_url).HasMaxLength(200);
-            entity.Property(e => e.payment_method).HasMaxLength(50);
-            entity.Property(e => e.payment_status).HasMaxLength(50);
-            entity.Property(e => e.product_name).HasMaxLength(100);
-            entity.Property(e => e.shipping_address).HasMaxLength(50);
             entity.Property(e => e.uptade_date).HasColumnType("datetime");
+
+            entity.HasOne(d => d.product).WithMany(p => p.baskets)
+                .HasForeignKey(d => d.product_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_basket_product");
+
+            entity.HasOne(d => d.user).WithMany(p => p.baskets)
+                .HasForeignKey(d => d.user_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_basket_user");
         });
 
         modelBuilder.Entity<brand>(entity =>
@@ -153,15 +158,20 @@ public partial class EcommerceDbContext : DbContext
         {
             entity.ToTable("order");
 
+            entity.Property(e => e.address).HasColumnType("text");
             entity.Property(e => e.create_date).HasColumnType("datetime");
-            entity.Property(e => e.delivery_adress).HasColumnType("text");
-            entity.Property(e => e.order_date).HasColumnType("datetime");
-            entity.Property(e => e.order_status).HasMaxLength(20);
-            entity.Property(e => e.payment_date).HasColumnType("datetime");
-            entity.Property(e => e.payment_status).HasMaxLength(50);
-            entity.Property(e => e.total_amount).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.delivery).HasMaxLength(50);
             entity.Property(e => e.update_date).HasColumnType("datetime");
-            entity.Property(e => e.upload_date).HasColumnType("datetime");
+
+            entity.HasOne(d => d.basket).WithMany(p => p.orders)
+                .HasForeignKey(d => d.basket_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_order_basket");
+
+            entity.HasOne(d => d.product).WithMany(p => p.orders)
+                .HasForeignKey(d => d.product_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_order_product");
         });
 
         modelBuilder.Entity<product>(entity =>
