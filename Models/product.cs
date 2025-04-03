@@ -29,6 +29,8 @@ public partial class product
 
     public virtual ICollection<entry_detail> entry_details { get; set; } = new List<entry_detail>();
 
+    public virtual ICollection<home> homes { get; set; } = new List<home>();
+
     public virtual ICollection<order> orders { get; set; } = new List<order>();
 
     public virtual ICollection<stock_movement> stock_movements { get; set; } = new List<stock_movement>();

@@ -1,6 +1,6 @@
 ﻿using ecommerce.Models;
 
-namespace ecommerce.Areas.Admin.Models.View
+namespace ecommerce.Models.View
 {
     public class EntryViewModel
     {

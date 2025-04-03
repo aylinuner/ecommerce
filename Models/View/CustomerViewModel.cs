@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using System.ComponentModel.DataAnnotations;
 
-namespace ecommerce.Areas.Admin.Models.View
+namespace ecommerce.Models.View
 {
     public class CustomerViewModel
     {

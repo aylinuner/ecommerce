@@ -1,4 +1,4 @@
-﻿namespace ecommerce.Areas.Admin.Models.View
+﻿namespace ecommerce.Models.View
 {
     public class CategoryViewModel
     {

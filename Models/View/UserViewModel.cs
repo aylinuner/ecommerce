@@ -26,6 +26,9 @@ namespace ecommerce.Models.View
 
         public DateTime birth_date { get; set; }
 
+        // Kullanıcının tüm siparişlerini çekmek için
+        public virtual ICollection<order> orders { get; set; }
+
 
 
 

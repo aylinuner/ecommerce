@@ -19,5 +19,7 @@ public partial class stock_movement
 
     public DateTime? update_date { get; set; }
 
+    public virtual order? order { get; set; }
+
     public virtual product product { get; set; } = null!;
 }

@@ -7,25 +7,25 @@ public partial class order
 {
     public int id { get; set; }
 
-    public int order_id { get; set; }
-
     public int user_id { get; set; }
 
-    public decimal total_amount { get; set; }
+    public int basket_id { get; set; }
 
-    public string payment_status { get; set; } = null!;
+    public int product_id { get; set; }
 
-    public DateTime order_date { get; set; }
+    public string address { get; set; } = null!;
 
-    public string delivery_adress { get; set; } = null!;
-
-    public string order_status { get; set; } = null!;
-
-    public DateTime payment_date { get; set; }
-
-    public DateTime upload_date { get; set; }
+    public string delivery { get; set; } = null!;
 
     public DateTime create_date { get; set; }
 
-    public DateTime update_date { get; set; }
+    public DateTime? update_date { get; set; }
+
+    public virtual basket basket { get; set; } = null!;
+
+    public virtual product product { get; set; } = null!;
+
+    public virtual ICollection<stock_movement> stock_movements { get; set; } = new List<stock_movement>();
+
+    public virtual user user { get; set; } = null!;
 }

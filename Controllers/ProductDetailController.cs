@@ -1,4 +1,5 @@
-﻿using ecommerce.Areas.Admin.Models.View;
+﻿using ecommerce.Models.View;
+
 using ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -26,7 +27,7 @@ namespace ecommerce.Controllers
                 {
                     model.id = p.id;
                     model.name = p.name;
-                    model.price = p.price;
+                    model.price = (int)p.price;
                     model.image_url = p.image_url;
                     model.description = p.description;
                 }

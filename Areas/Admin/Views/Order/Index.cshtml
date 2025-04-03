@@ -1,4 +1,5 @@
-﻿@using ecommerce.Areas.Admin.Models
+﻿@using ecommerce.Models.View
+
 <div class="text-center">
     @Html.ActionLink("Yeni", "Save", "Order", null, new { @class = "btn btn-primary" })
 </div>
@@ -6,13 +7,10 @@
 <table class="table table-striped table-bordered mt-3">
     <thead class="table-dark">
         <tr>
-            <th>Kullanıcı id</th>
             <th>Sipariş id</th>
-            <th>Toplam Mİktar</th>
-            <th>Ödeme şekli</th>
+            <th>Kullanıcı adı</th>
+            <th>Toplam tutar</th>
             <th>Teslimat adresi</th>
-            <th>Yüklenme tarihi</th>
-            <th>Ödeme Tarihi</th>
             <th>Oluşturulma Tarihi</th>
             <th>Güncellenme Tarihi</th>
             
@@ -27,13 +25,10 @@
             foreach (order item in ViewBag.orders)
             {
                 <tr class="order-row" data-id="@item.id">
-                    <td class="">@item.order_id</td>
+                    <td class="">@item.id</td>
                     <td class="">@item.user_id</td>
-                    <td class="">@item.total_amount</td>
-                    <td class="">@item.payment_status</td>
-                    <td class="">@item.delivery_adress</td>
-                    <td class="">@item.upload_date</td>
-                    <td class="">@item.payment_date</td>
+                    <td class="">@item.product.price</td>
+                    <td class="">@item.address</td>
                     <td class="">@item.create_date</td>
                     <td class="">@item.update_date</td>
                 </tr>

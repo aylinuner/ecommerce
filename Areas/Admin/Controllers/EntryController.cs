@@ -1,5 +1,5 @@
-﻿using ecommerce.Areas.Admin.Models.View;
-using ecommerce.Models;
+﻿using ecommerce.Models;
+using ecommerce.Models.View;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis.CSharp.Syntax;

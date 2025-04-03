@@ -1,4 +1,5 @@
-﻿<!-- Home Page -->
+﻿@using ecommerce.Models.View
+@* <!-- Home Page -->
 <div class="container mt-4">
     <!-- Slider -->
     <div id="campaignSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
@@ -39,55 +40,96 @@
             <img src="https://cdn.vatanbilgisayar.com/Upload/BANNER//0banner/2025/003/iPad-m3-satinal-17-3-25-web.png" alt="Kampanya 4">
         </div>
     </div>
+ *@
+ @model HomeViewModel
 
-    <!-- Ürünler Bölümü -->
-    <section class="mt-5">
-        <h2 class="text-center text-dark">Öne Çıkan Ürünler</h2>
-        <div class="row mt-3">
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm ">
-                    <img src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/0008-mlpf3tu-a_small.jpg" class="card-img-top" alt="İphone 13 128 GB">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">İphone 13 128 GB</h5>
-                        <p class="card-text text-danger fw-bold">₺4.299</p>
-                        <a href="/ProductDetail/Index"" class="btn btn-outline-primary">Ürüne git</a>
+<!-- Home Page -->
+<div id="campaignSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+        @if (ViewBag.homes != null)
+        {
+            bool firstItem = true; // İlk öğeye "active" eklemek için
 
-                    </div>
+            @foreach (var item in ViewBag.homes)
+            {
+                <div class="carousel-item @(firstItem ? "active" : "")">
+                    <img src="@item.slider_image_url" class="d-block w-100" alt="@item.name">
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm">
-                    <img src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/philips/thumb/148671-1_small.jpg" class="card-img-top" alt="Philips Ambilight TV 55PUS8949 55" 139cm 4K UHD LED Dolby Atmos Titan OS">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Philips Ambilight TV 55PUS8949 55" 139cm 4K UHD LED Dolby Atmos Titan OS</h5>
-                        <p class="card-text text-danger fw-bold">₺2.899</p>
-                        <a href="/ProductDetail/Index" " class="btn btn-outline-primary">Ürüne git</a>
+                firstItem = false; // İlk öğeden sonra active eklenmeyecek
+            }
+        }
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#campaignSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#campaignSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
 
-                    </div>
-                </div>
+<!-- Küçük Resimler -->
+<div class="thumbnail-container d-flex justify-content-center mt-3">
+    @if (ViewBag.homes != null)
+    {
+        @foreach (var item in ViewBag.homes)
+        {
+            <div class="thumbnail mx-2" data-bs-target="#campaignSlider" data-bs-slide-to="@ViewBag.homes.IndexOf(item)">
+                <img src="@item.thumbnail_url" alt="@item.name" width="100">
             </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm">
-                    <img src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/1-289_large.jpg" class="card-img-top" alt="iPhone 16 Pro Max 256 GB Akıllı Telefon Siyah Titanium">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">iPhone 16 Pro Max 256 GB Akıllı Telefon Siyah Titanium</h5>
-                        <p class="card-text text-danger fw-bold">₺92.999</p>
-                        <a href="/ProductDetail/Index" " class="btn btn-outline-primary">Ürüne git</a>
+        }
+    }
+</div>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm">
-                    <img src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/1-301_large.jpg" class="card-img-top" alt="Apple AirPods 4 Bluetooth Kulaklık">
-                    <div class="card-body text-center">
-                        <h5 class="card-title" >"Apple AirPods 4 Bluetooth Kulaklık"</h5>
-                        <p class="card-text text-danger fw-bold">₺6.299</p>
-                        <a href="/ProductDetail/Index" " class="btn btn-outline-primary">Ürüne git</a>
 
-                    </div>
+
+<!-- Ürünler Bölümü -->
+@* <section class="mt-5">
+    <h2 class="text-center text-dark">Öne Çıkan Ürünler</h2>
+    <div class="row mt-3">
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm ">
+                <img src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/0008-mlpf3tu-a_small.jpg" class="card-img-top" alt="İphone 13 128 GB">
+                <div class="card-body text-center">
+                    <h5 class="card-title">İphone 13 128 GB</h5>
+                    <p class="card-text text-danger fw-bold">₺4.299</p>
+                    <a href="/ProductDetail/Index" " class="btn btn-outline-primary">Ürüne git</a>
+
                 </div>
             </div>
         </div>
-    </section>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/philips/thumb/148671-1_small.jpg" class="card-img-top" alt="Philips Ambilight TV 55PUS8949 55" 139cm 4K UHD LED Dolby Atmos Titan OS">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Philips Ambilight TV 55PUS8949 55" 139cm 4K UHD LED Dolby Atmos Titan OS</h5>
+                    <p class="card-text text-danger fw-bold">₺2.899</p>
+                    <a href="/ProductDetail/Index" " class="btn btn-outline-primary">Ürüne git</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/1-289_large.jpg" class="card-img-top" alt="iPhone 16 Pro Max 256 GB Akıllı Telefon Siyah Titanium">
+                <div class="card-body text-center">
+                    <h5 class="card-title">iPhone 16 Pro Max 256 GB Akıllı Telefon Siyah Titanium</h5>
+                    <p class="card-text text-danger fw-bold">₺92.999</p>
+                    <a href="/ProductDetail/Index" " class="btn btn-outline-primary">Ürüne git</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/1-301_large.jpg" class="card-img-top" alt="Apple AirPods 4 Bluetooth Kulaklık">
+                <div class="card-body text-center">
+                    <h5 class="card-title">"Apple AirPods 4 Bluetooth Kulaklık"</h5>
+                    <p class="card-text text-danger fw-bold">₺6.299</p>
+                    <a href="/ProductDetail/Index" " class="btn btn-outline-primary">Ürüne git</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section> *@
 </div>

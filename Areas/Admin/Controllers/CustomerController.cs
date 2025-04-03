@@ -1,6 +1,6 @@
-﻿using ecommerce.Areas.Admin.Models.View;
-using ecommerce.Controllers;
+﻿using ecommerce.Controllers;
 using ecommerce.Models;
+using ecommerce.Models.View;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;

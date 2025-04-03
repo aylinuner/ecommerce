@@ -1,6 +1,5 @@
-﻿using ecommerce.Areas.Admin.Models;
-using ecommerce.Areas.Admin.Models.View;
-using ecommerce.Models;
+﻿using ecommerce.Models;
+using ecommerce.Models.View;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 //sayfada kullanılan kodların ait olduğu kütüphaneler yukarıdaki gibi sayfaya dahil edilir.
@@ -55,7 +54,7 @@ namespace ecommerce.Areas.Admin.Controllers
                 if (p != null) // Eğer kayıt bulunursa
                 {
                     model.name = p.name;
-                    model.price = p.price;
+                    model.price = (int)p.price;
                     model.description = p.description;
                     model.id = id;
                 }

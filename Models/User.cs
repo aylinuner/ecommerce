@@ -34,4 +34,6 @@ public partial class user
     public virtual ICollection<basket> baskets { get; set; } = new List<basket>();
 
     public virtual ICollection<customer> customers { get; set; } = new List<customer>();
+
+    public virtual ICollection<order> orders { get; set; } = new List<order>();
 }
