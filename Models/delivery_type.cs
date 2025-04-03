@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace ecommerce.Models;
 
-public partial class city
+public partial class delivery_type
 {
-    public string id { get; set; } = null!;
+    public int id { get; set; }
 
     public string name { get; set; } = null!;
+
+    public decimal price { get; set; }
 
     public DateTime create_date { get; set; }
 
     public DateTime? update_date { get; set; }
-
-    public virtual ICollection<user_address> user_addresses { get; set; } = new List<user_address>();
 }

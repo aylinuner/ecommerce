@@ -20,8 +20,11 @@ namespace ecommerce.Controllers
             // Veritabanýndan ürünleri çek
             try
             {
-                List<home> homes = await _context.homes.Include(x=>x.product).OrderBy(x => x.id).ToListAsync();
+                List<home> homes = await _context.homes.OrderBy(x => x.id).ToListAsync();
                 ViewBag.homes = homes;
+
+                List<product> products = await _context.products.OrderBy(x => x.id).ToListAsync();
+                ViewBag.products = products;
             }
             catch (Exception x)
             {

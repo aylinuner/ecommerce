@@ -43,13 +43,18 @@
 
             <div class="mt-4">
                 <p><strong>Birlikte Alabileceğiniz Ürünler:</strong></p>
-                @*   @foreach (var item in ViewBag.Products)
+                @if (ViewBag.products != null)
                 {
-                    <div class="d-flex justify-content-between align-items-center border p-2 mb-2">
-                        <span>@item.name - <strong>@item.price TL</strong></span>
-                        <button class="btn btn-sm btn-primary">Birlikte Al</button>
-                    </div>
-                } *@
+
+
+                    @foreach (var item in ViewBag.products)
+                    {
+                        <div class="d-flex justify-content-between align-items-center border p-2 mb-2">
+                            <span>@item.name - <strong>@item.price TL</strong></span>
+                            <button class="btn btn-sm btn-primary">Birlikte Al</button>
+                        </div>
+                    }
+                }
             </div>
         </div>
     </div>

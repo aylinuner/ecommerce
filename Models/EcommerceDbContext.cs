@@ -15,6 +15,8 @@ public partial class EcommerceDbContext : DbContext
     {
     }
 
+    public virtual DbSet<bank> banks { get; set; }
+
     public virtual DbSet<basket> baskets { get; set; }
 
     public virtual DbSet<brand> brands { get; set; }
@@ -26,6 +28,8 @@ public partial class EcommerceDbContext : DbContext
     public virtual DbSet<company> companies { get; set; }
 
     public virtual DbSet<customer> customers { get; set; }
+
+    public virtual DbSet<delivery_type> delivery_types { get; set; }
 
     public virtual DbSet<district> districts { get; set; }
 
@@ -51,6 +55,15 @@ public partial class EcommerceDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<bank>(entity =>
+        {
+            entity.ToTable("bank");
+
+            entity.Property(e => e.create_date).HasColumnType("datetime");
+            entity.Property(e => e.name).HasMaxLength(50);
+            entity.Property(e => e.update_time).HasColumnType("datetime");
+        });
+
         modelBuilder.Entity<basket>(entity =>
         {
             entity.ToTable("basket");
@@ -133,6 +146,18 @@ public partial class EcommerceDbContext : DbContext
                 .HasForeignKey(d => d.user_id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_customer_user");
+        });
+
+        modelBuilder.Entity<delivery_type>(entity =>
+        {
+            entity.HasKey(e => e.id).HasName("PK_delivery_types");
+
+            entity.ToTable("delivery_type");
+
+            entity.Property(e => e.create_date).HasColumnType("datetime");
+            entity.Property(e => e.name).HasMaxLength(50);
+            entity.Property(e => e.price).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.update_date).HasColumnType("datetime");
         });
 
         modelBuilder.Entity<district>(entity =>
@@ -285,7 +310,18 @@ public partial class EcommerceDbContext : DbContext
             entity.Property(e => e.city_id).HasMaxLength(3);
             entity.Property(e => e.create_date).HasColumnType("datetime");
             entity.Property(e => e.district_id).HasMaxLength(10);
+            entity.Property(e => e.name).HasMaxLength(50);
             entity.Property(e => e.update_date).HasColumnType("datetime");
+
+            entity.HasOne(d => d.city).WithMany(p => p.user_addresses)
+                .HasForeignKey(d => d.city_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_user_address_city");
+
+            entity.HasOne(d => d.district).WithMany(p => p.user_addresses)
+                .HasForeignKey(d => d.district_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_user_address_district");
         });
 
         OnModelCreatingPartial(modelBuilder);

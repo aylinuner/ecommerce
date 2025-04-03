@@ -14,4 +14,6 @@ public partial class district
     public DateTime? update_date { get; set; }
 
     public int city_id { get; set; }
+
+    public virtual ICollection<user_address> user_addresses { get; set; } = new List<user_address>();
 }

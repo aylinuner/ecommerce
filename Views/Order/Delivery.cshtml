@@ -1,4 +1,10 @@
-﻿
+﻿@using ecommerce.Models.View
+
+@model List<UserAddressViewModel>
+
+@{
+    int selectedAddressId = ViewBag.SelectedAddressId ?? 0; // Eğer ViewBag null ise varsayılan 0 olacak
+}
 <div class="container mt-4">
     <div class="row">
         <!-- Sol Bölüm - Teslimat Adresi ve Kargo -->
@@ -12,47 +18,48 @@
                             <p>Yeni adres ekle</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="border p-3">
-                            <input type="radio" checked>
-                            <span class="fw-bold">Aylin Üner</span>
-                            <p class="m-0">Mimar Sinan mah.</p>
-                            <p class="fw-bold">İSTANBUL / TUZLA</p>
-                            <a href="#">Düzenle</a> | <a href="#">Sil</a>
-                        </div>
-                    </div>
+
+                    @if (ViewBag.user_addresses != null)
+                    {
+
+
+                        @foreach (user_address address in ViewBag.user_addresses)
+                        {
+                            <div class="col-md-6">
+                                <div class="border p-3">
+                                    <input type="radio" name="selectedAddress" value="@address.id" @(address.id == selectedAddressId ? "checked" : "")>
+                                    <span class="fw-bold">@address.name</span>
+                                    <p class="m-0">@address.address</p>
+                                    <p class="fw-bold">@address.city.name / @address.district.name</p>
+                                    <a href="#">Düzenle</a> | <a href="#">Sil</a>
+                                </div>
+                            </div>
+                        }
+                    }
                 </div>
             </div>
 
- 
+
             <div class="card p-3">
                 <h5 class="fw-bold">Teslimat</h5>
-                <div class="form-check mb-2">
-                    <input class="form-check-input" type="radio" name="kargo" checked>
-                    <label class="form-check-label">
-                        Kolay Gelsin Kargo <span class="text-success">Ücretsiz</span>
-                    </label>
-                </div>
-                <div class="form-check mb-2">
-                    <input class="form-check-input" type="radio" name="kargo">
-                    <label class="form-check-label">
-                        Yurtiçi Kargo <span class="text-danger">49,90 TL</span>
-                    </label>
-                </div>
-                <div class="form-check mb-2">
-                    <input class="form-check-input" type="radio" name="kargo">
-                    <label class="form-check-label">
-                        Mağaza Teslim <span class="text-success">Ücretsiz</span>
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="kargo">
-                    <label class="form-check-label">
-                        HepsiJET Standart Kargo <span class="text-success">Ücretsiz</span>
-                    </label>
-                </div>
+                @if (ViewBag.delivery_types != null)
+                {
+                    @foreach (delivery_type dt in ViewBag.delivery_types)
+                    {
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="kargo" value="@dt.id" @* @(dt.IsDefault ? "checked" : "") *@>
+                            <label class="form-check-label">
+                                @dt.name
+                                <span class="@(dt.price == 0 ? "text-success" : "text-danger")">
+                                    @(dt.price == 0 ? "Ücretsiz" : dt.price.ToString("N2") + " TL")
+                                </span>
+                            </label>
+                        </div>
+                    }
+                }
             </div>
         </div>
+
 
         <!-- Sağ Bölüm - Sipariş Özeti -->
         <div class="col-md-4">
