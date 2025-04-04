@@ -39,6 +39,8 @@ public partial class EcommerceDbContext : DbContext
 
     public virtual DbSet<home> homes { get; set; }
 
+    public virtual DbSet<membership> memberships { get; set; }
+
     public virtual DbSet<order> orders { get; set; }
 
     public virtual DbSet<product> products { get; set; }
@@ -218,6 +220,19 @@ public partial class EcommerceDbContext : DbContext
             entity.HasOne(d => d.product).WithMany(p => p.homes)
                 .HasForeignKey(d => d.product_id)
                 .HasConstraintName("FK_home_home");
+        });
+
+        modelBuilder.Entity<membership>(entity =>
+        {
+            entity.ToTable("membership");
+
+            entity.Property(e => e.create_date).HasColumnType("datetime");
+            entity.Property(e => e.update_date).HasColumnType("datetime");
+
+            entity.HasOne(d => d.user).WithMany(p => p.memberships)
+                .HasForeignKey(d => d.user_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_membership_user");
         });
 
         modelBuilder.Entity<order>(entity =>

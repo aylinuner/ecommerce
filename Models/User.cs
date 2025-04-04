@@ -35,5 +35,7 @@ public partial class user
 
     public virtual ICollection<customer> customers { get; set; } = new List<customer>();
 
+    public virtual ICollection<membership> memberships { get; set; } = new List<membership>();
+
     public virtual ICollection<order> orders { get; set; } = new List<order>();
 }

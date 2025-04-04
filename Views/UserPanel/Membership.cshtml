@@ -5,14 +5,32 @@
                 @await Component.InvokeAsync("UserPanel")
             </div>
         </div>
+
         <div class="col-md-9">
             <div id="uyelik" class="content">
-                <h3>Üyelik Bilgilerim</h3>
-                <p>Ad: Aylin</p>
-                <p>Email: aylin@example.com</p>
-                <button class="btn btn-primary">Bilgileri Güncelle</button>
+                <div class="card shadow-sm bg-white p-4">
+                    <h3 class="card-title">Üyelik Bilgilerim</h3>
+                    <div class="card-body">
+                        @if (ViewBag.memberships != null)
+                        {
+                            @foreach (var item in ViewBag.memberships)
+                            {
+                                <p><strong>Ad Soyad:</strong> @item.user.name @item.user.surname</p>
+                                <p><strong>Cinsiyet:</strong> @item.user.gender</p>
+                                <p><strong>VKN:</strong> @item.user.vkn</p>
+                                <p><strong>TC:</strong> @item.user.tckn</p>
+                                <p><strong>Doğum Tarihi:</strong> @item.user.birth_date</p>
+                                <p><strong>Telefon:</strong> @item.user.phone_area @item.user.phone_number</p>
+                                <p><strong>Mail:</strong> @item.user.email</p>
+                                <p><strong>Şifre:</strong> @(new string('*', item.user.password.Length))</p>
+                            }
+                        }
+                        <button class="btn btn-primary mt-3">Bilgileri Güncelle</button>
+                    </div>
+                </div>
             </div>
-            
         </div>
+
+
     </div>
 </div>

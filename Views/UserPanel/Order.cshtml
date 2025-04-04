@@ -5,26 +5,39 @@
                 @await Component.InvokeAsync("UserPanel")
             </div>
         </div>
+
         <div id="siparis" class="col-md-9">
-            <h3>Siparişlerim</h3>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Ürün</th>
-                        <th>Fiyat</th>
-                        <th>Durum</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Kulaklık</td>
-                        <td>899,00 TL</td>
-                        <td>Kargoda</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="card shadow-sm bg-white p-4">
+                <h3 class="card-title"> Siparişlerim</h3>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Sipariş id</th>
+                                <th>Ürün</th>
+                                <th>Fiyat</th>
+                                <th>Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @if (ViewBag.orders != null)
+                            {
+                                @foreach (order item in ViewBag.orders)
+                                {
+                                    <tr>
+                                        <td>@item.id</td>
+                                        <td>@item.product.name</td>
+                                        <td>@item.product.price.ToString("N2") TL</td>
+                                        <td>Kargoda</td> @* döngüyle yazılacak. *@
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>

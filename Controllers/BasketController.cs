@@ -24,7 +24,7 @@ namespace ecommerce.Controllers
                     .OrderBy(x => x.id)
                     .ToListAsync();
 
-                ViewBag.Basket = baskets;
+                ViewBag.baskets = baskets;
             }
             catch (Exception ex)
             {

@@ -23,7 +23,7 @@ namespace ecommerce.Areas.Admin.Controllers
         {
             try
             {
-                List<order> orders = await _context.orders.OrderBy(x => x.id).ToListAsync();
+                List<order> orders = await _context.orders.Include(a=>a.user).Include(b=>b.product).OrderBy(x => x.id).ToListAsync();
                 ViewBag.orders = orders;
             }
             catch (Exception x)

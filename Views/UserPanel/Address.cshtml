@@ -4,15 +4,31 @@
             <div class="container  d-flex justify-content-center mt-3">
                 @await Component.InvokeAsync("UserPanel")
             </div>
-            
+
         </div>
         <div class="col-md-9">
             <div id="address" class="content">
-                <h3> Adres Bilgilerim</h3>
-                <p>Mimas Sinan Mah.</p>
-                <button class="btn btn-primary">Bilgileri Güncelle</button>
-            </div>
 
+                <div class="card shadow-sm bg-white p-4">
+                    <h3 class="card-title"> Adres Bilgilerim</h3>
+                    <div class="card-body">
+
+
+                        @if (ViewBag.user_addresses != null)
+                        {
+                            foreach (user_address item in ViewBag.user_addresses)
+                            {
+                                <span class="fw-bold">@item.name</span>
+                                <p class="m-0">@item.address</p>
+                                <p class="fw-bold">@item.city.name / @item.district.name</p>
+
+                            }
+                        }
+                        <button class="btn btn-primary">Bilgileri Güncelle</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
