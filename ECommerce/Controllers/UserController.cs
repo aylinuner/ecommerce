@@ -109,6 +109,7 @@ namespace ecommerce.Controllers
                     TempData["Message"] = "Kayýt iþlemi baþarýlý, Emailinizi kontrol ediniz,Kayýt iþleminizi tamamlamak için, gelen maildeki linke týklayýn!";
                     #endregion
 
+                    //test ersoy
                 }
                 else
                 {

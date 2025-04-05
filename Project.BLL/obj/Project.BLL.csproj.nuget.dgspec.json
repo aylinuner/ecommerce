@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projeler\\ecommerce\\Project.BLL\\Project.BLL.csproj": {}
+    "C:\\Projects\\ersoy\\ecommerce\\Project.BLL\\Project.BLL.csproj": {}
   },
   "projects": {
-    "C:\\projeler\\ecommerce\\Project.BLL\\Project.BLL.csproj": {
+    "C:\\Projects\\ersoy\\ecommerce\\Project.BLL\\Project.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projeler\\ecommerce\\Project.BLL\\Project.BLL.csproj",
+        "projectUniqueName": "C:\\Projects\\ersoy\\ecommerce\\Project.BLL\\Project.BLL.csproj",
         "projectName": "Project.BLL",
-        "projectPath": "C:\\projeler\\ecommerce\\Project.BLL\\Project.BLL.csproj",
-        "packagesPath": "C:\\Users\\Aylin\\.nuget\\packages\\",
-        "outputPath": "C:\\projeler\\ecommerce\\Project.BLL\\obj\\",
+        "projectPath": "C:\\Projects\\ersoy\\ecommerce\\Project.BLL\\Project.BLL.csproj",
+        "packagesPath": "C:\\Users\\ersoy\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ersoy\\ecommerce\\Project.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Aylin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ersoy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

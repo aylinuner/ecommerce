@@ -9,3 +9,15 @@ C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.dll
 C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\refint\Project.ENTITIES.dll
 C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.pdb
 C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\ref\Project.ENTITIES.dll
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\bin\Debug\net8.0\Project.ENTITIES.deps.json
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\bin\Debug\net8.0\Project.ENTITIES.dll
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\bin\Debug\net8.0\Project.ENTITIES.pdb
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.AssemblyInfoInputs.cache
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.AssemblyInfo.cs
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.csproj.CoreCompileInputs.cache
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.sourcelink.json
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.dll
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\obj\Debug\net8.0\refint\Project.ENTITIES.dll
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.pdb
+C:\Projects\ersoy\ecommerce\Project.ENTITIES\obj\Debug\net8.0\ref\Project.ENTITIES.dll

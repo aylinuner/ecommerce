@@ -1175,3 +1175,16 @@ C:\projeler\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.csproj.Up2Date
 C:\projeler\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.genruntimeconfig.cache
 C:\projeler\ecommerce\ECommerce\obj\Debug\net8.0\ref\ecommerce.dll
 C:\projeler\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.MvcApplicationPartsAssemblyInfo.cs
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.csproj.AssemblyReference.cache
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.AssemblyInfoInputs.cache
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.AssemblyInfo.cs
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.csproj.CoreCompileInputs.cache
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.MvcApplicationPartsAssemblyInfo.cs
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.RazorAssemblyInfo.cache
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.RazorAssemblyInfo.cs
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.sourcelink.json
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.dll
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\refint\ecommerce.dll
+C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.pdb
