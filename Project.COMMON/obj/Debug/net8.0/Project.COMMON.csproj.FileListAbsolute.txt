@@ -1,0 +1,11 @@
+C:\projeler\ecommerce\Project.COMMON\bin\Debug\net8.0\Project.COMMON.deps.json
+C:\projeler\ecommerce\Project.COMMON\bin\Debug\net8.0\Project.COMMON.dll
+C:\projeler\ecommerce\Project.COMMON\bin\Debug\net8.0\Project.COMMON.pdb
+C:\projeler\ecommerce\Project.COMMON\obj\Debug\net8.0\Project.COMMON.GeneratedMSBuildEditorConfig.editorconfig
+C:\projeler\ecommerce\Project.COMMON\obj\Debug\net8.0\Project.COMMON.AssemblyInfoInputs.cache
+C:\projeler\ecommerce\Project.COMMON\obj\Debug\net8.0\Project.COMMON.AssemblyInfo.cs
+C:\projeler\ecommerce\Project.COMMON\obj\Debug\net8.0\Project.COMMON.csproj.CoreCompileInputs.cache
+C:\projeler\ecommerce\Project.COMMON\obj\Debug\net8.0\Project.COMMON.dll
+C:\projeler\ecommerce\Project.COMMON\obj\Debug\net8.0\refint\Project.COMMON.dll
+C:\projeler\ecommerce\Project.COMMON\obj\Debug\net8.0\Project.COMMON.pdb
+C:\projeler\ecommerce\Project.COMMON\obj\Debug\net8.0\ref\Project.COMMON.dll

@@ -1,0 +1,11 @@
+C:\projeler\ecommerce\Project.ENTITIES\bin\Debug\net8.0\Project.ENTITIES.deps.json
+C:\projeler\ecommerce\Project.ENTITIES\bin\Debug\net8.0\Project.ENTITIES.dll
+C:\projeler\ecommerce\Project.ENTITIES\bin\Debug\net8.0\Project.ENTITIES.pdb
+C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.GeneratedMSBuildEditorConfig.editorconfig
+C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.AssemblyInfoInputs.cache
+C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.AssemblyInfo.cs
+C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.csproj.CoreCompileInputs.cache
+C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.dll
+C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\refint\Project.ENTITIES.dll
+C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\Project.ENTITIES.pdb
+C:\projeler\ecommerce\Project.ENTITIES\obj\Debug\net8.0\ref\Project.ENTITIES.dll
