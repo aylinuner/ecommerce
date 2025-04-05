@@ -13,7 +13,9 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.0",
           "Microsoft.Extensions.Configuration.Json": "8.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
+          "Project.COMMON": "1.0.0",
+          "Project.ENTITIES": "1.0.0"
         },
         "runtime": {
           "ecommerce.dll": {}
@@ -1901,6 +1903,22 @@
             "fileVersion": "7.0.22.51805"
           }
         }
+      },
+      "Project.COMMON/1.0.0": {
+        "runtime": {
+          "Project.COMMON.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Project.ENTITIES/1.0.0": {
+        "runtime": {
+          "Project.ENTITIES.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -3050,6 +3068,16 @@
       "sha512": "sha512-bR4qdCmssMMbo9Fatci49An5B1UaVJZHKNq70PRgzoLYIlitb8Tj7ns/Xt5Pz1CkERiTjcVBDU2y1AVrPBYkaw==",
       "path": "system.windows.extensions/7.0.0",
       "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
+    },
+    "Project.COMMON/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Project.ENTITIES/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

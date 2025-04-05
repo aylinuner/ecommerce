@@ -46,6 +46,19 @@
           }
         }
       },
+      "BouncyCastle.Cryptography/2.5.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -637,6 +650,153 @@
         "resource": {
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "MailKit/4.11.0": {
+        "type": "package",
+        "dependencies": {
+          "MimeKit": "4.11.0",
+          "System.Formats.Asn1": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/MailKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MailKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authorization/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Metadata": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Options": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Authorization.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authorization.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authorization": "8.0.0",
+          "Microsoft.AspNetCore.Components.Analyzers": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components.Analyzers/8.0.0": {
+        "type": "package",
+        "build": {
+          "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
+        }
+      },
+      "Microsoft.AspNetCore.Components.Forms/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.Forms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.Forms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components.QuickGrid/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.QuickGrid.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.QuickGrid.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.AspNetCore.Components.QuickGrid.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.AspNetCore.Components.QuickGrid.props": {}
+        }
+      },
+      "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.QuickGrid": "8.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components.Web/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "8.0.0",
+          "Microsoft.AspNetCore.Components.Forms": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection": "8.0.0",
+          "Microsoft.Extensions.Primitives": "8.0.0",
+          "Microsoft.JSInterop": "8.0.0",
+          "System.IO.Pipelines": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.Web.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Metadata/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Metadata.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Metadata.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -1824,6 +1984,19 @@
           }
         }
       },
+      "Microsoft.JSInterop/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.JSInterop.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.JSInterop.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.NET.StringTools/17.8.3": {
         "type": "package",
         "compile": {
@@ -2011,6 +2184,23 @@
           "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "MimeKit/4.11.0": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.5.1",
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/MimeKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MimeKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
           }
         }
       },
@@ -2420,15 +2610,15 @@
           }
         }
       },
-      "System.IO.Pipelines/7.0.0": {
+      "System.IO.Pipelines/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/System.IO.Pipelines.dll": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.IO.Pipelines.dll": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
             "related": ".xml"
           }
         },
@@ -2585,26 +2775,23 @@
           }
         }
       },
-      "System.Security.Cryptography.Pkcs/6.0.4": {
+      "System.Security.Cryptography.Pkcs/8.0.1": {
         "type": "package",
-        "dependencies": {
-          "System.Formats.Asn1": "6.0.0"
-        },
         "compile": {
-          "lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -2815,6 +3002,50 @@
             "rid": "win"
           }
         }
+      },
+      "X.PagedList/10.5.7": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/X.PagedList.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/X.PagedList.dll": {}
+        }
+      },
+      "X.PagedList.Mvc.Core/10.5.7": {
+        "type": "package",
+        "dependencies": {
+          "X.PagedList": "10.5.7"
+        },
+        "compile": {
+          "lib/net8.0/X.PagedList.Mvc.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/X.PagedList.Mvc.Core.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Project.COMMON/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Project.COMMON.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Project.COMMON.dll": {}
+        }
+      },
+      "Project.ENTITIES/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Project.ENTITIES.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Project.ENTITIES.dll": {}
+        }
       }
     }
   },
@@ -2855,6 +3086,26 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "BouncyCastle.Cryptography/2.5.1": {
+      "sha512": "zy8TMeTP+1FH2NrLaNZtdRbBdq7u5MI+NFZQOBSM69u5RFkciinwzV2eveY6Kjf5MzgsYvvl6kTStsj3JrXqkg==",
+      "type": "package",
+      "path": "bouncycastle.cryptography/2.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.5.1.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
       ]
     },
     "Humanizer/2.14.1": {
@@ -3601,6 +3852,181 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
+      ]
+    },
+    "MailKit/4.11.0": {
+      "sha512": "JVoRxJ+QRqFMRtEM4veStj3pMLBPRulQGV+iZm6Tq1pnr66Dy6dFYOW9Uw02nxAVzdZAN8G+y3BsUPtgZcKXhA==",
+      "type": "package",
+      "path": "mailkit/4.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/ExchangeOAuth2.md",
+        "docs/FAQ.md",
+        "docs/GMailOAuth2.md",
+        "docs/README.md",
+        "icons/mailkit-50.png",
+        "lib/net462/MailKit.dll",
+        "lib/net462/MailKit.dll.config",
+        "lib/net462/MailKit.pdb",
+        "lib/net462/MailKit.xml",
+        "lib/net47/MailKit.dll",
+        "lib/net47/MailKit.dll.config",
+        "lib/net47/MailKit.pdb",
+        "lib/net47/MailKit.xml",
+        "lib/net48/MailKit.dll",
+        "lib/net48/MailKit.dll.config",
+        "lib/net48/MailKit.pdb",
+        "lib/net48/MailKit.xml",
+        "lib/net8.0/MailKit.dll",
+        "lib/net8.0/MailKit.dll.config",
+        "lib/net8.0/MailKit.pdb",
+        "lib/net8.0/MailKit.xml",
+        "lib/netstandard2.0/MailKit.dll",
+        "lib/netstandard2.0/MailKit.dll.config",
+        "lib/netstandard2.0/MailKit.pdb",
+        "lib/netstandard2.0/MailKit.xml",
+        "lib/netstandard2.1/MailKit.dll",
+        "lib/netstandard2.1/MailKit.dll.config",
+        "lib/netstandard2.1/MailKit.pdb",
+        "lib/netstandard2.1/MailKit.xml",
+        "mailkit.4.11.0.nupkg.sha512",
+        "mailkit.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authorization/8.0.0": {
+      "sha512": "OGIGJMnlWvQgcweHcv1Mq/P24Zx/brUHeEdD05NzqkSXmQSnFomTvVyCuBtCXT4JPfv2m70y1RSocmd9bIbJRg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authorization/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.AspNetCore.Authorization.dll",
+        "lib/net462/Microsoft.AspNetCore.Authorization.xml",
+        "lib/net8.0/Microsoft.AspNetCore.Authorization.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Authorization.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.xml",
+        "microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.authorization.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Components/8.0.0": {
+      "sha512": "kqspqWo3lT+rrSd39kvrV7SZYl0znYZQbQ8SJaHjDA8ffMPV6BkfVe0i6LvxRPwq/agwSWdIDq2j4x+78Frypg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.components/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/net8.0/Microsoft.AspNetCore.Components.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Components.xml",
+        "microsoft.aspnetcore.components.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.components.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Components.Analyzers/8.0.0": {
+      "sha512": "lJMa9kQDw3vkqcMMbuicIpyax7QH6imQFbLRzVqJzrGs5LN954IPaJVkDzRCEXFVAN24Cml6g4mEF3b0D7Oa+Q==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.components.analyzers/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "analyzers/dotnet/cs/Microsoft.AspNetCore.Components.Analyzers.dll",
+        "build/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
+        "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
+        "microsoft.aspnetcore.components.analyzers.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.components.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Components.Forms/8.0.0": {
+      "sha512": "iiYB/7Sl/vTURO4EiTUCmfIXujlJOl+Gh7nknCFhvFQ+kKMFFXYcrszYwLN9aQSolpswc/A9a78KL59/UIezig==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.components.forms/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/net8.0/Microsoft.AspNetCore.Components.Forms.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Components.Forms.xml",
+        "microsoft.aspnetcore.components.forms.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.components.forms.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Components.QuickGrid/8.0.0": {
+      "sha512": "c+syEBbsHBMVsrLLkMOBqT9w3QQfoBffyiCqxGW91q83Qx3jKgIrMZnQ9u/uzPwLqJONpc+7ubDuN4/GXDpltg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.components.quickgrid/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Microsoft.AspNetCore.Components.QuickGrid.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Microsoft.AspNetCore.Components.QuickGrid.props",
+        "buildTransitive/Microsoft.AspNetCore.Components.QuickGrid.props",
+        "lib/net8.0/Microsoft.AspNetCore.Components.QuickGrid.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Components.QuickGrid.xml",
+        "microsoft.aspnetcore.components.quickgrid.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.components.quickgrid.nuspec",
+        "staticwebassets/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+        "staticwebassets/QuickGrid.razor.js"
+      ]
+    },
+    "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter/8.0.0": {
+      "sha512": "RROTWcOmnZ0eOnZGYFxPlmjHzzfOv+dVhcMq8ABtClh5QY9q+xhQ4KqzQ2ZW9NBc6Vp0NEIP/9i4uA2QDPBESw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.components.quickgrid.entityframeworkadapter/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/net8.0/Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.xml",
+        "microsoft.aspnetcore.components.quickgrid.entityframeworkadapter.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.components.quickgrid.entityframeworkadapter.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Components.Web/8.0.0": {
+      "sha512": "aokUKvFoNqxR6bf0+iKrDfQ79OLHWYn5UGYp5MU65/il1vuRK7MAF18oGj7QgiZJUu3cMAZjCFkHbsWLhQxCsA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.components.web/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/net8.0/Microsoft.AspNetCore.Components.Web.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Components.Web.xml",
+        "microsoft.aspnetcore.components.web.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.components.web.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Metadata/8.0.0": {
+      "sha512": "OmuSztiZMitRTYlbMNDkBk3BinSsVcOApSNBAsrw+KYNJh6ALarPhWLlKdtvMgrKzpyCY06xtLAjTmQLURHSlQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.metadata/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.AspNetCore.Metadata.dll",
+        "lib/net462/Microsoft.AspNetCore.Metadata.xml",
+        "lib/net8.0/Microsoft.AspNetCore.Metadata.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Metadata.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.xml",
+        "microsoft.aspnetcore.metadata.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.metadata.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.24": {
@@ -5774,6 +6200,21 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+    "Microsoft.JSInterop/8.0.0": {
+      "sha512": "qQqASbHxWIddssdEBKUQ/49j21SEstiho6VAepPQa9eISLCBCE6wq0m3YaB6cpdF5U+AWX5F3FvDfmssql3xtw==",
+      "type": "package",
+      "path": "microsoft.jsinterop/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/Microsoft.JSInterop.dll",
+        "lib/net8.0/Microsoft.JSInterop.xml",
+        "microsoft.jsinterop.8.0.0.nupkg.sha512",
+        "microsoft.jsinterop.nuspec"
+      ]
+    },
     "Microsoft.NET.StringTools/17.8.3": {
       "sha512": "y6DiuacjlIfXH3XVQG5htf+4oheinZAo7sHbITB3z7yCXQec48f9ZhGSXkr+xn1bfl73Yc3ZQEW2peJ5X68AvQ==",
       "type": "package",
@@ -6370,6 +6811,41 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "MimeKit/4.11.0": {
+      "sha512": "6p0RC1qwBGBHxf7hvzuR1GngzigF+Q6HQUTbD2RbmDrnS2m1qO2rgqOhYtn8n8JH7WGZ+7RthS8lfMuMzeg8AA==",
+      "type": "package",
+      "path": "mimekit/4.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/FAQ.md",
+        "docs/README.md",
+        "icons/mimekit-50.png",
+        "lib/net462/MimeKit.dll",
+        "lib/net462/MimeKit.pdb",
+        "lib/net462/MimeKit.xml",
+        "lib/net47/MimeKit.dll",
+        "lib/net47/MimeKit.pdb",
+        "lib/net47/MimeKit.xml",
+        "lib/net48/MimeKit.dll",
+        "lib/net48/MimeKit.pdb",
+        "lib/net48/MimeKit.xml",
+        "lib/net8.0/MimeKit.dll",
+        "lib/net8.0/MimeKit.dll.config",
+        "lib/net8.0/MimeKit.pdb",
+        "lib/net8.0/MimeKit.xml",
+        "lib/netstandard2.0/MimeKit.dll",
+        "lib/netstandard2.0/MimeKit.dll.config",
+        "lib/netstandard2.0/MimeKit.pdb",
+        "lib/netstandard2.0/MimeKit.xml",
+        "lib/netstandard2.1/MimeKit.dll",
+        "lib/netstandard2.1/MimeKit.dll.config",
+        "lib/netstandard2.1/MimeKit.pdb",
+        "lib/netstandard2.1/MimeKit.xml",
+        "mimekit.4.11.0.nupkg.sha512",
+        "mimekit.nuspec"
+      ]
+    },
     "Mono.TextTemplating/2.3.1": {
       "sha512": "pqYwzNqDL0QK1JFpAjpI/NPqyqLGpHLvVmA5Ec0LaSnbIDtEXxu0td16uunegb7c8xAnlcm4qkbIYUP5FfrFpA==",
       "type": "package",
@@ -6955,10 +7431,10 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-    "System.IO.Pipelines/7.0.0": {
-      "sha512": "jRn6JYnNPW6xgQazROBLSfpdoczRw694vO5kKvMcNnpXuolEixUyw6IBuBs2Y2mlSX/LdLvyyWmfXhaI3ND1Yg==",
+    "System.IO.Pipelines/8.0.0": {
+      "sha512": "FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
       "type": "package",
-      "path": "system.io.pipelines/7.0.0",
+      "path": "system.io.pipelines/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6975,9 +7451,11 @@
         "lib/net6.0/System.IO.Pipelines.xml",
         "lib/net7.0/System.IO.Pipelines.dll",
         "lib/net7.0/System.IO.Pipelines.xml",
+        "lib/net8.0/System.IO.Pipelines.dll",
+        "lib/net8.0/System.IO.Pipelines.xml",
         "lib/netstandard2.0/System.IO.Pipelines.dll",
         "lib/netstandard2.0/System.IO.Pipelines.xml",
-        "system.io.pipelines.7.0.0.nupkg.sha512",
+        "system.io.pipelines.8.0.0.nupkg.sha512",
         "system.io.pipelines.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -7361,39 +7839,39 @@
         "version.txt"
       ]
     },
-    "System.Security.Cryptography.Pkcs/6.0.4": {
-      "sha512": "LGbXi1oUJ9QgCNGXRO9ndzBL/GZgANcsURpMhNR8uO+rca47SZmciS3RSQUvlQRwK3QHZSHNOXzoMUASKA+Anw==",
+    "System.Security.Cryptography.Pkcs/8.0.1": {
+      "sha512": "CoCRHFym33aUSf/NtWSVSZa99dkd0Hm7OCZUxORBjRB16LNhIEOf8THPqzIYlvKM0nNDAPTRBa1FxEECrgaxxA==",
       "type": "package",
-      "path": "system.security.cryptography.pkcs/6.0.4",
+      "path": "system.security.cryptography.pkcs/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.Security.Cryptography.Pkcs.dll",
-        "lib/net461/System.Security.Cryptography.Pkcs.xml",
+        "lib/net462/System.Security.Cryptography.Pkcs.dll",
+        "lib/net462/System.Security.Cryptography.Pkcs.xml",
         "lib/net6.0/System.Security.Cryptography.Pkcs.dll",
         "lib/net6.0/System.Security.Cryptography.Pkcs.xml",
-        "lib/netcoreapp3.1/System.Security.Cryptography.Pkcs.dll",
-        "lib/netcoreapp3.1/System.Security.Cryptography.Pkcs.xml",
+        "lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.xml",
         "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
         "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
         "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
         "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
-        "runtimes/win/lib/net461/System.Security.Cryptography.Pkcs.dll",
-        "runtimes/win/lib/net461/System.Security.Cryptography.Pkcs.xml",
         "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll",
         "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.xml",
-        "runtimes/win/lib/netcoreapp3.1/System.Security.Cryptography.Pkcs.dll",
-        "runtimes/win/lib/netcoreapp3.1/System.Security.Cryptography.Pkcs.xml",
-        "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
-        "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
-        "runtimes/win/lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
-        "runtimes/win/lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
-        "system.security.cryptography.pkcs.6.0.4.nupkg.sha512",
+        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
         "system.security.cryptography.pkcs.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -7849,16 +8327,70 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "X.PagedList/10.5.7": {
+      "sha512": "Nevli+eaR3wMeb6pSNa+ApsddA9bw6Pl7wuX7B2nFj0v184RV/FtFRUckgNAaogGcmEiLXcsQX3ox0y164DnHg==",
+      "type": "package",
+      "path": "x.pagedlist/10.5.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net481/X.PagedList.dll",
+        "lib/net6.0/X.PagedList.dll",
+        "lib/net7.0/X.PagedList.dll",
+        "lib/net8.0/X.PagedList.dll",
+        "lib/netstandard2.0/X.PagedList.dll",
+        "lib/netstandard2.1/X.PagedList.dll",
+        "x-pagedlist.png",
+        "x.pagedlist.10.5.7.nupkg.sha512",
+        "x.pagedlist.nuspec"
+      ]
+    },
+    "X.PagedList.Mvc.Core/10.5.7": {
+      "sha512": "YuQEz9Y2AC8oaYk6yBISRxSpKuUEYLwoDpjimump8O+v4B2vZcigWQ6nEYE9blwmKLV0xGLy0S2zlbicvKCyPg==",
+      "type": "package",
+      "path": "x.pagedlist.mvc.core/10.5.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net6.0/X.PagedList.Mvc.Core.dll",
+        "lib/net7.0/X.PagedList.Mvc.Core.dll",
+        "lib/net8.0/X.PagedList.Mvc.Core.dll",
+        "x-pagedlist.png",
+        "x.pagedlist.mvc.core.10.5.7.nupkg.sha512",
+        "x.pagedlist.mvc.core.nuspec"
+      ]
+    },
+    "Project.COMMON/1.0.0": {
+      "type": "project",
+      "path": "../Project.COMMON/Project.COMMON.csproj",
+      "msbuildProject": "../Project.COMMON/Project.COMMON.csproj"
+    },
+    "Project.ENTITIES/1.0.0": {
+      "type": "project",
+      "path": "../Project.ENTITIES/Project.ENTITIES.csproj",
+      "msbuildProject": "../Project.ENTITIES/Project.ENTITIES.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "MailKit >= 4.11.0",
+      "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter >= 8.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
       "Microsoft.Extensions.Configuration.Json >= 8.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.7"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.7",
+      "MimeKit >= 4.11.0",
+      "Project.COMMON >= 1.0.0",
+      "Project.ENTITIES >= 1.0.0",
+      "X.PagedList >= 10.5.7",
+      "X.PagedList.Mvc.Core >= 10.5.7"
     ]
   },
   "packageFolders": {
@@ -7868,11 +8400,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projeler\\ecommerce\\ecommerce.csproj",
+      "projectUniqueName": "C:\\projeler\\ecommerce\\ECommerce\\ecommerce.csproj",
       "projectName": "ecommerce",
-      "projectPath": "C:\\projeler\\ecommerce\\ecommerce.csproj",
+      "projectPath": "C:\\projeler\\ecommerce\\ECommerce\\ecommerce.csproj",
       "packagesPath": "C:\\Users\\Aylin\\.nuget\\packages\\",
-      "outputPath": "C:\\projeler\\ecommerce\\obj\\",
+      "outputPath": "C:\\projeler\\ecommerce\\ECommerce\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7892,7 +8424,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\projeler\\ecommerce\\Project.COMMON\\Project.COMMON.csproj": {
+              "projectPath": "C:\\projeler\\ecommerce\\Project.COMMON\\Project.COMMON.csproj"
+            },
+            "C:\\projeler\\ecommerce\\Project.ENTITIES\\Project.ENTITIES.csproj": {
+              "projectPath": "C:\\projeler\\ecommerce\\Project.ENTITIES\\Project.ENTITIES.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -7911,6 +8450,14 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "MailKit": {
+            "target": "Package",
+            "version": "[4.11.0, )"
+          },
+          "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.0, )"
@@ -7938,6 +8485,18 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[8.0.7, )"
+          },
+          "MimeKit": {
+            "target": "Package",
+            "version": "[4.11.0, )"
+          },
+          "X.PagedList": {
+            "target": "Package",
+            "version": "[10.5.7, )"
+          },
+          "X.PagedList.Mvc.Core": {
+            "target": "Package",
+            "version": "[10.5.7, )"
           }
         },
         "imports": [

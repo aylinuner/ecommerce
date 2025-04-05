@@ -1,6 +1,11 @@
 using ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
+using Project.COMMON.Tools;
 using System;
+using Microsoft.Extensions.DependencyInjection;
+using Project.ecommerce.EmailService;
+using ecommerce.EmailService;
+
 
 
 
@@ -17,6 +22,9 @@ builder.Services.AddDbContext<EcommerceDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddIdentityServices();//kullanýcýnýn kimlik doðrulama iþlemlerini ve güvenli bir oturum yönetimi yapmasýný saðlar.
+
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 var app = builder.Build();
 

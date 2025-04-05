@@ -15,6 +15,22 @@ public partial class EcommerceDbContext : DbContext
     {
     }
 
+    public virtual DbSet<__ef_migrations_history> __ef_migrations_histories { get; set; }
+
+    public virtual DbSet<advert> adverts { get; set; }
+
+    public virtual DbSet<aspnet_role> aspnet_roles { get; set; }
+
+    public virtual DbSet<aspnet_role_claim> aspnet_role_claims { get; set; }
+
+    public virtual DbSet<aspnet_user> aspnet_users { get; set; }
+
+    public virtual DbSet<aspnet_user_claim> aspnet_user_claims { get; set; }
+
+    public virtual DbSet<aspnet_user_login> aspnet_user_logins { get; set; }
+
+    public virtual DbSet<aspnet_user_token> aspnet_user_tokens { get; set; }
+
     public virtual DbSet<bank> banks { get; set; }
 
     public virtual DbSet<basket> baskets { get; set; }
@@ -45,6 +61,8 @@ public partial class EcommerceDbContext : DbContext
 
     public virtual DbSet<product> products { get; set; }
 
+    public virtual DbSet<profile> profiles { get; set; }
+
     public virtual DbSet<stock_movement> stock_movements { get; set; }
 
     public virtual DbSet<user> users { get; set; }
@@ -53,10 +71,111 @@ public partial class EcommerceDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=AYLIN;Database=ecommerce;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=94.73.170.33;Database=u2211892_etic;User Id=u2211892_etic;Password=0S:-nK98Ue=O6ws.;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<__ef_migrations_history>(entity =>
+        {
+            entity.HasKey(e => e.MigrationId).HasName("PK___EFMigrationsHistory");
+
+            entity.ToTable("__ef_migrations_history");
+
+            entity.Property(e => e.MigrationId).HasMaxLength(150);
+            entity.Property(e => e.ProductVersion).HasMaxLength(32);
+        });
+
+        modelBuilder.Entity<advert>(entity =>
+        {
+            entity.HasKey(e => e.ID).HasName("PK_Adverts");
+        });
+
+        modelBuilder.Entity<aspnet_role>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_AspNetRoles");
+
+            entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
+                .IsUnique()
+                .HasFilter("([NormalizedName] IS NOT NULL)");
+
+            entity.Property(e => e.Name).HasMaxLength(256);
+            entity.Property(e => e.NormalizedName).HasMaxLength(256);
+        });
+
+        modelBuilder.Entity<aspnet_role_claim>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_AspNetRoleClaims");
+
+            entity.HasIndex(e => e.RoleId, "IX_AspNetRoleClaims_RoleId");
+
+            entity.HasOne(d => d.Role).WithMany(p => p.aspnet_role_claims)
+                .HasForeignKey(d => d.RoleId)
+                .HasConstraintName("FK_AspNetRoleClaims_AspNetRoles_RoleId");
+        });
+
+        modelBuilder.Entity<aspnet_user>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_AspNetUsers");
+
+            entity.HasIndex(e => e.NormalizedEmail, "EmailIndex");
+
+            entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
+                .IsUnique()
+                .HasFilter("([NormalizedUserName] IS NOT NULL)");
+
+            entity.Property(e => e.Email).HasMaxLength(256);
+            entity.Property(e => e.NormalizedEmail).HasMaxLength(256);
+            entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
+            entity.Property(e => e.UserName).HasMaxLength(256);
+
+            entity.HasMany(d => d.Roles).WithMany(p => p.Users)
+                .UsingEntity<Dictionary<string, object>>(
+                    "aspnet_user_role",
+                    r => r.HasOne<aspnet_role>().WithMany()
+                        .HasForeignKey("RoleId")
+                        .HasConstraintName("FK_AspNetUserRoles_AspNetRoles_RoleId"),
+                    l => l.HasOne<aspnet_user>().WithMany()
+                        .HasForeignKey("UserId")
+                        .HasConstraintName("FK_AspNetUserRoles_AspNetUsers_UserId"),
+                    j =>
+                    {
+                        j.HasKey("UserId", "RoleId").HasName("PK_AspNetUserRoles");
+                        j.ToTable("aspnet_user_roles");
+                        j.HasIndex(new[] { "RoleId" }, "IX_AspNetUserRoles_RoleId");
+                    });
+        });
+
+        modelBuilder.Entity<aspnet_user_claim>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_AspNetUserClaims");
+
+            entity.HasIndex(e => e.UserId, "IX_AspNetUserClaims_UserId");
+
+            entity.HasOne(d => d.User).WithMany(p => p.aspnet_user_claims)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_AspNetUserClaims_AspNetUsers_UserId");
+        });
+
+        modelBuilder.Entity<aspnet_user_login>(entity =>
+        {
+            entity.HasKey(e => new { e.LoginProvider, e.ProviderKey }).HasName("PK_AspNetUserLogins");
+
+            entity.HasIndex(e => e.UserId, "IX_AspNetUserLogins_UserId");
+
+            entity.HasOne(d => d.User).WithMany(p => p.aspnet_user_logins)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_AspNetUserLogins_AspNetUsers_UserId");
+        });
+
+        modelBuilder.Entity<aspnet_user_token>(entity =>
+        {
+            entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name }).HasName("PK_AspNetUserTokens");
+
+            entity.HasOne(d => d.User).WithMany(p => p.aspnet_user_tokens)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_AspNetUserTokens_AspNetUsers_UserId");
+        });
+
         modelBuilder.Entity<bank>(entity =>
         {
             entity.ToTable("bank");
@@ -88,9 +207,7 @@ public partial class EcommerceDbContext : DbContext
         {
             entity.ToTable("brand");
 
-            entity.Property(e => e.create_date)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
+            entity.Property(e => e.create_date).HasColumnType("datetime");
             entity.Property(e => e.name).HasMaxLength(50);
             entity.Property(e => e.update_time).HasColumnType("datetime");
         });
@@ -99,10 +216,9 @@ public partial class EcommerceDbContext : DbContext
         {
             entity.ToTable("category");
 
+            entity.Property(e => e.id).ValueGeneratedNever();
             entity.Property(e => e.create_date).HasColumnType("datetime");
-            entity.Property(e => e.name)
-                .HasMaxLength(50)
-                .IsUnicode(false);
+            entity.Property(e => e.name).HasMaxLength(50);
             entity.Property(e => e.update_date).HasColumnType("datetime");
         });
 
@@ -121,8 +237,8 @@ public partial class EcommerceDbContext : DbContext
             entity.ToTable("company");
 
             entity.Property(e => e.create_date).HasColumnType("datetime");
-            entity.Property(e => e.name).HasMaxLength(100);
-            entity.Property(e => e.uptade_date).HasColumnType("datetime");
+            entity.Property(e => e.name).HasMaxLength(50);
+            entity.Property(e => e.update_date).HasColumnType("datetime");
             entity.Property(e => e.vkn).HasMaxLength(10);
         });
 
@@ -143,30 +259,26 @@ public partial class EcommerceDbContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("update_ date");
             entity.Property(e => e.vkn).HasMaxLength(10);
-
-            entity.HasOne(d => d.user).WithMany(p => p.customers)
-                .HasForeignKey(d => d.user_id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_customer_user");
         });
 
         modelBuilder.Entity<delivery_type>(entity =>
         {
-            entity.HasKey(e => e.id).HasName("PK_delivery_types");
-
             entity.ToTable("delivery_type");
 
+            entity.Property(e => e.id).ValueGeneratedNever();
             entity.Property(e => e.create_date).HasColumnType("datetime");
             entity.Property(e => e.name).HasMaxLength(50);
             entity.Property(e => e.price).HasColumnType("decimal(10, 2)");
-            entity.Property(e => e.update_date).HasColumnType("datetime");
+            entity.Property(e => e.update_time).HasColumnType("datetime");
         });
 
         modelBuilder.Entity<district>(entity =>
         {
+            entity.HasKey(e => e.id).HasName("PK_ditrict");
+
             entity.ToTable("district");
 
-            entity.Property(e => e.id).HasMaxLength(10);
+            entity.Property(e => e.city_id).HasMaxLength(3);
             entity.Property(e => e.create_date).HasColumnType("datetime");
             entity.Property(e => e.name).HasMaxLength(100);
             entity.Property(e => e.update_date).HasColumnType("datetime");
@@ -174,17 +286,19 @@ public partial class EcommerceDbContext : DbContext
 
         modelBuilder.Entity<entry_detail>(entity =>
         {
-            entity.HasKey(e => e.id).HasName("PK_entry_detail_1");
-
             entity.ToTable("entry_detail");
 
-            entity.Property(e => e.create_date)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
+            entity.Property(e => e.create_date).HasColumnType("datetime");
             entity.Property(e => e.update_date).HasColumnType("datetime");
+
+            entity.HasOne(d => d.category).WithMany(p => p.entry_details)
+                .HasForeignKey(d => d.category_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_entry_detail_category");
 
             entity.HasOne(d => d.entry_master).WithMany(p => p.entry_details)
                 .HasForeignKey(d => d.entry_master_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_entry_detail_entry_master");
 
             entity.HasOne(d => d.product).WithMany(p => p.entry_details)
@@ -195,13 +309,9 @@ public partial class EcommerceDbContext : DbContext
 
         modelBuilder.Entity<entry_master>(entity =>
         {
-            entity.HasKey(e => e.id).HasName("PK_entry_detail");
-
             entity.ToTable("entry_master");
 
-            entity.Property(e => e.create_date)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
+            entity.Property(e => e.create_date).HasColumnType("datetime");
             entity.Property(e => e.update_date).HasColumnType("datetime");
             entity.Property(e => e.waybill_date).HasColumnType("datetime");
             entity.Property(e => e.waybill_no).HasMaxLength(50);
@@ -219,7 +329,7 @@ public partial class EcommerceDbContext : DbContext
 
             entity.HasOne(d => d.product).WithMany(p => p.homes)
                 .HasForeignKey(d => d.product_id)
-                .HasConstraintName("FK_home_home");
+                .HasConstraintName("FK_home_product");
         });
 
         modelBuilder.Entity<membership>(entity =>
@@ -265,9 +375,7 @@ public partial class EcommerceDbContext : DbContext
             entity.ToTable("product");
 
             entity.Property(e => e.code).HasMaxLength(50);
-            entity.Property(e => e.create_date)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
+            entity.Property(e => e.create_date).HasColumnType("datetime");
             entity.Property(e => e.image_url).HasMaxLength(500);
             entity.Property(e => e.name).HasMaxLength(250);
             entity.Property(e => e.price).HasColumnType("decimal(10, 2)");
@@ -275,36 +383,47 @@ public partial class EcommerceDbContext : DbContext
 
             entity.HasOne(d => d.category).WithMany(p => p.products)
                 .HasForeignKey(d => d.category_id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_product_category");
+        });
+
+        modelBuilder.Entity<profile>(entity =>
+        {
+            entity.HasKey(e => e.ID).HasName("PK_Profiles");
+
+            entity.Property(e => e.ID).ValueGeneratedNever();
+
+            entity.HasOne(d => d.IDNavigation).WithOne(p => p.profile)
+                .HasForeignKey<profile>(d => d.ID)
+                .HasConstraintName("FK_Profiles_AspNetUsers_ID");
         });
 
         modelBuilder.Entity<stock_movement>(entity =>
         {
-            entity.Property(e => e.create_date)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
+            entity.HasKey(e => e.id).HasName("PK_stock_movements");
+
+            entity.ToTable("stock_movement");
+
+            entity.Property(e => e.create_date).HasColumnType("datetime");
             entity.Property(e => e.type).HasMaxLength(50);
             entity.Property(e => e.update_date).HasColumnType("datetime");
 
             entity.HasOne(d => d.order).WithMany(p => p.stock_movements)
                 .HasForeignKey(d => d.order_id)
-                .HasConstraintName("FK_stock_movements_order");
+                .HasConstraintName("FK_stock_movement_order");
 
             entity.HasOne(d => d.product).WithMany(p => p.stock_movements)
                 .HasForeignKey(d => d.product_id)
-                .HasConstraintName("FK_stock_movements_stock_movements");
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_stock_movement_product");
         });
 
         modelBuilder.Entity<user>(entity =>
         {
-            entity.HasKey(e => e.id).HasName("PK_users");
-
             entity.ToTable("user");
 
             entity.Property(e => e.birth_date).HasColumnType("datetime");
-            entity.Property(e => e.create_time)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
+            entity.Property(e => e.create_date).HasColumnType("datetime");
             entity.Property(e => e.email).HasMaxLength(100);
             entity.Property(e => e.gender).HasMaxLength(10);
             entity.Property(e => e.name).HasMaxLength(100);
@@ -324,7 +443,6 @@ public partial class EcommerceDbContext : DbContext
             entity.Property(e => e.address).HasMaxLength(200);
             entity.Property(e => e.city_id).HasMaxLength(3);
             entity.Property(e => e.create_date).HasColumnType("datetime");
-            entity.Property(e => e.district_id).HasMaxLength(10);
             entity.Property(e => e.name).HasMaxLength(50);
             entity.Property(e => e.update_date).HasColumnType("datetime");
 

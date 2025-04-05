@@ -13,5 +13,5 @@ public partial class company
 
     public DateTime create_date { get; set; }
 
-    public DateTime? uptade_date { get; set; }
+    public DateTime? update_date { get; set; }
 }

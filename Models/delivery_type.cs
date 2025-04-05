@@ -13,5 +13,5 @@ public partial class delivery_type
 
     public DateTime create_date { get; set; }
 
-    public DateTime? update_date { get; set; }
+    public DateTime? update_time { get; set; }
 }

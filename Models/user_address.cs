@@ -13,7 +13,7 @@ public partial class user_address
 
     public string city_id { get; set; } = null!;
 
-    public string district_id { get; set; } = null!;
+    public int district_id { get; set; }
 
     public DateTime create_date { get; set; }
 

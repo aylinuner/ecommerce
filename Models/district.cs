@@ -5,7 +5,7 @@ namespace ecommerce.Models;
 
 public partial class district
 {
-    public string id { get; set; } = null!;
+    public int id { get; set; }
 
     public string name { get; set; } = null!;
 
@@ -13,7 +13,7 @@ public partial class district
 
     public DateTime? update_date { get; set; }
 
-    public int city_id { get; set; }
+    public string city_id { get; set; } = null!;
 
     public virtual ICollection<user_address> user_addresses { get; set; } = new List<user_address>();
 }

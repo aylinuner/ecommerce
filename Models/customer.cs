@@ -30,6 +30,4 @@ public partial class customer
     public DateTime create_date { get; set; }
 
     public DateTime save_date { get; set; }
-
-    public virtual user user { get; set; } = null!;
 }
