@@ -21,5 +21,5 @@ public partial class entry_master
 
     public DateTime? update_date { get; set; }
 
-    public virtual ICollection<entry_detail> entry_details { get; set; } = new List<entry_detail>();
+    public virtual ICollection<entry_detail> entry_detail { get; set; } = new List<entry_detail>();
 }

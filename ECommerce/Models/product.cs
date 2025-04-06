@@ -23,15 +23,13 @@ public partial class product
 
     public DateTime? update_date { get; set; }
 
-    public virtual ICollection<basket> baskets { get; set; } = new List<basket>();
+    public virtual ICollection<basket> basket { get; set; } = new List<basket>();
 
     public virtual category category { get; set; } = null!;
 
-    public virtual ICollection<entry_detail> entry_details { get; set; } = new List<entry_detail>();
+    public virtual ICollection<entry_detail> entry_detail { get; set; } = new List<entry_detail>();
 
-    public virtual ICollection<home> homes { get; set; } = new List<home>();
+    public virtual ICollection<order> order { get; set; } = new List<order>();
 
-    public virtual ICollection<order> orders { get; set; } = new List<order>();
-
-    public virtual ICollection<stock_movement> stock_movements { get; set; } = new List<stock_movement>();
+    public virtual ICollection<stock_movement> stock_movement { get; set; } = new List<stock_movement>();
 }

@@ -1,28 +1,30 @@
-using ecommerce.Models;
+ï»¿using ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
-using Project.COMMON.Tools;
+//using Project.COMMON.Tools;
 using System;
 using Microsoft.Extensions.DependencyInjection;
 using Project.ecommerce.EmailService;
 using ecommerce.EmailService;
-
-
-
+using ecommerce.Models.Custom;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-// Connection String'i appsettings.json'dan al ve PostgreSQL'e baðlan
+// Connection String'i appsettings.json'dan al ve PostgreSQL'e baÃ°lan
 
-builder.Services.AddDbContext<EcommerceDbContext>(options =>
+builder.Services.AddDbContext<_DbContext>(options =>
 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<_DbContext>()
+    .AddDefaultTokenProviders();
 
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddIdentityServices();//kullanýcýnýn kimlik doðrulama iþlemlerini ve güvenli bir oturum yönetimi yapmasýný saðlar.
+//builder.Services.AddIdentityServices();//kullanÃ½cÃ½nÃ½n kimlik doÃ°rulama iÃ¾lemlerini ve gÃ¼venli bir oturum yÃ¶netimi yapmasÃ½nÃ½ saÃ°lar.
 
 builder.Services.AddTransient<IEmailService, EmailService>();
 
@@ -42,6 +44,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication(); // KullanÄ±cÄ± doÄŸrulama
 
 app.UseEndpoints(endpoints =>
 {

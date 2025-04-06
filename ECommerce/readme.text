@@ -2,4 +2,4 @@
 veritabanındaki bilgilerin en güncel halinin buraya klonlanması işlemine diyoruz.
 dotnet ef dbcontext scaffold "Server=AYLIN;Database=ecommerce;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c EcommerceDbContext --force --use-database-names
 
-dotnet ef dbcontext scaffold "Server=94.73.170.33;Database=u2211892_etic;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c EcommerceDbContext --force --use-database-names
+dotnet ef dbcontext scaffold "Server=94.73.170.33;Database=u2211892_etic;User Id=u2211892_etic;Password=0S:-nK98Ue=O6ws.;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c EcommerceDbContext --force --use-database-names --no-build --no-pluralize

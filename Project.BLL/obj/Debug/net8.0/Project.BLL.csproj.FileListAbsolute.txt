@@ -1,0 +1,5 @@
+C:\Projects\ersoy\ecommerce\Project.BLL\obj\Debug\net8.0\Project.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\ersoy\ecommerce\Project.BLL\obj\Debug\net8.0\Project.BLL.AssemblyInfoInputs.cache
+C:\Projects\ersoy\ecommerce\Project.BLL\obj\Debug\net8.0\Project.BLL.AssemblyInfo.cs
+C:\Projects\ersoy\ecommerce\Project.BLL\obj\Debug\net8.0\Project.BLL.csproj.CoreCompileInputs.cache
+C:\Projects\ersoy\ecommerce\Project.BLL\obj\Debug\net8.0\Project.BLL.sourcelink.json

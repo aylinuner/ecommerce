@@ -2,10 +2,10 @@
 using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
-using ecommerce.Models;
 using Project.ecommerce.EmailService;
 using System.Net;
 using Project.ecommerce.EmailService;
+using ecommerce.Models.Custom;
 
 
 namespace ecommerce.EmailService

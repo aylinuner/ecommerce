@@ -8,22 +8,22 @@ namespace ecommerce.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly EcommerceDbContext _context;
+        private readonly _DbContext _context;
 
-        public HomeController(EcommerceDbContext context)
+        public HomeController(_DbContext context)
         {
             _context = context;
         }
 
-       public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             // Veritabanýndan ürünleri çek
             try
             {
-                List<home> homes = await _context.homes.OrderBy(x => x.id).ToListAsync();
-                ViewBag.homes = homes;
+                //List<home> homes = await _context.homes.OrderBy(x => x.id).ToListAsync();
+                //ViewBag.homes = homes;
 
-                List<product> products = await _context.products.OrderBy(x => x.id).ToListAsync();
+                List<product> products = await _context.product.OrderBy(x => x.id).ToListAsync();
                 ViewBag.products = products;
             }
             catch (Exception x)
@@ -41,10 +41,5 @@ namespace ecommerce.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }

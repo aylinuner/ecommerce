@@ -1,4 +1,4 @@
-﻿using ecommerce.Models;
+﻿using ecommerce.Models.Custom;
 
 namespace Project.ecommerce.EmailService
 {

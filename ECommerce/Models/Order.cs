@@ -25,7 +25,5 @@ public partial class order
 
     public virtual product product { get; set; } = null!;
 
-    public virtual ICollection<stock_movement> stock_movements { get; set; } = new List<stock_movement>();
-
-    public virtual user user { get; set; } = null!;
+    public virtual ICollection<stock_movement> stock_movement { get; set; } = new List<stock_movement>();
 }

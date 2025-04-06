@@ -13,5 +13,5 @@ public partial class city
 
     public DateTime? update_date { get; set; }
 
-    public virtual ICollection<user_address> user_addresses { get; set; } = new List<user_address>();
+    public virtual ICollection<user_address> user_address { get; set; } = new List<user_address>();
 }

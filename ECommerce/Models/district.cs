@@ -15,5 +15,5 @@ public partial class district
 
     public string city_id { get; set; } = null!;
 
-    public virtual ICollection<user_address> user_addresses { get; set; } = new List<user_address>();
+    public virtual ICollection<user_address> user_address { get; set; } = new List<user_address>();
 }

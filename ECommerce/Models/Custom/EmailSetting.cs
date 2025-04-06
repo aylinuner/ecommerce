@@ -1,6 +1,6 @@
 ﻿using System.Collections.Specialized;
 
-namespace ecommerce.Models
+namespace ecommerce.Models.Custom
 {
     //email gönderirken kullanılacak bilgileri bu clasın içersinde topladım(Hybrid ntierdan örnek aldım)
     public class EmailSetting

@@ -1,4 +1,4 @@
-﻿namespace ecommerce.Models
+﻿namespace ecommerce.Models.Custom
 {
     public class MailRequest
     {

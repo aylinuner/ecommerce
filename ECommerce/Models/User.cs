@@ -5,35 +5,41 @@ namespace ecommerce.Models;
 
 public partial class user
 {
-    public int id { get; set; }
+    public string id { get; set; } = null!;
 
-    public DateTime create_date { get; set; }
+    public string? user_name { get; set; }
 
-    public string name { get; set; } = null!;
+    public string? normalized_user_name { get; set; }
 
-    public string surname { get; set; } = null!;
+    public string? email { get; set; }
 
-    public string gender { get; set; } = null!;
+    public string? normalized_email { get; set; }
 
-    public string? tckn { get; set; }
+    public bool email_confirmed { get; set; }
 
-    public string? vkn { get; set; }
+    public string? password_hash { get; set; }
 
-    public string phone_area { get; set; } = null!;
+    public string? security_stamp { get; set; }
 
-    public string phone_number { get; set; } = null!;
+    public string? concurrency_stamp { get; set; }
 
-    public DateTime? update_date { get; set; }
+    public string? phone_number { get; set; }
 
-    public string email { get; set; } = null!;
+    public bool phone_number_confirmed { get; set; }
 
-    public string password { get; set; } = null!;
+    public bool two_factor_enabled { get; set; }
 
-    public DateTime birth_date { get; set; }
+    public DateTimeOffset? lockout_end { get; set; }
 
-    public virtual ICollection<basket> baskets { get; set; } = new List<basket>();
+    public bool lockout_enabled { get; set; }
 
-    public virtual ICollection<membership> memberships { get; set; } = new List<membership>();
+    public int access_failed_count { get; set; }
 
-    public virtual ICollection<order> orders { get; set; } = new List<order>();
+    public virtual ICollection<user_claim> user_claim { get; set; } = new List<user_claim>();
+
+    public virtual ICollection<user_login> user_login { get; set; } = new List<user_login>();
+
+    public virtual ICollection<user_token> user_token { get; set; } = new List<user_token>();
+
+    public virtual ICollection<role> role { get; set; } = new List<role>();
 }

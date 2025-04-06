@@ -15,7 +15,7 @@ public partial class category
 
     public DateTime? update_date { get; set; }
 
-    public virtual ICollection<entry_detail> entry_details { get; set; } = new List<entry_detail>();
+    public virtual ICollection<entry_detail> entry_detail { get; set; } = new List<entry_detail>();
 
-    public virtual ICollection<product> products { get; set; } = new List<product>();
+    public virtual ICollection<product> product { get; set; } = new List<product>();
 }

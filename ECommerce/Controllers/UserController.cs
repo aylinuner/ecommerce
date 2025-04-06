@@ -9,17 +9,17 @@ using ecommerce.Models.View;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Project.COMMON.Tools;
+//using Project.COMMON.Tools;
 
 namespace ecommerce.Controllers
 {
     public class UserController : Controller
     {
-         readonly EcommerceDbContext _context;
+         readonly _DbContext _context;
          readonly UserManager<AppUser> _userManager;
          readonly SignInManager<AppUser> _signInManager;
 
-        public UserController( EcommerceDbContext context, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public UserController( _DbContext context, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _context = context;
             _userManager = userManager;
@@ -37,12 +37,13 @@ namespace ecommerce.Controllers
         {
             //parametredeki bilgilere ait veritabanýndaki kullanýcýyý bul.
 
-            user exist_user = _context.users.FirstOrDefault(o => o.email == model.email && o.password == model.password);
-            if (exist_user == null)
-            {
-                ViewBag.ErrorMessage = "E posta veya þifre yanlýþ";
-            }
-            return View(model);
+            //user exist_user = _context.user.FirstOrDefault(o => o.email == model.email && o.password_hash == model.password);
+            //if (exist_user == null)
+            //{
+            //    ViewBag.ErrorMessage = "E posta veya þifre yanlýþ";
+            //}
+            //return View(model);
+            return View();
 
         }
         [HttpGet]
@@ -51,8 +52,8 @@ namespace ecommerce.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Register(UserViewModel model)
+        //[HttpPost]
+        public async Task<IActionResult> RegisterOld(UserViewModel model)
         {
             AppUser u = new AppUser();
             if (model.email != null)
@@ -104,7 +105,7 @@ namespace ecommerce.Controllers
 
                     #region üyelik doðrulama maili gönder
                     string body = $"Hesabýnýz oluþturulmuþtur. Üyeliðinizi onaylamak için lütfen http://localhost:5089/User/ConfirmEmail?id={appUser.Id} linkine týklayýnýz";
-                    MailService.Send(model.email, body: body, subject: "Nera Yeni Üye Kaydý Doðrulama");
+                    //MailService.Send(model.email, body: body, subject: "Nera Yeni Üye Kaydý Doðrulama");
 
                     TempData["Message"] = "Kayýt iþlemi baþarýlý, Emailinizi kontrol ediniz,Kayýt iþleminizi tamamlamak için, gelen maildeki linke týklayýn!";
                     #endregion
@@ -116,6 +117,24 @@ namespace ecommerce.Controllers
                     ModelState.AddModelError(string.Empty, result.Errors.FirstOrDefault().Description);
 
                 }
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(UserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new AppUser { FullName="test", UserName = model.email, Email = model.email };
+                var result = await _userManager.CreateAsync(user, model.password);
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+                }
+                foreach (var error in result.Errors)
+                    ModelState.AddModelError("", error.Description);
             }
             return View(model);
         }

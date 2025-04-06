@@ -12,6 +12,4 @@ public partial class membership
     public DateTime create_date { get; set; }
 
     public DateTime? update_date { get; set; }
-
-    public virtual user user { get; set; } = null!;
 }

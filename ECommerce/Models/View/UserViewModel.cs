@@ -9,7 +9,7 @@ namespace ecommerce.Models.View
 
         public string surname { get; set; }
 
-        public DateTime date { get; set; }
+        //public DateTime date { get; set; }
 
         public string phone_area { get; set; }
 
@@ -27,7 +27,7 @@ namespace ecommerce.Models.View
         public DateTime birth_date { get; set; }
 
         // Kullanıcının tüm siparişlerini çekmek için
-        public virtual ICollection<order> orders { get; set; }
+        //public virtual ICollection<order> orders { get; set; }
 
 
 

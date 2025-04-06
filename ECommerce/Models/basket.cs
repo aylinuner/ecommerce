@@ -21,9 +21,7 @@ public partial class basket
 
     public DateTime? uptade_date { get; set; }
 
-    public virtual ICollection<order> orders { get; set; } = new List<order>();
+    public virtual ICollection<order> order { get; set; } = new List<order>();
 
     public virtual product product { get; set; } = null!;
-
-    public virtual user user { get; set; } = null!;
 }
