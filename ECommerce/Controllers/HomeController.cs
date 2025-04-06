@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using ecommerce.Models;
+using ecommerce.Models.Db;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,8 +23,8 @@ namespace ecommerce.Controllers
                 //List<home> homes = await _context.homes.OrderBy(x => x.id).ToListAsync();
                 //ViewBag.homes = homes;
 
-                List<product> products = await _context.product.OrderBy(x => x.id).ToListAsync();
-                ViewBag.products = products;
+                //List<product> products = await _context.product.OrderBy(x => x.id).ToListAsync();
+                //ViewBag.products = products;
             }
             catch (Exception x)
             {

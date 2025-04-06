@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ecommerce.Models;
 
-public partial class entry_detail
+public partial class EntryDetail
 {
     public int id { get; set; }
 
@@ -25,9 +25,9 @@ public partial class entry_detail
 
     public int entry_master_id { get; set; }
 
-    public virtual category category { get; set; } = null!;
+    //public virtual category category { get; set; } = null!;
 
-    public virtual entry_master entry_master { get; set; } = null!;
+    //public virtual entry_master entry_master { get; set; } = null!;
 
-    public virtual product product { get; set; } = null!;
+    //public virtual product product { get; set; } = null!;
 }

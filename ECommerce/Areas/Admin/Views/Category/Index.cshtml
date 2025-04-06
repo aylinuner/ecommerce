@@ -22,7 +22,7 @@
         @if (ViewBag.categories != null)
         {
             @*  ViewBag'daki kategoriler içerisinde dön' *@
-            foreach (category item in ViewBag.categories)
+            foreach (Category item in ViewBag.categories)
             {
                 <tr class="category-row" data-id="@item.id">
                     <td class="">@item.name</td>

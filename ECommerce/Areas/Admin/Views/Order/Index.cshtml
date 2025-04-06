@@ -22,7 +22,7 @@
         @if (ViewBag.orders != null)
         {
             @*  ViewBag'daki ürünler içerisinde dön' *@
-            foreach (order item in ViewBag.orders)
+            foreach (var item in ViewBag.orders)
             {
                 <tr class="order-row" data-id="@item.id">
                     <td class="">@item.id</td>

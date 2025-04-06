@@ -26,7 +26,7 @@
         @if (ViewBag.customers != null)
         {
             @*  ViewBag'daki müşteriler içerisinde dön' *@
-            foreach (customer item in ViewBag.customers)
+            foreach (Customer item in ViewBag.customers)
             {
                 <tr class="customer-row" data-id="@item.id">
                     <td class="">@item.name</td>

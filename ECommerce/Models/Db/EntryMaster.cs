@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ecommerce.Models;
 
-public partial class entry_master
+public partial class EntryMaster
 {
     public int id { get; set; }
 
@@ -21,5 +21,5 @@ public partial class entry_master
 
     public DateTime? update_date { get; set; }
 
-    public virtual ICollection<entry_detail> entry_detail { get; set; } = new List<entry_detail>();
+    public virtual ICollection<EntryDetail> entry_detail { get; set; } = new List<EntryDetail>();
 }

@@ -16,7 +16,7 @@
 
                         @if (ViewBag.user_addresses != null)
                         {
-                            foreach (user_address item in ViewBag.user_addresses)
+                            foreach (var item in ViewBag.user_addresses)
                             {
                                 <span class="fw-bold">@item.name</span>
                                 <p class="m-0">@item.address</p>

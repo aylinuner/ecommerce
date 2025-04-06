@@ -10,8 +10,8 @@
         public int quantity { get; set; }
         public DateTime create_date { get; set; }
         public DateTime update_date { get; set; }
-        public virtual user user { get; set; } = null!; // User tablosuna erişim sağlar
-        public virtual product product { get; set; } = null!; // Product tablosuna erişim sağlar
+        //public virtual user user { get; set; } = null!; // User tablosuna erişim sağlar
+        //public virtual product product { get; set; } = null!; // Product tablosuna erişim sağlar
 
     }
 }

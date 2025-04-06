@@ -52,7 +52,7 @@ namespace ecommerce.Models.View
 
         public int entry_master_id { get; set; }
 
-        public product product { get; set; }
+        //public product product { get; set; }
     }
 
 }

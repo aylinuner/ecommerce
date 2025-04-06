@@ -1,5 +1,4 @@
-﻿using ecommerce.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 //using Project.COMMON.Tools;
 using System;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,6 +6,7 @@ using Project.ecommerce.EmailService;
 using ecommerce.EmailService;
 using ecommerce.Models.Custom;
 using Microsoft.AspNetCore.Identity;
+using ecommerce.Models.Db;
 
 var builder = WebApplication.CreateBuilder(args);
 

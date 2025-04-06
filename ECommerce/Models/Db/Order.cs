@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ecommerce.Models;
 
-public partial class order
+public partial class Order
 {
     public int id { get; set; }
 
@@ -21,9 +21,9 @@ public partial class order
 
     public DateTime? update_date { get; set; }
 
-    public virtual basket basket { get; set; } = null!;
+    //public virtual basket basket { get; set; } = null!;
 
-    public virtual product product { get; set; } = null!;
+    //public virtual product product { get; set; } = null!;
 
-    public virtual ICollection<stock_movement> stock_movement { get; set; } = new List<stock_movement>();
+    //public virtual ICollection<stock_movement> stock_movement { get; set; } = new List<stock_movement>();
 }

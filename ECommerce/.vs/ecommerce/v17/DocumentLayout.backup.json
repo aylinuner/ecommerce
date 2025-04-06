@@ -3,36 +3,204 @@
   "WorkspaceRootPath": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\migrations\\_dbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:migrations\\_dbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\custom\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\custom\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\views\\userpanel\\order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\userpanel\\order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\views\\order\\delivery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\order\\delivery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\views\\userpanel\\address.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\userpanel\\address.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\views\\basket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\basket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\areas\\admin\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\views\\order\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\order\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\areas\\admin\\views\\entry\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\views\\entry\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\db\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\db\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\db\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\db\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\db\\entrydetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\db\\entrydetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\db\\entrymaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\db\\entrymaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\areas\\admin\\views\\entry\\save.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\views\\entry\\save.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\areas\\admin\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\view\\useraddressviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\view\\useraddressviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\view\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\view\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\view\\entryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\view\\entryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\view\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\view\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\view\\basketviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\view\\basketviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\db\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\db\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\db\\_dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\db\\_dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\user_token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\user_token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\user_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\user_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\user_claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\user_claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\user_address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\user_address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\stock_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\stock_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\role_claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\role_claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\membership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\membership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\district.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\district.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\delivery_type.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\delivery_type.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\readme.text||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:readme.text||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\custom\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\custom\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\_dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\_dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\readme.text||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:readme.text||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\areas\\admin\\controllers\\entrydetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,10 +231,6 @@
       "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -91,28 +255,8 @@
       "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\view\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\areas\\admin\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\district.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\district.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\user_token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\user_token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\user_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\user_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\user_claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:models\\user_claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projects\\ersoy\\ecommerce\\ecommerce\\models\\custom\\emailsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -142,8 +286,346 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_DbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Migrations\\_DbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\_DbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Migrations\\_DbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\_DbContextModelSnapshot.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAgwBAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:38:08.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Address.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\UserPanel\\Address.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserPanel\\Address.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\UserPanel\\Address.cshtml",
+              "RelativeToolTip": "Views\\UserPanel\\Address.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:37:27.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAewFoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:37:21.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Basket\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Basket\\Index.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Basket\\Index.cshtml",
+              "RelativeToolTip": "Views\\Basket\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:37:16.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAewBcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:37:10.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Payment.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Order\\Payment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\Payment.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Order\\Payment.cshtml",
+              "RelativeToolTip": "Views\\Order\\Payment.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:36:53.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAewIIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:36:42.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Order.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\UserPanel\\Order.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserPanel\\Order.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\UserPanel\\Order.cshtml",
+              "RelativeToolTip": "Views\\UserPanel\\Order.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAhwBMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:35:47.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Delivery.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Order\\Delivery.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\Delivery.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Order\\Delivery.cshtml",
+              "RelativeToolTip": "Views\\Order\\Delivery.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAAAhwCoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:32:17.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Entry\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Entry\\Index.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Entry\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Entry\\Index.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAhwBYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:31:57.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Save.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Entry\\Save.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Entry\\Save.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Entry\\Save.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Entry\\Save.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEgAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:31:46.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAhwBgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:30:36.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EntryMaster.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\EntryMaster.cs",
+              "RelativeDocumentMoniker": "Models\\Db\\EntryMaster.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\EntryMaster.cs",
+              "RelativeToolTip": "Models\\Db\\EntryMaster.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:38.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EntryDetail.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\EntryDetail.cs",
+              "RelativeDocumentMoniker": "Models\\Db\\EntryDetail.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\EntryDetail.cs",
+              "RelativeToolTip": "Models\\Db\\EntryDetail.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAcwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:35.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Order\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Order\\Index.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Order\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Order\\Index.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAewBMAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T21:26:59.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Customer\\Index.cshtml",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Customer\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Customer\\Index.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAewBcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T00:30:59.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Db\\Category.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\Category.cs",
+              "RelativeToolTip": "Models\\Db\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:21:07.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\Order.cs",
+              "RelativeDocumentMoniker": "Models\\Db\\Order.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\Order.cs",
+              "RelativeToolTip": "Models\\Db\\Order.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:47.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UserAddressViewModel.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\UserAddressViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\View\\UserAddressViewModel.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\UserAddressViewModel.cs",
+              "RelativeToolTip": "Models\\View\\UserAddressViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:30:04.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OrderViewModel.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\OrderViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\View\\OrderViewModel.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\OrderViewModel.cs",
+              "RelativeToolTip": "Models\\View\\OrderViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:29:59.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EntryViewModel.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\EntryViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\View\\EntryViewModel.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\EntryViewModel.cs",
+              "RelativeToolTip": "Models\\View\\EntryViewModel.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAIAxwDYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:29:53.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HomeViewModel.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\HomeViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\View\\HomeViewModel.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\HomeViewModel.cs",
+              "RelativeToolTip": "Models\\View\\HomeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:29:48.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "BasketViewModel.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\BasketViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\View\\BasketViewModel.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\BasketViewModel.cs",
+              "RelativeToolTip": "Models\\View\\BasketViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:29:42.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "user_address.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_address.cs",
+              "RelativeDocumentMoniker": "Models\\user_address.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_address.cs",
+              "RelativeToolTip": "Models\\user_address.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:28:04.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "user.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user.cs",
+              "RelativeDocumentMoniker": "Models\\user.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user.cs",
+              "RelativeToolTip": "Models\\user.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwCwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:28:01.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "stock_movement.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\stock_movement.cs",
+              "RelativeDocumentMoniker": "Models\\stock_movement.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\stock_movement.cs",
+              "RelativeToolTip": "Models\\stock_movement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:58.246Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -154,59 +636,228 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-06T00:00:34.086Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "BasketController.cs",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\BasketController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BasketController.cs",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\BasketController.cs",
-              "RelativeToolTip": "Controllers\\BasketController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAwwCkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 28,
+              "Title": "user_claim.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_claim.cs",
+              "RelativeDocumentMoniker": "Models\\user_claim.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_claim.cs",
+              "RelativeToolTip": "Models\\user_claim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:27:24.401Z",
+              "WhenOpened": "2025-04-05T21:12:11.1Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAwwGEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 27,
+              "Title": "user_login.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_login.cs",
+              "RelativeDocumentMoniker": "Models\\user_login.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_login.cs",
+              "RelativeToolTip": "Models\\user_login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:28:38.854Z",
+              "WhenOpened": "2025-04-05T21:12:12.76Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAQwIAAAAA5AAAAAAAAAA==",
+              "DocumentIndex": 26,
+              "Title": "user_token.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_token.cs",
+              "RelativeDocumentMoniker": "Models\\user_token.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_token.cs",
+              "RelativeToolTip": "Models\\user_token.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T13:32:11.884Z",
+              "WhenOpened": "2025-04-05T21:12:16.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 25,
+              "Title": "_DbContext.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\_DbContext.cs",
+              "RelativeDocumentMoniker": "Models\\Db\\_DbContext.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\_DbContext.cs",
+              "RelativeToolTip": "Models\\Db\\_DbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T21:13:18.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "role_claim.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\role_claim.cs",
+              "RelativeDocumentMoniker": "Models\\role_claim.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\role_claim.cs",
+              "RelativeToolTip": "Models\\role_claim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:55.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Db\\Product.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Db\\Product.cs",
+              "RelativeToolTip": "Models\\Db\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:18:19.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAArwBoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T21:26:05.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "role.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\role.cs",
+              "RelativeDocumentMoniker": "Models\\role.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\role.cs",
+              "RelativeToolTip": "Models\\role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:52.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "membership.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\membership.cs",
+              "RelativeDocumentMoniker": "Models\\membership.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\membership.cs",
+              "RelativeToolTip": "Models\\membership.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:44.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "home.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\home.cs",
+              "RelativeDocumentMoniker": "Models\\home.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\home.cs",
+              "RelativeToolTip": "Models\\home.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:40.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "delivery_type.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\delivery_type.cs",
+              "RelativeDocumentMoniker": "Models\\delivery_type.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\delivery_type.cs",
+              "RelativeToolTip": "Models\\delivery_type.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:30.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "company.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\company.cs",
+              "RelativeDocumentMoniker": "Models\\company.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\company.cs",
+              "RelativeToolTip": "Models\\company.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:24.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "city.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\city.cs",
+              "RelativeDocumentMoniker": "Models\\city.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\city.cs",
+              "RelativeToolTip": "Models\\city.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:21.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "brand.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\brand.cs",
+              "RelativeDocumentMoniker": "Models\\brand.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\brand.cs",
+              "RelativeToolTip": "Models\\brand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:15.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "basket.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\basket.cs",
+              "RelativeDocumentMoniker": "Models\\basket.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\basket.cs",
+              "RelativeToolTip": "Models\\basket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:12.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "bank.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\bank.cs",
+              "RelativeDocumentMoniker": "Models\\bank.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\bank.cs",
+              "RelativeToolTip": "Models\\bank.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T00:27:09.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "district.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\district.cs",
+              "RelativeDocumentMoniker": "Models\\district.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\district.cs",
+              "RelativeToolTip": "Models\\district.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T21:13:17.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -219,20 +870,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_DbContext.cs",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\_DbContext.cs",
-              "RelativeDocumentMoniker": "Models\\_DbContext.cs",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\_DbContext.cs",
-              "RelativeToolTip": "Models\\_DbContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 54,
+              "Title": "BasketController.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\BasketController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BasketController.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\BasketController.cs",
+              "RelativeToolTip": "Controllers\\BasketController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:13:18.459Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:27:24.401Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 52,
               "Title": "EntryController.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Controllers\\EntryController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\EntryController.cs",
@@ -240,25 +890,24 @@
               "RelativeToolTip": "Areas\\Admin\\Controllers\\EntryController.cs",
               "ViewState": "AgIAALAAAAAAAAAAAAAgwMgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:27:53.92Z",
+              "WhenOpened": "2025-04-05T21:27:53.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-06T00:00:34.086Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Custom\\AppUser.cs",
-              "RelativeDocumentMoniker": "Models\\Custom\\AppUser.cs",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Custom\\AppUser.cs",
-              "RelativeToolTip": "Models\\Custom\\AppUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T20:28:19.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 44,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -271,20 +920,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 46,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAjwIUAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T13:32:11.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAwwGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T21:28:38.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Custom\\AppUser.cs",
+              "RelativeDocumentMoniker": "Models\\Custom\\AppUser.cs",
+              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Custom\\AppUser.cs",
+              "RelativeToolTip": "Models\\Custom\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T20:28:19.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
               "Title": "readme.text",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\readme.text",
               "RelativeDocumentMoniker": "readme.text",
               "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\readme.text",
               "RelativeToolTip": "readme.text",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAADYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-04-06T00:00:47.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 48,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\User\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\User\\Register.cshtml",
@@ -292,12 +979,11 @@
               "RelativeToolTip": "Views\\User\\Register.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T00:03:37.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T00:03:37.707Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 51,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\CategoryController.cs",
@@ -305,12 +991,11 @@
               "RelativeToolTip": "Areas\\Admin\\Controllers\\CategoryController.cs",
               "ViewState": "AgIAAEwAAAAAAAAAAAAgwGEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:23:04.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:23:04.296Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 55,
               "Title": "CategoryMenuViewComponent.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\CategoryMenuViewComponent.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoryMenuViewComponent.cs",
@@ -318,12 +1003,11 @@
               "RelativeToolTip": "Controllers\\CategoryMenuViewComponent.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAQwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:30:09.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:30:09.608Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 50,
               "Title": "EntryDetailController.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Controllers\\EntryDetailController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\EntryDetailController.cs",
@@ -331,12 +1015,11 @@
               "RelativeToolTip": "Areas\\Admin\\Controllers\\EntryDetailController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:28:53.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:28:53.429Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 56,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\ProductController.cs",
@@ -344,25 +1027,11 @@
               "RelativeToolTip": "Areas\\Admin\\Controllers\\ProductController.cs",
               "ViewState": "AgIAAFYAAAAAAAAAAAAgwG8AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:24:30.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:24:30.503Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAowCwAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:26:05.989Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 57,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
@@ -370,12 +1039,11 @@
               "RelativeToolTip": "Controllers\\OrderController.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAowDsAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:24:38.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:24:38.535Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 58,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
@@ -383,12 +1051,11 @@
               "RelativeToolTip": "Controllers\\ProductController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAgwCEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:24:43.509Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:24:43.509Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 59,
               "Title": "ProductDetailController.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\ProductDetailController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductDetailController.cs",
@@ -396,12 +1063,11 @@
               "RelativeToolTip": "Controllers\\ProductDetailController.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAowCgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:28:50.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:28:50.996Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 60,
               "Title": "UserPanelController.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Controllers\\UserPanelController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserPanelController.cs",
@@ -409,12 +1075,11 @@
               "RelativeToolTip": "Controllers\\UserPanelController.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAowDkAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:28:59.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:28:59.632Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 61,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Controllers\\CustomerController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\CustomerController.cs",
@@ -422,25 +1087,11 @@
               "RelativeToolTip": "Areas\\Admin\\Controllers\\CustomerController.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAgwGEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:24:15.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:24:15.189Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Order\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Order\\Index.cshtml",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Order\\Index.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Order\\Index.cshtml",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAwwBwAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-05T21:26:59.869Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 62,
               "Title": "UserViewModel.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\View\\UserViewModel.cs",
               "RelativeDocumentMoniker": "Models\\View\\UserViewModel.cs",
@@ -448,12 +1099,11 @@
               "RelativeToolTip": "Models\\View\\UserViewModel.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAiwB0AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:35:34.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:35:34.555Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 63,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
@@ -461,64 +1111,11 @@
               "RelativeToolTip": "Views\\Shared\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-05T21:22:21.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:22:21.873Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "district.cs",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\district.cs",
-              "RelativeDocumentMoniker": "Models\\district.cs",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\district.cs",
-              "RelativeToolTip": "Models\\district.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:13:17.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "user_token.cs",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_token.cs",
-              "RelativeDocumentMoniker": "Models\\user_token.cs",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_token.cs",
-              "RelativeToolTip": "Models\\user_token.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:12:16.045Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "user_login.cs",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_login.cs",
-              "RelativeDocumentMoniker": "Models\\user_login.cs",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_login.cs",
-              "RelativeToolTip": "Models\\user_login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:12:12.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "user_claim.cs",
-              "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_claim.cs",
-              "RelativeDocumentMoniker": "Models\\user_claim.cs",
-              "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\user_claim.cs",
-              "RelativeToolTip": "Models\\user_claim.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:12:11.1Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 64,
               "Title": "EmailSetting.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Custom\\EmailSetting.cs",
               "RelativeDocumentMoniker": "Models\\Custom\\EmailSetting.cs",
@@ -526,12 +1123,11 @@
               "RelativeToolTip": "Models\\Custom\\EmailSetting.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T21:00:50.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T21:00:50.306Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 65,
               "Title": "MailRequest.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\Models\\Custom\\MailRequest.cs",
               "RelativeDocumentMoniker": "Models\\Custom\\MailRequest.cs",
@@ -539,12 +1135,11 @@
               "RelativeToolTip": "Models\\Custom\\MailRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T14:21:22.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T14:21:22.002Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 67,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\EmailService\\EmailService.cs",
               "RelativeDocumentMoniker": "EmailService\\EmailService.cs",
@@ -552,12 +1147,11 @@
               "RelativeToolTip": "EmailService\\EmailService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T14:19:27.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T14:19:27.97Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 68,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\EmailService\\IEmailService.cs",
               "RelativeDocumentMoniker": "EmailService\\IEmailService.cs",
@@ -565,20 +1159,18 @@
               "RelativeToolTip": "EmailService\\IEmailService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T14:20:05.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T14:20:05.386Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 66,
               "Title": "ecommerce",
               "DocumentMoniker": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\ecommerce.csproj",
               "RelativeDocumentMoniker": "ecommerce.csproj",
               "ToolTip": "C:\\Projects\\ersoy\\ecommerce\\ECommerce\\ecommerce.csproj",
               "RelativeToolTip": "ecommerce.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-05T19:43:36.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T19:43:36.655Z"
             }
           ]
         }

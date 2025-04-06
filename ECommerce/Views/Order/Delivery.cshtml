@@ -19,7 +19,7 @@
                         {
 
 
-                            @foreach (user_address address in ViewBag.user_addresses)
+                            @foreach (var address in ViewBag.user_addresses)
                             {
                                 <div class="col-md-6">
                                     <div class="border p-3">
@@ -40,7 +40,7 @@
                     <h5 class="fw-bold">Teslimat</h5>
                     @if (ViewBag.delivery_types != null)
                     {
-                        @foreach (delivery_type dt in ViewBag.delivery_types)
+                        @foreach (var dt in ViewBag.delivery_types)
                         {
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="radio" name="kargo" value="@dt.id" @* @(dt.IsDefault ? "checked" : "") *@>

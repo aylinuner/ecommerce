@@ -23,7 +23,7 @@
 
                             @if (ViewBag.orders != null)
                             {
-                                @foreach (order item in ViewBag.orders)
+                                @foreach (var item in ViewBag.orders)
                                 {
                                     <tr>
                                         <td>@item.id</td>

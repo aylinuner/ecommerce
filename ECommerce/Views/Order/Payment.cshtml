@@ -7,7 +7,7 @@
                 <form>
                     @if (ViewBag.banks != null)
                     {
-                        @foreach (bank item in ViewBag.banks)
+                        @foreach (var item in ViewBag.banks)
                         {
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="banka" id="@item.id" value="@item.id" @* @(item.id == "garanti" ? "checked" : "") *@>

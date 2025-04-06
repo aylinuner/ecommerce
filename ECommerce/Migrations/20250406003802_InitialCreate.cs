@@ -52,6 +52,26 @@ namespace ecommerce.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Product",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    code = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    image_url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    category_id = table.Column<int>(type: "int", nullable: false),
+                    create_date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    update_date = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Product", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -214,6 +234,9 @@ namespace ecommerce.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Product");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
