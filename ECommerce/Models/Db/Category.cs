@@ -5,17 +5,17 @@ namespace ecommerce.Models;
 
 public partial class Category
 {
-    public int id { get; set; }
+    public int Id { get; set; }
 
-    public string name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-    public int sort_no { get; set; }
+    public int SortNo { get; set; }
 
-    public DateTime create_date { get; set; }
+    public DateTime CreateDate { get; set; }
 
-    public DateTime? update_date { get; set; }
+    public DateTime? UpdateDate { get; set; }
 
-    //public virtual ICollection<entry_detail> entry_detail { get; set; } = new List<entry_detail>();
+    //public virtual ICollection<EntryDetail> EntryDetail { get; set; } = new List<EntryDetail>();
 
-    //public virtual ICollection<product> product { get; set; } = new List<product>();
+    public virtual ICollection<Product> Product { get; set; } = new List<Product>();
 }

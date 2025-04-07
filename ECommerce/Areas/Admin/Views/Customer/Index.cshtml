@@ -28,16 +28,16 @@
             @*  ViewBag'daki müşteriler içerisinde dön' *@
             foreach (Customer item in ViewBag.customers)
             {
-                <tr class="customer-row" data-id="@item.id">
-                    <td class="">@item.name</td>
-                    <td class="">@item.surname</td>
-                    <td class="">@item.type</td>
+                <tr class="customer-row" data-id="@item.Id">
+                    <td class="">@item.Name</td>
+                    <td class="">@item.Surname</td>
+                    <td class="">@item.Type</td>
                     @* <td class="">@item.type</td> *@
                     @* <td class="">@item.phone_area</td> *@
-                    <td class="">@item.phone_number</td>
-                    <td class="">@item.gender</td>
-                    <td class="">@item.birth_date</td>
-                     <td class="">@item.save_date</td> 
+                    <td class="">@item.PhoneNumber</td>
+                    <td class="">@item.Gender</td>
+                    <td class="">@item.BirthDate</td>
+                     <td class="">@item.SaveDate</td> 
                    @*  <td class="">@item.email</td>
                     <td class="">@item.password</td> *@
                     

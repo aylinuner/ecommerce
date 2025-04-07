@@ -5,29 +5,29 @@ namespace ecommerce.Models;
 
 public partial class Customer
 {
-    public int id { get; set; }
+    public int Id { get; set; }
 
-    public int user_id { get; set; }
+    public int UserId { get; set; }
 
-    public string type { get; set; } = null!;
+    public string Type { get; set; } = null!;
 
-    public string name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-    public string surname { get; set; } = null!;
+    public string Surname { get; set; } = null!;
 
-    public DateTime birth_date { get; set; }
+    public DateTime BirthDate { get; set; }
 
-    public string gender { get; set; } = null!;
+    public string Gender { get; set; } = null!;
 
-    public string? tckn { get; set; }
+    public string? Tckn { get; set; }
 
-    public string? vkn { get; set; }
+    public string? Vkn { get; set; }
 
-    public string phone_number { get; set; } = null!;
+    public string PhoneNumber { get; set; } = null!;
 
-    public DateTime? update__date { get; set; }
+    public DateTime? UpdateDate { get; set; }  
 
-    public DateTime create_date { get; set; }
+    public DateTime CreateDate { get; set; }
 
-    public DateTime save_date { get; set; }
+    public DateTime SaveDate { get; set; }
 }

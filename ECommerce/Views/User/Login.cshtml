@@ -6,12 +6,14 @@
         <div class="login-card card p-3">
             <h3 class="text-center mb-3">Giriş Yap</h3>
 
+            <!-- Validation Summary: Hataları Üst Kısımda Göster -->
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <form method="post" action="@Url.Action("Login", "User")">
                 <div class="mb-3">
-                    <input type="email" class="form-control" name="email" placeholder="E-posta" required asp-for="email">
+                    <input type="" class="form-control" name="email" placeholder="E-posta" asp-for="email">
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" name="password" placeholder="Şifre" required asp-for="password">
+                    <input type="password" class="form-control" name="password" placeholder="Şifre" asp-for="password">
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
             </form>

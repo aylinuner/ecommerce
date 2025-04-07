@@ -24,12 +24,12 @@
             @*  ViewBag'daki kategoriler içerisinde dön' *@
             foreach (Category item in ViewBag.categories)
             {
-                <tr class="category-row" data-id="@item.id">
-                    <td class="">@item.name</td>
-                    <td class="">@item.sort_no</td>
+                <tr class="category-row" data-id="@item.Id">
+                    <td class="">@item.Name</td>
+                    <td class="">@item.SortNo</td>
                     @* <td class="">@item.category_name</td> *@
-                    <td class="">@item.update_date</td>
-                    <td class="">@item.create_date</td>
+                    <td class="">@item.UpdateDate</td>
+                    <td class="">@item.CreateDate</td>
                 </tr>
             }
         }

@@ -5,21 +5,21 @@ namespace ecommerce.Models;
 
 public partial class EntryMaster
 {
-    public int id { get; set; }
+    public int Id { get; set; }
 
-    public string waybill_no { get; set; } = null!;
+    public string WaybillNo { get; set; } = null!;
 
-    public DateTime waybill_date { get; set; }
+    public DateTime WaybillDate { get; set; }
 
-    public int waybill_total { get; set; }
+    public int WaybillTotal { get; set; }
 
-    public int? supplier_id { get; set; }
+    public int? SupplierId { get; set; }
 
-    public int? receiver_id { get; set; }
+    public int? ReceiverId { get; set; }
 
-    public DateTime create_date { get; set; }
+    public DateTime CreateDate { get; set; }
 
-    public DateTime? update_date { get; set; }
+    public DateTime? UpdateDate { get; set; }
 
-    public virtual ICollection<EntryDetail> entry_detail { get; set; } = new List<EntryDetail>();
+    //public virtual ICollection<EntryDetail> EntryDetail { get; set; } = new List<EntryDetail>();
 }

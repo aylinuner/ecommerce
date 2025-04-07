@@ -21,12 +21,12 @@
             @*  ViewBag'daki stok giriş içerisinde dön' *@
             foreach (EntryMaster item in ViewBag.entry_masters)
             {
-                 <tr class="entry-row" data-id="@item.id">
+                 <tr class="entry-row" data-id="@item.Id">
                    
-                    <td class="">@item.waybill_no</td>
-                    <td class="">@item.waybill_date</td>
-                    <td class="">@item.supplier_id</td>
-                    <td class="">@item.waybill_total</td>
+                    <td class="">@item.WaybillNo</td>
+                    <td class="">@item.WaybillDate</td>
+                    <td class="">@item.SupplierId</td>
+                    <td class="">@item.WaybillTotal</td>
                     @* <td class="">@item.create_date</td> *@
                 </tr>
             }

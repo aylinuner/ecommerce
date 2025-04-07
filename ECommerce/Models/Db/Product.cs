@@ -5,31 +5,31 @@ namespace ecommerce.Models;
 
 public partial class Product
 {
-    public int id { get; set; }
+    public int Id { get; set; }
 
-    public string name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-    public string code { get; set; } = null!;
+    public string Code { get; set; } = null!;
 
-    public string description { get; set; } = null!;
+    public string Description { get; set; } = null!;
 
-    public decimal price { get; set; }
+    public decimal Price { get; set; }
 
-    public string image_url { get; set; } = null!;
+    public string ImageUrl { get; set; } = null!;
 
-    public int category_id { get; set; }
+    public int CategoryId { get; set; }
 
-    public DateTime create_date { get; set; }
+    public DateTime CreateDate { get; set; }
 
-    public DateTime? update_date { get; set; }
+    public DateTime? UpdateDate { get; set; }
 
-    //public virtual ICollection<basket> basket { get; set; } = new List<basket>();
+    //public virtual ICollection<Basket> Basket { get; set; } = new List<Basket>();
 
-    //public virtual category category { get; set; } = null!;
+    //public virtual Category Category { get; set; } = null!;
 
-    //public virtual ICollection<entry_detail> entry_detail { get; set; } = new List<entry_detail>();
+    //public virtual ICollection<EntryDetail> EntryDetail { get; set; } = new List<EntryDetail>();
 
-    //public virtual ICollection<order> order { get; set; } = new List<order>();
+    //public virtual ICollection<Order> Order { get; set; } = new List<Order>();
 
-    //public virtual ICollection<stock_movement> stock_movement { get; set; } = new List<stock_movement>();
+    //public virtual ICollection<StockMovement> StockMovement { get; set; } = new List<StockMovement>();
 }

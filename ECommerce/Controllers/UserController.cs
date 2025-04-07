@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
+using ecommerce.Models;
 using ecommerce.Models.Custom;
 using ecommerce.Models.Db;
 using ecommerce.Models.View;
@@ -15,11 +16,11 @@ namespace ecommerce.Controllers
 {
     public class UserController : Controller
     {
-         readonly _DbContext _context;
-         readonly UserManager<AppUser> _userManager;
-         readonly SignInManager<AppUser> _signInManager;
+        readonly _DbContext _context;
+        readonly UserManager<AppUser> _userManager;
+        readonly SignInManager<AppUser> _signInManager;
 
-        public UserController( _DbContext context, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public UserController(_DbContext context, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _context = context;
             _userManager = userManager;
@@ -35,15 +36,37 @@ namespace ecommerce.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(UserViewModel model)
         {
-            //parametredeki bilgilere ait veritabanýndaki kullanýcýyý bul.
+            if (String.IsNullOrEmpty(model.email))
+            {
+                ModelState.AddModelError("", "E posta zorunludur");
+            }
+            else if (!IsValidEmail(model.email))
+            {
+                ModelState.AddModelError("", "Geçerli bir e-posta adresi girin");
+            }
+            else if (String.IsNullOrEmpty(model.password))
+            {
+                ModelState.AddModelError("", "Þifre zorunludur");
+            }
+            else
+            {
+                var existUser = _context.AppUsers.FirstOrDefault(x => x.Email == model.email.ToLower().Trim());
+                if (existUser != null)
+                {
+                    // Kullanýcýyý oturum açmýþ gibi iþaretleme
+                    await _signInManager.SignInAsync(existUser, isPersistent: false);
 
-            //user exist_user = _context.user.FirstOrDefault(o => o.email == model.email && o.password_hash == model.password);
-            //if (exist_user == null)
-            //{
-            //    ViewBag.ErrorMessage = "E posta veya þifre yanlýþ";
-            //}
-            //return View(model);
-            return View();
+                }
+            }
+                //parametredeki bilgilere ait veritabanýndaki kullanýcýyý bul.
+
+                //user exist_user = _context.user.FirstOrDefault(o => o.email == model.email && o.password_hash == model.password);
+                //if (exist_user == null)
+                //{
+                //    ViewBag.ErrorMessage = "E posta veya þifre yanlýþ";
+                //}
+                //return View(model);
+                return View(model);
 
         }
         [HttpGet]
@@ -124,18 +147,97 @@ namespace ecommerce.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(UserViewModel model)
         {
-            if (ModelState.IsValid)
+            if (String.IsNullOrEmpty(model.name))
             {
-                var user = new AppUser { FullName="test", UserName = model.email, Email = model.email };
-                var result = await _userManager.CreateAsync(user, model.password);
-                if (result.Succeeded)
-                {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
-                }
-                foreach (var error in result.Errors)
-                    ModelState.AddModelError("", error.Description);
+                ModelState.AddModelError("", "Ad Zorunludur");
             }
+            else if (String.IsNullOrEmpty(model.surname))
+            {
+                ModelState.AddModelError("", "Soyad Zorunludur");
+            }
+            else if (model.gender == '\0')
+            {
+                ModelState.AddModelError("", "Cinsiyet zorunludur");
+            }
+            else if (model.birth_date == DateOnly.MinValue || model.birth_date == null)
+            {
+                ModelState.AddModelError("", "Doðum tarihi zorunludur");
+            }
+            else if (String.IsNullOrEmpty(model.phone_area))
+            {
+                ModelState.AddModelError("", "Telefon kodu zorunludur");
+            }
+            else if (String.IsNullOrEmpty(model.phone_number))
+            {
+                ModelState.AddModelError("", "Telefon numarasý zorunludur");
+            }
+            else if (model.phone_number.Length < 10)
+            {
+
+                ModelState.AddModelError("", "Telefon numarasýný 10 hane giriniz");
+            }
+            else if (String.IsNullOrEmpty(model.email))
+            {
+
+                ModelState.AddModelError("", "E posta zorunludur");
+            }
+            else if (!IsValidEmail(model.email))
+            {
+                ModelState.AddModelError("", "Geçerli bir e-posta adresi girin");
+            }
+            else if (!IsValidPassword(model.password))
+            {
+                ModelState.AddModelError("", "Þifre en az 8 karakter, bir büyük harf, bir küçük harf ve bir özel karakter içermelidir.");
+            }
+            else if (String.IsNullOrEmpty(model.password))
+            {
+                ModelState.AddModelError("", "Þifre zorunludur");
+            }
+            else if (String.IsNullOrEmpty(model.password_confirm))
+            {
+                ModelState.AddModelError("", "Þifre tekrarý zorunludur");
+            }
+            else if (model.password != model.password_confirm)
+            {
+                ModelState.AddModelError("", "Þifreler eþleþmiyor, kontrol edin");
+            }
+            else
+            {
+                var existUser = _context.AppUsers.FirstOrDefault(x => x.Email == model.email.Trim().ToLower());
+
+                if (existUser != null)
+                {
+                    ModelState.AddModelError("", "Bu e posta zaten kayýtlý!");
+                }
+                else
+                {
+                    PasswordHasher<AppUser> passwordHasher = new PasswordHasher<AppUser>(); //IdentityFrameworkten gelir.Þifrelerin hashlenmesi ve doðrulanmasý için kullanýlýr.(chatgpt)
+
+                    //parametredeki viewmodeldeki verileri appuser nesnesine aktardým.
+                    AppUser user = new()
+                    {
+                        UserName = model.name,
+                        Email = model.email,
+                        NormalizedEmail = model.email.ToUpper(),
+                        NormalizedUserName = model.name.ToUpper(),
+                        EmailConfirmed = false,
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        PasswordHash = passwordHasher.HashPassword(null, model.password), //þifreyi þifrelemek
+                        //Profile = new AppUserProfile { FirstName = model.name, LastName = model.surname }, //kullanýcýnýn profil kaydýnýda oluþturmuþ oluyoruz
+                    };
+
+                    //yeni kullanýcý oluþtur ve kaydet
+                    var result = await _userManager.CreateAsync(user, model.password);
+
+                    if (result.Succeeded)
+                    {
+                        //Bu kod (sinInManager) oturum açýldýktan sonra sana bir user vereceðim o user oturum açmýþ olarak ayarla.(html kodu yazýlacak.)
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
+            }
+
             return View(model);
         }
         public async Task<IActionResult> ConfirmEmail(int id)
@@ -155,7 +257,46 @@ namespace ecommerce.Controllers
             // Ana sayfaya yönlendirme
             return RedirectToAction("Index", "Home");
         }
+        public bool IsValidPassword(string password)
+        {
+            if (string.IsNullOrEmpty(password))
+            {
+                return false;
+            }
+
+            // Þifre uzunluðu kontrolü
+            if (password.Length < 8)
+            {
+                return false;
+            }
+
+            // Büyük harf kontrolü
+            bool hasUpperCase = password.Any(c => char.IsUpper(c));
+
+            // Küçük harf kontrolü
+            bool hasLowerCase = password.Any(c => char.IsLower(c));
+
+            // Özel karakter kontrolü
+            bool hasSpecialChar = password.Any(c => !char.IsLetterOrDigit(c));
+
+            // Tüm þartlarýn saðlandýðýndan emin ol
+            return hasUpperCase && hasLowerCase && hasSpecialChar;
+        }
+        public bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return false;
+            }
+
+            // E-posta adresinin geçerli olup olmadýðýný kontrol eden bir düzenli ifade (regex)
+            var emailRegex = new System.Text.RegularExpressions.Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+            return emailRegex.IsMatch(email);
+        }
+
+
     }
+
 }
 //            if (ModelState.IsValid)
 //            {

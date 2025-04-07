@@ -5,25 +5,25 @@ namespace ecommerce.Models;
 
 public partial class Order
 {
-    public int id { get; set; }
+    public int Id { get; set; }
 
-    public int user_id { get; set; }
+    public int UserId { get; set; }
 
-    public int basket_id { get; set; }
+    public int BasketId { get; set; }
 
-    public int product_id { get; set; }
+    public int ProductId { get; set; }
 
-    public string address { get; set; } = null!;
+    public string Address { get; set; } = null!;
 
-    public string delivery { get; set; } = null!;
+    public string Delivery { get; set; } = null!;
 
-    public DateTime create_date { get; set; }
+    public DateTime CreateDate { get; set; }
 
-    public DateTime? update_date { get; set; }
+    public DateTime? UpdateDate { get; set; }
 
-    //public virtual basket basket { get; set; } = null!;
+    public virtual Basket Basket { get; set; } = null!;
 
-    //public virtual product product { get; set; } = null!;
+    public virtual Product Product { get; set; } = null!;
 
-    //public virtual ICollection<stock_movement> stock_movement { get; set; } = new List<stock_movement>();
+    public virtual ICollection<StockMovement> StockMovement { get; set; } = new List<StockMovement>();
 }

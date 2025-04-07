@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
+
 //using Project.ENTITIES.CoreInterfaces;
 using System.Security.Principal;
 
@@ -8,16 +10,19 @@ namespace ecommerce.Models.Custom
     {
 
         // Veritabanınızdaki kullanıcı tablosunun sütunlarıyla uyumlu özellikler ekleyin
+
+        [Required(ErrorMessage = "Zorunlu alan")]
         public string FullName { get; set; } // Örnek bir alan
 
-        //public AppUser()
-        //{
-        //    CreatedDate = DateTime.UtcNow;
-        //}
-        //public int ID { get; set; }
-        //public DateTime CreatedDate { get; set; }
-        //public DateTime? ModifiedDate { get; set; }
-        //public DateTime? DeletedDate { get; set; }
+        public AppUser()
+        {
+            CreatedDate = DateTime.UtcNow;
+        }
+        public int Id { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
+        public DateTime? DeletedDate { get; set; }
+        //public virtual AppUserProfile Profile { get; set; }
 
     }
 

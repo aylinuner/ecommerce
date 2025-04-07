@@ -1,29 +1,34 @@
 @model ecommerce.Models.View.UserViewModel
+
 <div class="row mt-4">
     <div class="offset-4 col-4 ">
         <div class="login-card card p-3">
             <h3 class="text-center mb-3">Kayıt Ol</h3>
+
+            <!-- Validation Summary: Hataları Üst Kısımda Göster -->
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
             <form method="post" action="@Url.Action("Register", "User")">
                 <div class="mb-3">
-                    <input type="text" class="form-control" name="name" placeholder="Ad" required asp-for="name">
+                    <input type="text" class="form-control" name="name" placeholder="Ad"  asp-for="name">
                 </div>
-                
+
                 <div class="mb-3">
                     <input type="text" class="form-control" name="surname" placeholder="Soyad" required asp-for="surname">
                 </div>
+
                 <div class="mb-3">
                     <select class="form-select" name="gender" asp-for="gender">
-                        <option value="select" selected>Cinsiyet </option>
-                        <option value="woman">Kadın</option>
-                        <option value="man">Erkek</option>
-
+                        <option value="" selected>Cinsiyet</option>
+                        <option value="W">Kadın</option>
+                        <option value="M">Erkek</option>
                     </select>
                 </div>
 
                 <div class="mb-3">
                     <input type="date" class="form-control" name="birth_date" placeholder="Doğum Tarihi" required asp-for="birth_date">
                 </div>
-                
+
                 <!-- Alan Kodu ve Telefon Numarası -->
                 <div class="mb-3 d-flex">
                     <select class="form-select me-2" name="phone_area" style="max-width: 100px;" asp-for="phone_area">
@@ -34,22 +39,27 @@
                     </select>
                     <input type="text" class="form-control" name="phone_number" placeholder="Telefon No" required asp-for="phone_number">
                 </div>
+
                 <div class="mb-3">
                     <input type="email" class="form-control" name="email" placeholder="E-posta" required asp-for="email">
                 </div>
+
                 <div class="mb-3">
                     <input type="password" class="form-control" name="password" placeholder="Şifre" required asp-for="password">
                 </div>
+
                 <div class="mb-3">
                     <input type="password" class="form-control" name="password_confirm" placeholder="Şifre (Tekrar)" required asp-for="password_confirm">
                 </div>
+
                 <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
+
                 @if (ViewBag.ErrorMessage != null)
                 {
                     <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
-
                 }
             </form>
+
             <div class="text-center mt-3">
                 <a href="@Url.Action("Login", "User")" class="text-decoration-none">Giriş Yap</a>
             </div>
