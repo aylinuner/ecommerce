@@ -1,3 +1,4 @@
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Net.Mail;
@@ -50,24 +51,44 @@ namespace ecommerce.Controllers
             }
             else
             {
-                var existUser = _context.AppUsers.FirstOrDefault(x => x.Email == model.email.ToLower().Trim());
-                if (existUser != null)
+                var user = await _userManager.FindByEmailAsync(model.email.ToLower().Trim());
+
+                if (user != null)
                 {
-                    // Kullanýcýyý oturum açmýþ gibi iþaretleme
-                    await _signInManager.SignInAsync(existUser, isPersistent: false);
+                    var result = await _signInManager.PasswordSignInAsync(user, model.password, isPersistent: false, lockoutOnFailure: false);
 
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "E-posta veya þifre hatalý.");
+                    }
                 }
-            }
-                //parametredeki bilgilere ait veritabanýndaki kullanýcýyý bul.
+                else
+                {
+                    ModelState.AddModelError("", "Kullanýcý bulunamadý.");
+                }
 
-                //user exist_user = _context.user.FirstOrDefault(o => o.email == model.email && o.password_hash == model.password);
-                //if (exist_user == null)
-                //{
-                //    ViewBag.ErrorMessage = "E posta veya þifre yanlýþ";
-                //}
-                //return View(model);
-                return View(model);
+            }  //parametredeki bilgilere ait veritabanýndaki kullanýcýyý bul.
 
+            //user exist_user = _context.user.FirstOrDefault(o => o.email == model.email && o.password_hash == model.password);
+            //if (exist_user == null)
+            //{
+            //    ViewBag.ErrorMessage = "E posta veya þifre yanlýþ";
+            //}
+            //return View(model);
+            return View(model);
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "User");
         }
         [HttpGet]
         public IActionResult Register()
@@ -203,13 +224,13 @@ namespace ecommerce.Controllers
             }
             else
             {
-                var existUser = _context.AppUsers.FirstOrDefault(x => x.Email == model.email.Trim().ToLower());
+                var existUser = _context.AppUser.FirstOrDefault(x => x.Email == model.email.Trim().ToLower()) ;
 
                 if (existUser != null)
                 {
                     ModelState.AddModelError("", "Bu e posta zaten kayýtlý!");
                 }
-                else
+                else 
                 {
                     PasswordHasher<AppUser> passwordHasher = new PasswordHasher<AppUser>(); //IdentityFrameworkten gelir.Þifrelerin hashlenmesi ve doðrulanmasý için kullanýlýr.(chatgpt)
 
@@ -231,6 +252,8 @@ namespace ecommerce.Controllers
 
                     if (result.Succeeded)
                     {
+                        //kullanýcý profilini oluþtur. Rol ata ve kaydet
+                        await _userManager.AddToRoleAsync(user, "Visitor");
                         //Bu kod (sinInManager) oturum açýldýktan sonra sana bir user vereceðim o user oturum açmýþ olarak ayarla.(html kodu yazýlacak.)
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return RedirectToAction("Index", "Home");
@@ -257,6 +280,9 @@ namespace ecommerce.Controllers
             // Ana sayfaya yönlendirme
             return RedirectToAction("Index", "Home");
         }
+
+    
+
         public bool IsValidPassword(string password)
         {
             if (string.IsNullOrEmpty(password))

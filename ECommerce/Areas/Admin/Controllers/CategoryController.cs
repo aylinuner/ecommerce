@@ -1,101 +1,98 @@
-﻿//using ecommerce.Controllers;
-//using ecommerce.Models;
-//using ecommerce.Models.View;
-//using Microsoft.AspNetCore.Mvc;
-//using Microsoft.EntityFrameworkCore;
+﻿using ecommerce.Controllers;
+using ecommerce.Models;
+using ecommerce.Models.Db;
+using ecommerce.Models.View;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-//namespace ecommerce.Areas.Admin.Controllers
-//{
-//    [Area("Admin")]
-//    public class CategoryController : Controller
-//    {
-//        #region Dependency Enjection (DI)
-//        private readonly _DbContext _context;
+namespace ecommerce.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    public class CategoryController : Controller
+    {
+        #region Dependency Enjection (DI)
+        private readonly _DbContext _context;
 
-//        public CategoryController(_DbContext context)
-//        {
-//            _context = context;
-//        }
-//        #endregion
-//        [HttpGet]
-//        public async Task<IActionResult> Index()
-//        {
-//            try
-//            {
-//                List<category> categories = await _context.category.OrderBy(x => x.id).ToListAsync();
-//                ViewBag.categories = categories;
-//            }
+        public CategoryController(_DbContext context)
+        {
+            _context = context;
+        }
+        #endregion
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            try
+            {
+                List<Category> categories = await _context.Category.OrderBy(x => x.Id).ToListAsync();
+                ViewBag.categories = categories;
+            }
 
-//            catch (Exception x)
-//            {
+            catch (Exception x)
+            {
 
-//                throw;
-//            }
-//            return View();
-//        }
-
-     
-//        [HttpGet]
-
-//        public async Task<IActionResult> Save(int id)
-//        {
-//            CategoryViewModel model = new CategoryViewModel();
-
-//            if (id > 0)
-//            {
-               
-//                category c = _context.category.FirstOrDefault(x => x.id == id);
-//                if (c != null) // Eğer kayıt bulunursa
-//                {
-//                    model.id = c.id;
-//                    model.name = c.name;
-//                    model.sort_no = c.sort_no;
-//                }
-
-//            }
-//            return View(model);
-//        }
-        
-//        [HttpPost]
-//        public async Task<IActionResult> Save(CategoryViewModel data)
-//        {
-//            category c = new category
-//            {
-//                id = data.id,
-//                name = data.name,
-//                sort_no = data.sort_no,
-//                create_date = DateTime.Now
-//            };
-
-//            if (c.id == 0)
-//            {
-//                _context.category.Add(c);
-//            }
-//            else if (c.id > 0)
-//            {
-//                _context.category.Update(c);
-//            }
-//            await _context.SaveChangesAsync(); // Asenkron olarak kaydet
-
-//            return RedirectToAction("Index", "Category", new {id=c.id});
-//        }
+                throw;
+            }
+            return View();
+        }
 
 
+        [HttpGet]
 
+        public async Task<IActionResult> Save(int id)
+        {
+            CategoryViewModel model = new CategoryViewModel();
 
+            if (id > 0)
+            {
 
-//        [HttpGet]
-//        public IActionResult Delete(int id)
-//        {
-//            category c = _context.category.FirstOrDefault(x => x.id == id);
-//            _context.category.Remove(c);
-//            _context.SaveChanges();
+                Category c = _context.Category.FirstOrDefault(x => x.Id == id);
+                if (c != null) // Eğer kayıt bulunursa
+                {
+                    model.id = c.Id;
+                    model.name = c.Name;
+                    model.sort_no = c.SortNo;
+                }
 
-//            return RedirectToAction("Index", "Category" );
-//        }
-//        public IActionResult List()
-//        {
-//            return View();
-//        }
-//    }
-//}
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Save(CategoryViewModel data)
+        {
+            Category c = new Category
+            {
+                Id = data.id,
+                Name = data.name,
+               SortNo= data.sort_no,
+                CreateDate = DateTime.Now
+            };
+
+            if (c.Id == 0)
+            {
+                _context.Category.Add(c);
+            }
+            else if (c.Id > 0)
+            {
+                _context.Category.Update(c);
+            }
+            await _context.SaveChangesAsync(); // Asenkron olarak kaydet
+
+            return RedirectToAction("Index", "Category", new { id = c.Id });
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            Category c = _context.Category.FirstOrDefault(x => x.Id == id);
+            _context.Category.Remove(c);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Category");
+        }
+        public IActionResult List()
+        {
+            return View();
+        }
+    }
+}

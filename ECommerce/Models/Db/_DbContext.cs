@@ -20,13 +20,14 @@ namespace ecommerce.Models.Db
 
         }
 
-        public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<AppUser> AppUser { get; set; }
         public DbSet<Bank> Bank { get; set; }
         public DbSet<Basket> Basket { get; set; }
         public DbSet<Brand> Brand { get; set; }
-        public DbSet<City> City { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<City> City { get; set; }
         public DbSet<Company> Company { get; set; }
+        public DbSet<Customer> Customer { get; set; }
         public DbSet<DeliveryType> DeliveryType { get; set; }
         public DbSet<District> District { get; set; }
         public DbSet<Home> Home { get; set; }

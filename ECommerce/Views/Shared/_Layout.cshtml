@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using ecommerce.Models.Custom
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager //userın bilgilerine ulaşmak için
+
+@* websitenin tüm içerik sayfalarının bu sayfa kendi içersinde gösterir bir resmin çerçevesi gibidir *@
+@{
+    var userx = await UserManager.GetUserAsync(User); //oturum açmış kullanıcı bilgilerini getir
+    var email = userx?.Email;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -67,17 +77,50 @@
                     </ul>
 
                     <div class="d-flex">
+                        @if (!SignInManager.IsSignedIn(User))
+                        { 
+                            @Html.ActionLink("Giriş Yap", "Login", "User", null, new { @class = "btn btn-outline-dark me-2" })
 
-                        @Html.ActionLink("Giriş Yap", "Login", "User", null, new { @class = "btn btn-outline-dark me-2" })
 
                         <a href="/Admin/Category/Index" class="btn btn-dark me-2">Admin Girişi</a>
                         <a href="/UserPanel/Membership" class="btn btn-dark">
                             Kullanıcı
                         </a>
-
+                        }
                     </div>
                 </div>
             </div>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <form asp-controller="User" asp-action="Logout" method="post">
+                    @{
+                        var user = await UserManager.GetUserAsync(User); // Oturum açmış kullanıcıyı alıyoruz.
+                        if (user != null && !await UserManager.IsInRoleAsync(user, "Visitor")) // kullanıcı rollerinde visitor diye bir rol yoksa navbarda admin paneline geçiş butonunu göster.
+                        {
+                            @Html.ActionLink("Admin", "Index", "Home", new { area = "Admin" }, new { @class = "btn btn-dark" })
+
+                        }
+
+                    }
+                    <a href="/UserPanel/Membership" type="button" class="btn btn-dark">
+
+                        @* bootstrap sitesinden kullanıcı iconu kulalndım *@
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                        </svg>
+                        @email
+                        @* @firstName *@
+
+                            </a>
+                    <button type="submit" class="btn btn-dark">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Çıkış
+                    </button>
+                </form>
+            }
+            
+
         </nav>
         @* Url'deki controller bilgisi UserPanel ve User değilse kategori componentini ekranda göster. Kategoriler kısmı user ve userpanelde ekranda gösterme' *@
         @if (
@@ -89,7 +132,6 @@
                 @await Component.InvokeAsync("CategoryMenu")
             </div>
         }
-
 
     </header>
 

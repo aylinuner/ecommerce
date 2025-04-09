@@ -1,98 +1,99 @@
-﻿//using ecommerce.Controllers;
-//using ecommerce.Models;
-//using ecommerce.Models.View;
-//using Microsoft.AspNetCore.Mvc;
-//using Microsoft.EntityFrameworkCore;
-//using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
+﻿using ecommerce.Controllers;
+using ecommerce.Models;
+using ecommerce.Models.Db;
+using ecommerce.Models.View;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 
-//namespace ecommerce.Areas.Admin.Controllers
-//{
-//    [Area("Admin")]
-//    public class CustomerController : Controller
-//    {
-//        private readonly _DbContext _context;
-        
-//        public CustomerController(_DbContext context)
-//        {
-//            _context = context;
-//        }
+namespace ecommerce.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    public class CustomerController : Controller
+    {
+        private readonly _DbContext _context;
 
-//        [HttpGet]
-//        public async Task<IActionResult> Index()
-//        {
-//            try
-//            {
-//                List<customer> customers = _context.customer.ToList();
-//                ViewBag.customers = customers;
-//            }
-//            catch 
-//            {
-//                throw;
-//            }
-//            return View();
-//        }
+        public CustomerController(_DbContext context)
+        {
+            _context = context;
+        }
 
-//        [HttpGet]
-//        public async Task<IActionResult> Save(int id)
-//        {
-//            CustomerViewModel model = new CustomerViewModel();
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            try
+            {
+                List<Customer> customers = _context.Customer.ToList();
+                ViewBag.customers = customers;
+            }
+            catch
+            {
+                throw;
+            }
+            return View();
+        }
 
-//            if (id > 0)
-//            {
-//                customer c = _context.customer.FirstOrDefault(x => x.id == id);
-//                model.name = c.name;
-//                model.surname = c.surname;
-//                //model.phone_area = c.phone_area;
-//                model.phone_number = c.phone_number;
-//                model.gender = c.gender;
-//                model.create_date = DateTime.Now;
-//                model.birth_date = c.birth_date;
-//                //model.email = c.email;
-//                //model.password = c.password;
-//                model.type = c.type;
-//                model.save_date = c.save_date;
-//            }
-//            return View(model);
-//        }
-//        [HttpGet]
-//        public IActionResult Save(CustomerViewModel data)
-//        {
-//            customer c = new customer();
-//            c.name = data.name;
-//            c.surname = data.surname;
-//            //c.phone_area = data.phone_area;
-//            c.phone_number = data.phone_number;
-//            c.gender = data.gender;
-//            c.create_date = DateTime.Now;
-//            c.birth_date = data.birth_date;
-//            //c.email = data.email;
-//            //c.password = data.password;
-//            c.type = data.type;
-//            c.save_date = data.save_date;
+        [HttpGet]
+        public async Task<IActionResult> Save(int id)
+        {
+            CustomerViewModel model = new CustomerViewModel();
 
-//            if (c.id == 0)
-//            {
-//                _context.customer.Add(c);
-//            }
-//            else
-//            {
-//                _context.customer.Update(c);
-//            }
-//            _context.SaveChanges();
-//            return RedirectToAction("Index", "Customer");
-//        }
-//        [HttpGet]
-//        public IActionResult Delete(int id)
-//        {
-//            customer c = _context.customer.FirstOrDefault(x => x.id == id);
-//            _context.customer.Remove(c);
-//            _context.SaveChanges();
+            if (id > 0)
+            {
+                Customer c = _context.Customer.FirstOrDefault(x => x.Id == id);
+                model.name = c.Name;
+                model.surname = c.Surname;
+                //model.phone_area = c.phone_area;
+                model.phone_number = c.PhoneNumber;
+                model.gender = c.Gender;
+                model.create_date = DateTime.Now;
+                model.birth_date = c.BirthDate;
+                //model.email = c.email;
+                //model.password = c.password;
+                model.type = c.Type;
+                model.save_date = c.SaveDate;
+            }
+            return View(model);
+        }
+        [HttpGet]
+        public IActionResult Save(CustomerViewModel data)
+        {
+            Customer c = new Customer();
+            c.Name = data.name;
+            c.Surname = data.surname;
+            //c.phone_area = data.phone_area;
+            c.PhoneNumber = data.phone_number;
+            c.Gender = data.gender;
+            c.CreateDate = DateTime.Now;
+            c.BirthDate = data.birth_date;
+            //c.email = data.email;
+            //c.password = data.password;
+            c.Type = data.type;
+            c.SaveDate = data.save_date;
 
-//            return RedirectToAction("Index", "Customer");
-//        }
-//        public IActionResult List()
-//        {
-//            return View();
-//        }
-//    }
-//}
+            if (c.Id == 0)
+            {
+                _context.Customer.Add(c);
+            }
+            else
+            {
+                _context.Customer.Update(c);
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Customer");
+        }
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            Customer c = _context.Customer.FirstOrDefault(x => x.Id == id);
+            _context.Customer.Remove(c);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Customer");
+        }
+        public IActionResult List()
+        {
+            return View();
+        }
+    }
+}

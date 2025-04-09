@@ -24,7 +24,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">ECOMMERCE</a>
             <div class="d-flex align-items-center">
-                <span class="text-light me-3">Kullanıcı Adı</span>
+                <span class="text-light me-3">Kullanıcı adı</span>
                 <a href="/Home/Index" class="btn btn-outline-light">Çıkış</a>
             </div>
         </div>
@@ -40,6 +40,9 @@
                 <li class="nav-item"><a href="/Admin/Order/Index" class="nav-link text-white">Siparişler</a></li>
             </ul> *@
             <ul class="nav flex-column mt-4">
+                <li class="nav-item">
+                    <a href="/Admin/AppUser/Index" class="nav-link text-white @(Context.Request.Path.StartsWithSegments("/Admin/AppUser") ? "active" : "")">Kullanıcılar</a>
+                </li>
                 <li class="nav-item">
                     <a href="/Admin/Category/Index" class="nav-link text-white @(Context.Request.Path.StartsWithSegments("/Admin/Category") ? "active" : "")">Kategoriler</a>
                 </li>
