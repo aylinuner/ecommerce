@@ -237,6 +237,7 @@ namespace ecommerce.Controllers
                     //parametredeki viewmodeldeki verileri appuser nesnesine aktardým.
                     AppUser user = new()
                     {
+                        FullName="Aylin",
                         UserName = model.name,
                         Email = model.email,
                         NormalizedEmail = model.email.ToUpper(),
@@ -244,7 +245,7 @@ namespace ecommerce.Controllers
                         EmailConfirmed = false,
                         SecurityStamp = Guid.NewGuid().ToString(),
                         PasswordHash = passwordHasher.HashPassword(null, model.password), //þifreyi þifrelemek
-                        //Profile = new AppUserProfile { FirstName = model.name, LastName = model.surname }, //kullanýcýnýn profil kaydýnýda oluþturmuþ oluyoruz
+                        Profile = new AppUserProfile { FirstName = model.name, LastName = model.surname }, //kullanýcýnýn profil kaydýnýda oluþturmuþ oluyoruz
                     };
 
                     //yeni kullanýcý oluþtur ve kaydet

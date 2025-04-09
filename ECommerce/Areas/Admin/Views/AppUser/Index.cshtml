@@ -10,51 +10,28 @@
         </tr>
     </thead>
     <tbody>
-        @if (ViewBag.AppUserProfile != null)
+        @foreach (var user in Model)
         {
-            foreach (AppUserProfile item in ViewBag.AppUserProfile)
-            {
-                <tr class="customer-row" data-id="@item.Id">
-                    <td>@item.FirstName</td>
-                    <td>@item.LastName</td>
-                    <td>
-                        <button class="btn btn-danger btn-sm delete-btn" data-id="@item.Id">Sil</button>
-                        <button class="btn btn-primary btn-sm update-btn" data-id="@item.Id">Güncelle</button>
-                    </td>
-                </tr>
-            }
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>
+                    <!-- Silme butonu -->
+                    <form action="/User/Delete" method="post" onsubmit="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?')">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-danger">Sil</button>
+                    </form>
+                </td>
+                <td>
+                    <!-- Güncelleme butonu -->
+                    <form action="/User/Update" method="get">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-primary">Güncelle</button>
+                    </form>
+                </td>
+            </tr>
         }
+
     </tbody>
 </table>
-
-<script>
-    $(document).ready(function () {
-        // Silme işlemi
-        $('.delete-btn').click(function () {
-            var id = $(this).data('id');
-            if (confirm("Bu kullanıcıyı silmek istediğinize emin misiniz?")) {
-                $.ajax({
-                    url: '/User/Delete',
-                    type: 'POST',
-                    data: { id: id },
-                    success: function () {
-                        location.reload(); // Sayfayı yenileyerek güncel tabloyu göster
-                    },
-                    error: function () {
-                        alert("Silme işlemi başarısız.");
-                    }
-                });
-            }
-        });
-
-        // Güncelleme işlemi için örnek
-        $('.update-btn').click(function () {
-            var id = $(this).data('id');
-            // Burada modalle form açabilir veya direkt bir işlem yapabilirsin
-            alert("Güncelleme için ID: " + id); // geçici
-            // Örnek: $('#updateModal').modal('show');
-        });
-    });
-</script>
-
 
