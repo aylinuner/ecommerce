@@ -245,7 +245,7 @@ namespace ecommerce.Controllers
                         EmailConfirmed = false,
                         SecurityStamp = Guid.NewGuid().ToString(),
                         PasswordHash = passwordHasher.HashPassword(null, model.password), //þifreyi þifrelemek
-                        Profile = new AppUserProfile { FirstName = model.name, LastName = model.surname }, //kullanýcýnýn profil kaydýnýda oluþturmuþ oluyoruz
+                        //Profile = new AppUserProfile { FirstName = model.name, LastName = model.surname }, //kullanýcýnýn profil kaydýnýda oluþturmuþ oluyoruz
                     };
 
                     //yeni kullanýcý oluþtur ve kaydet
@@ -254,7 +254,7 @@ namespace ecommerce.Controllers
                     if (result.Succeeded)
                     {
                         //kullanýcý profilini oluþtur. Rol ata ve kaydet
-                        await _userManager.AddToRoleAsync(user, "Visitor");
+                        await _userManager.AddToRoleAsync(user, "Customer");
                         //Bu kod (sinInManager) oturum açýldýktan sonra sana bir user vereceðim o user oturum açmýþ olarak ayarla.(html kodu yazýlacak.)
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return RedirectToAction("Index", "Home");
@@ -281,8 +281,6 @@ namespace ecommerce.Controllers
             // Ana sayfaya yönlendirme
             return RedirectToAction("Index", "Home");
         }
-
-    
 
         public bool IsValidPassword(string password)
         {

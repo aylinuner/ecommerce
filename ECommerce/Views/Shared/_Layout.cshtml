@@ -55,7 +55,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand fw-bold text-dark" href="#">
+                <a class="navbar-brand fw-bold text-dark" href="/Home/Index">
                     <img src="https://www.vatanbilgisayar.com/assets/dist/images/sitelogo.svg" alt="Logo" width="100" height="50" class="d-inline-block align-text-top">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -95,7 +95,7 @@
                 <form asp-controller="User" asp-action="Logout" method="post">
                     @{
                         var user = await UserManager.GetUserAsync(User); // Oturum açmış kullanıcıyı alıyoruz.
-                        if (user != null && !await UserManager.IsInRoleAsync(user, "Visitor")) // kullanıcı rollerinde visitor diye bir rol yoksa navbarda admin paneline geçiş butonunu göster.
+                        if (user != null && !await UserManager.IsInRoleAsync(user, "Customer")) // kullanıcı rollerinde customer diye bir rol yoksa navbarda admin paneline geçiş butonunu göster.
                         {
                             @Html.ActionLink("Admin", "Index", "Home", new { area = "Admin" }, new { @class = "btn btn-dark" })
 
