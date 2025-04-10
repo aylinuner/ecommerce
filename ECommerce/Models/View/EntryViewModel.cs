@@ -4,55 +4,50 @@ namespace ecommerce.Models.View
 {
     public class EntryViewModel
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public string waybill_no { get; set; } = null!;
+        public string WaybillNo { get; set; } = null!;
 
-        public DateTime waybill_date { get; set; }
+        public DateTime WaybillDate { get; set; }
 
-        public int waybill_total { get; set; }
+        public int WaybillTotal { get; set; }
 
-        public int? supplier_id { get; set; }
+        public int? SupplierId { get; set; }
 
-        public int? receiver_id { get; set; }
+        public int? ReceiverId { get; set; }
 
-        public DateTime create_date { get; set; }
+        public DateTime CreateDate { get; set; }
 
-        public DateTime? update_date { get; set; }
-        public virtual List<EntryDetailViewModel> entry_details { get; set; } = new List<EntryDetailViewModel>();
-
-
-        //public virtual ICollection<EntryDetailViewModel> entry_details { get; set; } = new List<EntryDetailViewModel>();
-
-
+        public DateTime? UpdateDate { get; set; }
+        public virtual List<EntryDetailViewModel> EntryDetails { get; set; } = new List<EntryDetailViewModel>();
     }
-    public class EntryDetailViewModel 
+
+    public class EntryDetailViewModel
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int category_id { get; set; }
+        public int CategoryId { get; set; }
 
-        public string category_name { get; set; } = null!;
+        public string CategoryName { get; set; } = null!;
 
-        public int product_id { get; set; }
+        public int ProductId { get; set; }
 
-        public string product_name { get; set; } = null!;
+        public string ProductName { get; set; } = null!;
 
-        public int quantity { get; set; }
+        public int Quantity { get; set; }
 
-        public int amount { get; set; }
+        public int Amount { get; set; }
 
-        public int total_amount { get; set; }
+        public int TotalAmount { get; set; }
 
-        public int weight { get; set; }
+        public int Weight { get; set; }
 
-        public DateTime create_date { get; set; }
+        public DateTime CreateDate { get; set; }
 
-        public DateTime? update_date { get; set; }
+        public DateTime? UpdateDate { get; set; }
 
-        public int entry_master_id { get; set; }
+        public int EntryMasterId { get; set; }
 
-        //public product product { get; set; }
+        public Product Product { get; set; }
     }
-
 }

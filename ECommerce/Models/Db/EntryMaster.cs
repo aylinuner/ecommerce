@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ecommerce.Models.Db;
+using System;
 using System.Collections.Generic;
 
 namespace ecommerce.Models;
@@ -21,5 +22,5 @@ public partial class EntryMaster
 
     public DateTime? UpdateDate { get; set; }
 
-    //public virtual ICollection<EntryDetail> EntryDetail { get; set; } = new List<EntryDetail>();
+    public virtual ICollection<EntryDetail> EntryDetail { get; set; } = new List<EntryDetail>();
 }

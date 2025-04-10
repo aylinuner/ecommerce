@@ -30,13 +30,16 @@ namespace ecommerce.Models.Db
         public DbSet<Customer> Customer { get; set; }
         public DbSet<DeliveryType> DeliveryType { get; set; }
         public DbSet<District> District { get; set; }
+        public DbSet<EntryMaster> EntryMaster { get; set; }
+        public DbSet<EntryDetail> EntryDetail { get; set; }
+
         public DbSet<Home> Home { get; set; }
         public DbSet<Membership> Membership { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<StockMovement> StockMovement { get; set; }
         public DbSet<UserAddress> UserAddress { get; set; }
-        public DbSet<AppUserProfile> AppUserProfile { get; set; }
+        //public DbSet<AppUserProfile> AppUserProfile { get; set; }
 
 
 

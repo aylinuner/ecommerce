@@ -4,25 +4,25 @@
 <div class="container mt-5">
     <h2 class="mb-4">Stok Giriş</h2>
     <form method="post" action="/Admin/Entry/Save">
-        <input type="text" id="id" asp-for="id" hidden>
+        <input type="text" id="id" asp-for="Id" hidden>
         <div class="mb-3 row">
-            <label for="waybill_no" class="col-sm-2 col-form-label">İrsaliye No:</label>
+            <label for="WaybillNo" class="col-sm-2 col-form-label">İrsaliye No:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="waybill_no" placeholder="İrsaliye no girin" asp-for="waybill_no">
+                <input type="text" class="form-control" id="WaybillNo" placeholder="İrsaliye no girin" asp-for="WaybillNo">
             </div>
         </div>
 
         <div class="mb-3 row">
-            <label for="waybill_date" class="col-sm-2 col-form-label">İrsaliye Tarihi:</label>
+            <label for="WaybillDate" class="col-sm-2 col-form-label">İrsaliye Tarihi:</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="waybill_date" asp-for="waybill_date">
+                <input type="date" class="form-control" id="WaybillDate" asp-for="WaybillDate">
             </div>
         </div>
 
         <div class="mb-3 row">
-            <label for="supplier_id" class="col-sm-2 col-form-label">Tedarikçi Firma:</label>
+            <label for="SupplierId" class="col-sm-2 col-form-label">Tedarikçi Firma:</label>
             <div class="col-sm-10">
-                <select class="form-control" id="supplier_id" asp-for="supplier_id">
+                <select class="form-control" id="SupplierId" asp-for="SupplierId">
                     <option value="">Seçiniz</option>
                     @foreach (var supplier in ViewBag.suppliers ?? new List<SelectListItem>())
                     {
@@ -33,16 +33,16 @@
         </div>
 
         <div class="mb-3 row">
-            <label for="waybill_total" class="col-sm-2 col-form-label">İrsaliye Tutarı</label>
+            <label for="WaybillTotal" class="col-sm-2 col-form-label">İrsaliye Tutarı</label>
             <div class="col-sm-10">
-                <input type="number" step="0.01" class="form-control" id="waybill_total" placeholder="İrsaliye tutarını girin" asp-for="waybill_total">
+                <input type="number" step="0.01" class="form-control" id="WaybillTotal" placeholder="İrsaliye tutarını girin" asp-for="WaybillTotal">
             </div>
         </div>
 
         <div class="mb-3 row">
-            <label for="receiver_id" class="col-sm-2 col-form-label">Teslim Alan Kişi</label>
+            <label for="ReceiverId" class="col-sm-2 col-form-label">Teslim Alan Kişi</label>
             <div class="col-sm-10">
-                <select class="form-control" id="receiver_id" asp-for="receiver_id">
+                <select class="form-control" id="ReceiverId" asp-for="ReceiverId">
                     <option value="">Seçiniz</option>
                     @foreach (var user in ViewBag.users ?? new List<SelectListItem>())
                     {
@@ -66,31 +66,31 @@
             </thead>
             <tbody id="entryDetailsBody">
 
-                @for (var i = 0; i < Model.entry_details.Count; i++)
+                @for (var i = 0; i < Model.EntryDetails.Count; i++)
                 {
-                    <tr class="entry_detail-row" data-id="@Model.entry_details[i].id" ondblclick="dblclick">
+                    <tr class="entry_detail-row" data-id="@Model.EntryDetails[i].Id" ondblclick="dblclick">
                         <td>
                             @* @Model.entry_details[i].product.name *@
-                            <input type="hidden" name="entry_details[@i].product_id" value="@Model.entry_details[i].product_id" />
+                            <input type="hidden" name="entry_details[@i].product_id" value="@Model.EntryDetails[i].ProductId" />
 
-                            <input type="hidden" name="entry_details[@i].id" value="@Model.entry_details[i].id" />
+                            <input type="hidden" name="entry_details[@i].id" value="@Model.EntryDetails[i].Id" />
                         </td>
 
                         <td>
-                            @Model.entry_details[i].quantity
-                            <input type="hidden" name="entry_details[@i].quantity" value="@Model.entry_details[i].quantity" class="form-control" />
+                            @Model.EntryDetails[i].Quantity
+                            <input type="hidden" name="entry_details[@i].quantity" value="@Model.EntryDetails[i].Quantity" class="form-control" />
                         </td>
                         <td>
-                            @Model.entry_details[i].amount
-                            <input type="hidden" step="0.01" name="entry_details[@i].amount" value="@Model.entry_details[i].amount" class="form-control" />
+                            @Model.EntryDetails[i].Amount
+                            <input type="hidden" step="0.01" name="entry_details[@i].amount" value="@Model.EntryDetails[i].Amount" class="form-control" />
                         </td>
                         <td>
-                            @Model.entry_details[i].total_amount
-                            <input type="hidden" step="0.01" name="entry_details[@i].total_amount" value="@Model.entry_details[i].total_amount" class="form-control" />
+                            @Model.EntryDetails[i].TotalAmount
+                            <input type="hidden" step="0.01" name="entry_details[@i].total_amount" value="@Model.EntryDetails[i].TotalAmount" class="form-control" />
                         </td>
                         <td>
-                            @Model.entry_details[i].weight
-                            <input type="hidden" step="0.01" name="entry_details[@i].weight" value="@Model.entry_details[i].weight" class="form-control" />
+                            @Model.EntryDetails[i].Weight
+                            <input type="hidden" step="0.01" name="entry_details[@i].weight" value="@Model.EntryDetails[i].Weight" class="form-control" />
                         </td>
                     </tr>
                 }
@@ -110,7 +110,7 @@
 </div>
 
 <!-- Ürün Ekle Modal -->
-<div class="modal fade" id="entry_detailModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="EntryDetailModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg ">
         <div class="modal-content">
             <div class="modal-header">
@@ -118,12 +118,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body ">
-                <form id="entry_detailForm">
-                    <input type="hidden" id="entry_detail_id">
+                <form id="EntryDetailForm">
+                    <input type="hidden" id="EntryDetailId">
 
                     <div class="mb-3">
                         <label class="form-label">Ürün</label>
-                        <select class="form-control" id="product_id">
+                        <select class="form-control" id="ProductId">
                             <option value="">Ürün Seçiniz</option>
                             @foreach (var product in ViewBag.products ?? new List<SelectListItem>())
                             {
@@ -133,15 +133,15 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Adet</label>
-                        <input type="number" class="form-control" id="quantity" required>
+                        <input type="number" class="form-control" id="Quantity" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Birim Fiyat</label>
-                        <input type="number" step="0.01" class="form-control" id="amount" required>
+                        <input type="number" step="0.01" class="form-control" id="Amount" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Ağırlık</label>
-                        <input type="number" step="0.01" class="form-control" id="weight" required>
+                        <input type="number" step="0.01" class="form-control" id="Weight" required>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="saveEntryDetail()">Kaydet</button>
                     <button type="button" class="btn btn-danger" onclick="deleteProductToTable()">Sil</button>
@@ -155,7 +155,7 @@
 
 <script>
         document.addEventListener("dblclick", function (event) {
-        var row = event.target.closest(".entry_detail-row");
+        var row = event.target.closest(".EntryDetail-row");
         if (row) {
             var entryDetailId = row.getAttribute("data-id");
 
@@ -164,15 +164,15 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data) {
-                        document.getElementById("entry_detail_id").value = data.id;
-                        document.getElementById("product_id").value = data.product_id;
-                        document.getElementById("quantity").value = data.quantity;
-                        document.getElementById("amount").value = data.amount;
-                        document.getElementById("weight").value = data.weight;
+                        document.getElementById("EntryDetailId").value = data.id;
+                        document.getElementById("ProductId").value = data.product_id;
+                        document.getElementById("Quantity").value = data.quantity;
+                        document.getElementById("Amount").value = data.amount;
+                        document.getElementById("Weight").value = data.weight;
                     }
 
                     // Modalı aç
-                    var modal = new bootstrap.Modal(document.getElementById('entry_detailModal'));
+                    var modal = new bootstrap.Modal(document.getElementById('EntryDetailModal'));
                     modal.show();
                 })
                 .catch(error => console.error("Veri alınırken hata oluştu:", error));
@@ -181,24 +181,24 @@
 
     // "Yeni Ürün Ekle" butonuna basılınca boş modal aç
     document.getElementById("newProductButton").addEventListener("click", function () {
-        document.getElementById("entry_detail_id").value = "";
-        document.getElementById("product_id").value = "";
-        document.getElementById("quantity").value = "";
-        document.getElementById("amount").value = "";
-        document.getElementById("weight").value = "";
+        document.getElementById("EntryDetailId").value = "";
+        document.getElementById("ProductId").value = "";
+        document.getElementById("Quantity").value = "";
+        document.getElementById("Amount").value = "";
+        document.getElementById("Weight").value = "";
 
-        var modal = new bootstrap.Modal(document.getElementById('entry_detailModal'));
+        var modal = new bootstrap.Modal(document.getElementById('EntryDetailModal'));
         modal.show();
     });
 
         function saveEntryDetail() {
-        let product_name = document.getElementById("product_id");
-        let quantity = document.getElementById("quantity").value;
-        let amount = document.getElementById("amount").value;
-        let total_amount = (quantity * amount).toFixed(2);
-        let weight = document.getElementById("weight").value;
+        let product_name = document.getElementById("ProductId");
+        let quantity = document.getElementById("Quantity").value;
+        let amount = document.getElementById("Amount").value;
+        let total_amount = (Quantity * Amount).toFixed(2);
+        let weight = document.getElementById("Weight").value;
 
-        if (!product_name.value || quantity <= 0 || amount <= 0 || weight <= 0) {
+        if (!ProductName.value || Quantity <= 0 || Amount <= 0 || Weight <= 0) {
             alert("Lütfen tüm alanları doğru şekilde doldurun!");
             return;
         }
@@ -211,18 +211,18 @@
 
         let newRow = `
             <tr>
-                <td>${product_name.options[product_name.selectedIndex].text}</td>
-                <td>${quantity}</td>
-                <td>${amount}</td>
-                <td>${total_amount}</td>
-                <td>${weight}</td>
+                <td>${ProductName.options[ProductName.selectedIndex].text}</td>
+                <td>${Quantity}</td>
+                <td>${Amount}</td>
+                <td>${TotalAmount}</td>
+                <td>${Weight}</td>
             </tr>
         `;
         tableBody.insertAdjacentHTML("beforeend", newRow);
 
-        document.getElementById("entry_detailForm").reset();
+        document.getElementById("EntryDetailForm").reset();
 
-        let modalElement = document.getElementById('entry_detailModal');
+        let modalElement = document.getElementById('EntryDetailModal');
         let modalInstance = bootstrap.Modal.getInstance(modalElement);
         if (modalInstance) modalInstance.hide();
     }
