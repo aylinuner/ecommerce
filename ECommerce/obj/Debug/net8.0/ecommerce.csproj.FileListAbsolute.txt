@@ -1185,7 +1185,6 @@ C:\Projects\ersoy\ecommerce\ECommerce\bin\Debug\net8.0\appsettings.Development.j
 C:\Projects\ersoy\ecommerce\ECommerce\bin\Debug\net8.0\appsettings.json
 C:\Projects\ersoy\ecommerce\ECommerce\bin\Debug\net8.0\bundleconfig.json
 C:\Projects\ersoy\ecommerce\ECommerce\bin\Debug\net8.0\ecommerce.staticwebassets.runtime.json
-C:\Projects\ersoy\ecommerce\ECommerce\bin\Debug\net8.0\ecommerce.staticwebassets.endpoints.json
 C:\Projects\ersoy\ecommerce\ECommerce\bin\Debug\net8.0\ecommerce.exe
 C:\Projects\ersoy\ecommerce\ECommerce\bin\Debug\net8.0\ecommerce.deps.json
 C:\Projects\ersoy\ecommerce\ECommerce\bin\Debug\net8.0\ecommerce.runtimeconfig.json
@@ -1427,9 +1426,7 @@ C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\scopedcss\bundle\ecommerc
 C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\scopedcss\projectbundle\ecommerce.bundle.scp.css
 C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\staticwebassets.build.json
 C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\staticwebassets.development.json
-C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\staticwebassets\msbuild.ecommerce.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\staticwebassets\msbuild.ecommerce.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\staticwebassets\msbuild.build.ecommerce.props
 C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ecommerce.props
 C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ecommerce.props
@@ -1441,7 +1438,6 @@ C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.pdb
 C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ecommerce.genruntimeconfig.cache
 C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\ref\ecommerce.dll
 C:\Projects\ersoy\ecommerce\ECommerce\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Projects\ersoy\ecommerce\ECommerce\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\projeler\ecommerce\ECommerce\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 C:\projeler\ecommerce\ECommerce\bin\Debug\net8.0\MailKit.dll
 C:\projeler\ecommerce\ECommerce\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll

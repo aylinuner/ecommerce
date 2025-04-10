@@ -17,157 +17,155 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ecommerce
 build_property.RootNamespace = ecommerce
-build_property.ProjectDir = C:\projeler\ecommerce\ECommerce\
+build_property.ProjectDir = C:\Projects\ersoy\ecommerce\ECommerce\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\projeler\ecommerce\ECommerce
+build_property.MSBuildProjectDirectory = C:\Projects\ersoy\ecommerce\ECommerce
 build_property._RazorSourceGeneratorDebug = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/AppUser/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/AppUser/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXBwVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/AppUser/Save.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/AppUser/Save.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXBwVXNlclxTYXZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/Category/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/Category/Save.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/Category/Save.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcU2F2ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/Customer/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/Customer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/Entry/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/Entry/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW50cnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/Entry/Save.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/Entry/Save.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW50cnlcU2F2ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/Order/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/ProductCategory/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/ProductCategory/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdENhdGVnb3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/Product/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/Product/Save.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/Product/Save.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxTYXZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/Shared/_Layout.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/User/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/User/Save.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/User/Save.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxTYXZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Basket/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Basket/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Home/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Home/Privacy.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Order/Delivery.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Order/Delivery.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGVsaXZlcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Order/Payment.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Order/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcUGF5bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/ProductDetail/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/ProductDetail/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Product/Index.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Shared/Components/CategoryMenu/Default.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Shared/Components/CategoryMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcnlNZW51XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Shared/Components/UserPanel/Default.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Shared/Components/UserPanel/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVXNlclBhbmVsXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Shared/Error.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/UserPanel/Address.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/UserPanel/Address.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclBhbmVsXEFkZHJlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/UserPanel/Membership.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/UserPanel/Membership.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclBhbmVsXE1lbWJlcnNoaXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/UserPanel/Order.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/UserPanel/Order.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclBhbmVsXE9yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/User/Login.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/User/Register.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/_ViewImports.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/_ViewStart.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/projeler/ecommerce/ECommerce/Views/Shared/_Layout.cshtml]
+[C:/Projects/ersoy/ecommerce/ECommerce/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9gj9yy8tln

@@ -12,8 +12,8 @@ using ecommerce.Models.Db;
 namespace ecommerce.Migrations
 {
     [DbContext(typeof(_DbContext))]
-    [Migration("20250409093403_10")]
-    partial class _10
+    [Migration("20250410102604_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -156,36 +156,6 @@ namespace ecommerce.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("ecommerce.Models.AppUserProfile", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AppUserProfile");
                 });
 
             modelBuilder.Entity("ecommerce.Models.Bank", b =>
@@ -393,9 +363,6 @@ namespace ecommerce.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int>("ProfileId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -415,8 +382,6 @@ namespace ecommerce.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("ProfileId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -475,6 +440,58 @@ namespace ecommerce.Migrations
                     b.ToTable("Customer");
                 });
 
+            modelBuilder.Entity("ecommerce.Models.Db.EntryDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EntryMasterId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalAmount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntryMasterId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("EntryDetail");
+                });
+
             modelBuilder.Entity("ecommerce.Models.DeliveryType", b =>
                 {
                     b.Property<int>("Id")
@@ -526,6 +543,41 @@ namespace ecommerce.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("District");
+                });
+
+            modelBuilder.Entity("ecommerce.Models.EntryMaster", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ReceiverId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SupplierId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("WaybillDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("WaybillNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("WaybillTotal")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EntryMaster");
                 });
 
             modelBuilder.Entity("ecommerce.Models.Home", b =>
@@ -797,15 +849,21 @@ namespace ecommerce.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ecommerce.Models.Custom.AppUser", b =>
+            modelBuilder.Entity("ecommerce.Models.Db.EntryDetail", b =>
                 {
-                    b.HasOne("ecommerce.Models.AppUserProfile", "Profile")
-                        .WithMany()
-                        .HasForeignKey("ProfileId")
+                    b.HasOne("ecommerce.Models.EntryMaster", null)
+                        .WithMany("EntryDetail")
+                        .HasForeignKey("EntryMasterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Profile");
+                    b.HasOne("ecommerce.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ecommerce.Models.Home", b =>
@@ -905,6 +963,11 @@ namespace ecommerce.Migrations
             modelBuilder.Entity("ecommerce.Models.District", b =>
                 {
                     b.Navigation("UserAddress");
+                });
+
+            modelBuilder.Entity("ecommerce.Models.EntryMaster", b =>
+                {
+                    b.Navigation("EntryDetail");
                 });
 
             modelBuilder.Entity("ecommerce.Models.Order", b =>
