@@ -21,6 +21,7 @@ namespace ecommerce.Models.Db
         }
 
         public DbSet<AppUser> AppUser { get; set; }
+        public DbSet<AppRole> AppRole { get; set; }
         public DbSet<Bank> Bank { get; set; }
         public DbSet<Basket> Basket { get; set; }
         public DbSet<Brand> Brand { get; set; }
@@ -32,7 +33,6 @@ namespace ecommerce.Models.Db
         public DbSet<District> District { get; set; }
         public DbSet<EntryMaster> EntryMaster { get; set; }
         public DbSet<EntryDetail> EntryDetail { get; set; }
-
         public DbSet<Home> Home { get; set; }
         public DbSet<Membership> Membership { get; set; }
         public DbSet<Order> Order { get; set; }
@@ -40,9 +40,5 @@ namespace ecommerce.Models.Db
         public DbSet<StockMovement> StockMovement { get; set; }
         public DbSet<UserAddress> UserAddress { get; set; }
         //public DbSet<AppUserProfile> AppUserProfile { get; set; }
-
-
-
-
     }
 }

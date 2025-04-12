@@ -1,23 +1,82 @@
-﻿@using ecommerce.Models.Custom
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
 @model ecommerce.Models.Custom.AppUser
+
 @{
-    var user = ViewBag.User as AppUser;
+    var roles = ViewBag.Roles as List<SelectListItem>;
+    var user = ViewBag.User as ecommerce.Models.Custom.AppUser;
 }
 
-<h2>Kullanıcı Güncelle</h2>
-
 <form asp-action="Save" method="post">
-    <input type="hidden" name="Id" value="@user.Id" />
     <input type="hidden" asp-for="Id" />
-    <div class="form-group">
-        <label>Kullanıcı Adı</label>
-        <input type="text" name="UserName" class="form-control" value="@user.UserName" />
+
+    <div class="mb-3">
+        <label asp-for="UserName" class="form-label"></label>
+        <input asp-for="UserName" class="form-control" />
     </div>
 
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="Email" class="form-control" value="@user.Email" />
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
     </div>
 
-    <button type="submit" class="btn btn-success">Kaydet</button>
+    <div class="mb-3">
+        <label>Rol:</label>
+        <input type="text" id="selectedRoleDisplay" class="form-control" disabled />
+        <input type="hidden" name="selectedRole" id="selectedRole" />
+        <button type="button" class="btn btn-secondary mt-2" data-bs-toggle="modal" data-bs-target="#roleModal">
+            Rol Seç
+        </button>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
 </form>
+
+@if (ViewBag.Errors != null)
+{
+    <ul class="text-danger mt-3">
+        @foreach (var error in ViewBag.Errors)
+        {
+            <li>@error</li>
+        }
+    </ul>
+}
+
+<!-- Rol Seç Modal -->
+<div class="modal fade" id="roleModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Rol Seç</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+             <div class="modal-body ">
+                <form id="roleForm">
+                    <input type="hidden" id="roleId">
+
+                    <div class="mb-3">
+                        <label class="form-label">Roller</label>
+                        <select class="form-control" id="Id">
+                            <option value="">Rol seç</option>
+                            @foreach (var role in roles ?? new List<SelectListItem>())
+                            {
+                                <option value="@role.Value">@role.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="saveEntryDetail()">Kaydet</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteProductToTable()">Sil</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectRole(role) {
+        document.getElementById("selectedRoleDisplay").value = role;
+        document.getElementById("selectedRole").value = role;
+
+        var modal = bootstrap.Modal.getInstance(document.getElementById('roleModal'));
+        modal.hide();
+    }
+</script>

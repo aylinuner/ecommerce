@@ -2,6 +2,8 @@
 using ecommerce.Models.View;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Areas.Admin.Controllers
 {
@@ -9,10 +11,12 @@ namespace ecommerce.Areas.Admin.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly RoleManager<AppRole> _roleManager;
 
-        public UserController(UserManager<AppUser> userManager)
+        public UserController(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public IActionResult Index()
@@ -34,12 +38,23 @@ namespace ecommerce.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            // Tüm rolleri çek
+            var allRoles = await _roleManager.Roles.ToListAsync();
+
+            // Rolleri ViewBag'e ekle
+            ViewBag.Roles = allRoles.Select(r => new SelectListItem
+            {
+                Text = r.Name,
+                Value = r.Name
+            }).ToList();
 
             ViewBag.User = user;
-            return View();
+            return View(user);
         }
+
+
         [HttpPost]
-        public async Task<IActionResult> Save(AppUser data)
+        public async Task<IActionResult> Save(AppUser data, string selectedRole)
         {
             if (data == null)
             {
@@ -55,17 +70,47 @@ namespace ecommerce.Areas.Admin.Controllers
             user.UserName = data.UserName;
             user.Email = data.Email;
 
-            var result = await _userManager.UpdateAsync(user);
+            var updateResult = await _userManager.UpdateAsync(user);
 
-            if (result.Succeeded)
+            if (!updateResult.Succeeded)
             {
-                return RedirectToAction("Index");
+                ViewBag.Errors = updateResult.Errors.Select(e => e.Description).ToList();
+                ViewBag.User = user;
+                return View(data);
             }
 
-            ViewBag.Errors = result.Errors.Select(e => e.Description).ToList();
-            ViewBag.User = user;
-            return View(data); // Geriye modelin bilgilerini de tekrar view'a gönder
-        }
+            // Tüm rollerden çıkar
+            var currentRoles = await _userManager.GetRolesAsync(user);
+            await _userManager.RemoveFromRolesAsync(user, currentRoles);
 
+            // Yeni rol ata (boş değilse)
+            if (!string.IsNullOrEmpty(selectedRole))
+            {
+                var addResult = await _userManager.AddToRoleAsync(user, selectedRole);
+                if (!addResult.Succeeded)
+                {
+                    ViewBag.Errors = addResult.Errors.Select(e => e.Description).ToList();
+                    ViewBag.User = user;
+                    return View(data);
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }
+
+
+//    var result = await _userManager.UpdateAsync(user);
+
+//        if (result.Succeeded)
+//        {
+//            return RedirectToAction("Index");
+//        }
+
+//        ViewBag.Errors = result.Errors.Select(e => e.Description).ToList();
+//        ViewBag.User = user;
+//        return View(data); // Geriye modelin bilgilerini de tekrar view'a gönder
+//    }
+
+//}
