@@ -13,6 +13,9 @@
 
 
         public List<RoleViewModel> Roles { get; set; }
+
+        // Eklendi:
+        public string SelectedRole { get; set; }
     }
 
     public class RoleViewModel

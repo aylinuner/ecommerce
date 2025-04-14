@@ -1,16 +1,11 @@
-﻿@using Microsoft.AspNetCore.Mvc.Rendering
-@model ecommerce.Models.Custom.AppUser
-
+﻿@using ecommerce.Models.Custom
+@using ecommerce.Models.View
+@model ecommerce.Models.View.AppUserViewModel
 @{
     var roles = ViewBag.Roles as List<SelectListItem>;
-    var user = ViewBag.User as ecommerce.Models.Custom.AppUser;
 }
-
 <form asp-action="Save" method="post">
     <input type="hidden" asp-for="Id" />
-
-
-
 
     <div class="mb-3">
         <label asp-for="UserName" class="form-label"></label>
@@ -20,15 +15,31 @@
     <div class="mb-3">
         <label asp-for="Email" class="form-label"></label>
         <input asp-for="Email" class="form-control" />
+    </div>  
+    
+    <div class="mb-3">
+        <label asp-for="PhoneNumber" class="form-label"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
     </div>
 
-    <div class="mb-3">
+    @* <div class="mb-3">
         <label>Rol:</label>
         <input type="text" id="selectedRoleDisplay" class="form-control" disabled />
         <input type="hidden" name="selectedRole" id="selectedRole" />
+
         <button type="button" class="btn btn-secondary mt-2" data-bs-toggle="modal" data-bs-target="#roleModal">
             Rol Seç
         </button>
+    </div> *@
+    <div class="mb-3">
+        <label class="form-label">Roller</label>
+        <select class="form-control" id="Id">
+            <option value="">Rol seç</option>
+            @foreach (var role in Model.Roles ?? new List<RoleViewModel>())
+            {
+                <option value="@role.RoleId">@role.RoleName</option>
+            }
+        </select>
     </div>
 
     <button type="submit" class="btn btn-primary">Kaydet</button>
@@ -52,7 +63,7 @@
                 <h5 class="modal-title">Rol Seç</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
             </div>
-             <div class="modal-body ">
+            <div class="modal-body ">
                 <form id="roleForm">
                     <input type="hidden" id="roleId">
 
@@ -60,9 +71,9 @@
                         <label class="form-label">Roller</label>
                         <select class="form-control" id="Id">
                             <option value="">Rol seç</option>
-                            @foreach (var role in roles ?? new List<SelectListItem>())
+                            @foreach (var role in Model.Roles ?? new List<RoleViewModel>())
                             {
-                                <option value="@role.Value">@role.Text</option>
+                                <option value="@role.RoleId">@role.RoleName</option>
                             }
                         </select>
                     </div>
@@ -75,9 +86,13 @@
 </div>
 
 <script>
-    function selectRole(role) {
-        document.getElementById("selectedRoleDisplay").value = role;
-        document.getElementById("selectedRole").value = role;
+    function saveEntryDetail() {
+        const roleSelect = document.getElementById("Id");
+        const selectedText = roleSelect.options[roleSelect.selectedIndex].text;
+        const selectedValue = roleSelect.value;
+
+        document.getElementById("selectedRoleDisplay").value = selectedText;
+        document.getElementById("selectedRole").value = selectedValue;
 
         var modal = bootstrap.Modal.getInstance(document.getElementById('roleModal'));
         modal.hide();

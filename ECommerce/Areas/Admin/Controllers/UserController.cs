@@ -26,73 +26,70 @@ namespace ecommerce.Areas.Admin.Controllers
             return View();
         }
         [HttpGet]
-        public async Task<IActionResult> Save(string Id)
+        public async Task<IActionResult> Save(string id)
         {
-            if (Id == null)
-            {
-                return NotFound();
-            }
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null) return NotFound();
 
-            var user = await _userManager.FindByIdAsync(Id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-            // Tüm rolleri çek
-            var allRoles = await _roleManager.Roles.ToListAsync();
+            var userRoles = await _userManager.GetRolesAsync(user);
+            var allRoles = _roleManager.Roles.ToList();
 
-            // Rolleri ViewBag'e ekle
-            ViewBag.Roles = allRoles.Select(r => new SelectListItem
+            var viewModel = new AppUserViewModel
             {
-                Text = r.Name,
-                Value = r.Name
+                Id = user.Id,
+                UserName = user.UserName,
+                PhoneNumber = user.PhoneNumber,
+                PhoneNumberConfirmed = user.PhoneNumberConfirmed,
+                TwoFactorEnabled = user.TwoFactorEnabled,
+                Email = user.Email,
+                CreatedDate = user.CreatedDate,
+                Roles = allRoles.Select(role => new RoleViewModel
+                {
+                    RoleId = role.Id,
+                    RoleName = role.Name
+                }).ToList(),
+                SelectedRole = userRoles.FirstOrDefault() // varsa ilk rolü gösteriyoruz
+            };
+
+            ViewBag.Roles = allRoles.Select(role => new SelectListItem
+            {
+                Value = role.Name,
+                Text = role.Name
             }).ToList();
 
-            ViewBag.User = user;
-            return View(user);
+            return View(viewModel);
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> Save(AppUser data, string selectedRole)
+        public async Task<IActionResult> Save(AppUserViewModel model)
         {
-            if (data == null)
+            var user = await _userManager.FindByIdAsync(model.Id);
+            if (user == null) return NotFound();
+
+            user.UserName = model.UserName;
+            user.Email = model.Email;
+            user.PhoneNumber = model.PhoneNumber;
+            user.PhoneNumberConfirmed = model.PhoneNumberConfirmed;
+            user.TwoFactorEnabled = model.TwoFactorEnabled;
+
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded)
             {
-                return BadRequest();
-            }
-
-            var user = await _userManager.FindByIdAsync(data.Id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            user.UserName = data.UserName;
-            user.Email = data.Email;
-
-            var updateResult = await _userManager.UpdateAsync(user);
-
-            if (!updateResult.Succeeded)
-            {
-                ViewBag.Errors = updateResult.Errors.Select(e => e.Description).ToList();
-                ViewBag.User = user;
-                return View(data);
-            }
-
-            // Tüm rollerden çıkar
-            var currentRoles = await _userManager.GetRolesAsync(user);
-            await _userManager.RemoveFromRolesAsync(user, currentRoles);
-
-            // Yeni rol ata (boş değilse)
-            if (!string.IsNullOrEmpty(selectedRole))
-            {
-                var addResult = await _userManager.AddToRoleAsync(user, selectedRole);
-                if (!addResult.Succeeded)
+                ViewBag.Errors = result.Errors.Select(e => e.Description).ToList();
+                ViewBag.Roles = _roleManager.Roles.Select(role => new SelectListItem
                 {
-                    ViewBag.Errors = addResult.Errors.Select(e => e.Description).ToList();
-                    ViewBag.User = user;
-                    return View(data);
-                }
+                    Value = role.Name,
+                    Text = role.Name
+                }).ToList();
+                return View(model);
+            }
+
+            var currentRoles = await _userManager.GetRolesAsync(user);
+            if (!string.IsNullOrEmpty(model.SelectedRole) && !currentRoles.Contains(model.SelectedRole))
+            {
+                // eski rolleri kaldır, yeni rolü ekle
+                await _userManager.RemoveFromRolesAsync(user, currentRoles);
+                await _userManager.AddToRoleAsync(user, model.SelectedRole);
             }
 
             return RedirectToAction("Index");
@@ -100,17 +97,3 @@ namespace ecommerce.Areas.Admin.Controllers
     }
 }
 
-
-//    var result = await _userManager.UpdateAsync(user);
-
-//        if (result.Succeeded)
-//        {
-//            return RedirectToAction("Index");
-//        }
-
-//        ViewBag.Errors = result.Errors.Select(e => e.Description).ToList();
-//        ViewBag.User = user;
-//        return View(data); // Geriye modelin bilgilerini de tekrar view'a gönder
-//    }
-
-//}

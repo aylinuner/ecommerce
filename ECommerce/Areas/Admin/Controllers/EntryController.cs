@@ -26,7 +26,7 @@ namespace ecommerce.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            //Ürünleri veritabanından çek.
+      
             try
             {
                 List<EntryMaster> entry_masters = await _context.EntryMaster.OrderBy(x => x.Id).ToListAsync();
@@ -46,7 +46,7 @@ namespace ecommerce.Areas.Admin.Controllers
 
             if (id > 0)
             {
-                //veritabanındaki giriş kaydı. entyr_maser içindeki entry_detail include ettik onunda içindeki product'ı include(dahil) ettik.
+                //veritabanındaki giriş kaydı. entyr_master içindeki entry_detail include ettik onunda içindeki product'ı include(dahil) ettik.
                 EntryMaster em = _context.EntryMaster.Include(x => x.EntryDetail).ThenInclude(ed => ed.Product).FirstOrDefault(x => x.Id == id);
 
                 if (em != null) // Eğer kayıt bulunursa
