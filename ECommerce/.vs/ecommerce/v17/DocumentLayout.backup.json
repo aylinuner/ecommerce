@@ -50,8 +50,7 @@
               "RelativeToolTip": "Areas\\Admin\\Views\\User\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-12T17:44:47.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T17:44:47.234Z"
             },
             {
               "$type": "Document",
@@ -61,7 +60,7 @@
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\User\\Save.cshtml",
               "ToolTip": "C:\\projeler\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\User\\Save.cshtml",
               "RelativeToolTip": "Areas\\Admin\\Views\\User\\Save.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADoAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-12T15:40:18.566Z",
               "EditorCaption": ""
@@ -76,8 +75,7 @@
               "RelativeToolTip": "Areas\\Admin\\Controllers\\UserController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T19:19:34.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T19:19:34.801Z"
             }
           ]
         }
@@ -88,8 +86,8 @@
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
         "Id": "7bdb990c-15b4-414d-8dd1-7fe116307012",
-        "Display": 1,
-        "X": 935,
+        "Display": 0,
+        "X": 934,
         "Y": 150,
         "Width": 1065,
         "Height": 481,
