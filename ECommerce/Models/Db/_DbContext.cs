@@ -8,7 +8,7 @@ using ecommerce.Models;
 
 namespace ecommerce.Models.Db
 {
-    public class _DbContext : IdentityDbContext<AppUser, IdentityRole, string, IdentityUserClaim<string>, IdentityUserRole<string>, IdentityUserLogin<string>, IdentityRoleClaim<string>, IdentityUserToken<string>>
+    public class _DbContext : IdentityDbContext<AppUser, AppRole, string, IdentityUserClaim<string>, IdentityUserRole<string>, IdentityUserLogin<string>, IdentityRoleClaim<string>, IdentityUserToken<string>>
     {
         public _DbContext(DbContextOptions<_DbContext> options) : base(options)
         {

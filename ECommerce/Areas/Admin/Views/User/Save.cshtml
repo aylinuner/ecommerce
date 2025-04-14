@@ -4,46 +4,71 @@
 @{
     var roles = ViewBag.Roles as List<SelectListItem>;
 }
+
+
 <form asp-action="Save" method="post">
     <input type="hidden" asp-for="Id" />
 
-    <div class="mb-3">
-        <label asp-for="UserName" class="form-label"></label>
-        <input asp-for="UserName" class="form-control" />
-    </div>
+    <div class="row">
+        <!-- Sol taraf: inputlar -->
+        <div class="col-6">
+            <div class="mb-3 row">
+                <label asp-for="UserName" class="form-label col-form-label col-4">Kullanıcı Adı</label>
+                <div class="col-8">
+                    <input asp-for="UserName" class="form-control" />
+                </div>
+            </div>
 
-    <div class="mb-3">
-        <label asp-for="Email" class="form-label"></label>
-        <input asp-for="Email" class="form-control" />
-    </div>  
-    
-    <div class="mb-3">
-        <label asp-for="PhoneNumber" class="form-label"></label>
-        <input asp-for="PhoneNumber" class="form-control" />
-    </div>
+            <div class="mb-3 row">
+                <label asp-for="Email" class="form-label col-form-label col-4">E-posta</label>
+                <div class="col-8">
+                    <input asp-for="Email" class="form-control" />
+                </div>
+            </div>
 
-    @* <div class="mb-3">
-        <label>Rol:</label>
-        <input type="text" id="selectedRoleDisplay" class="form-control" disabled />
-        <input type="hidden" name="selectedRole" id="selectedRole" />
+            <div class="mb-3 row">
+                <label asp-for="PhoneNumber" class="form-label col-form-label col-4">Telefon Numarası</label>
+                <div class="col-8">
+                    <input asp-for="PhoneNumber" class="form-control" />
+                </div>
+            </div>
+        </div>
 
-        <button type="button" class="btn btn-secondary mt-2" data-bs-toggle="modal" data-bs-target="#roleModal">
-            Rol Seç
-        </button>
-    </div> *@
-    <div class="mb-3">
-        <label class="form-label">Roller</label>
-        <select class="form-control" id="Id">
-            <option value="">Rol seç</option>
-            @foreach (var role in Model.Roles ?? new List<RoleViewModel>())
-            {
-                <option value="@role.RoleId">@role.RoleName</option>
-            }
-        </select>
+        <!-- Sağ taraf: roller tablo şeklinde -->
+        <div class="col-6">
+            <div class="mb-3 row">
+                <div class="col-8">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ROLLER</th>
+                                <th><button class="btn btn-primary">Yeni</button></th> <!-- Buton kısmı -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var role in Model.Roles ?? new List<RoleViewModel>())
+                            {
+                                <tr>
+                                    <td>@role.RoleName</td>
+                                    <td class="text-center" style="width:60px">
+                                        <!-- Sil butonu -->
+                                        <form action="/Sil/Endpoint" method="post">
+                                            <input type="hidden" name="roleId" value="@role.RoleId" />
+                                            <button onclick="delete() type="submit" class="btn btn-danger btn-sm " style="width:50px">Sil</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Kaydet</button>
 </form>
+
 
 @if (ViewBag.Errors != null)
 {
@@ -54,8 +79,28 @@
         }
     </ul>
 }
+<script>
+      function saveEntryDetail() {
+        const roleSelect = document.getElementById("Id");
+        const selectedText = roleSelect.options[roleSelect.selectedIndex].text;
+        const selectedValue = roleSelect.value;
 
-<!-- Rol Seç Modal -->
+        document.getElementById("selectedRoleDisplay").value = selectedText;
+        document.getElementById("selectedRole").value = selectedValue;
+
+        var modal = bootstrap.Modal.getInstance(document.getElementById('roleModal'));
+        modal.hide();
+    }
+
+    function delete(){
+        alert ("Merhaba");
+        return false;
+    }
+    
+</script>
+
+
+@* <!-- Rol Seç Modal -->
 <div class="modal fade" id="roleModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -83,18 +128,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> *@
 
-<script>
-    function saveEntryDetail() {
-        const roleSelect = document.getElementById("Id");
-        const selectedText = roleSelect.options[roleSelect.selectedIndex].text;
-        const selectedValue = roleSelect.value;
 
-        document.getElementById("selectedRoleDisplay").value = selectedText;
-        document.getElementById("selectedRole").value = selectedValue;
-
-        var modal = bootstrap.Modal.getInstance(document.getElementById('roleModal'));
-        modal.hide();
-    }
-</script>

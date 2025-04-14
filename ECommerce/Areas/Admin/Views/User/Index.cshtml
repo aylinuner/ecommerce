@@ -8,6 +8,7 @@
         <tr>
             <th>Kullanıcı Adı</th>
             <th>Email</th>
+            <th>Telefon Numarası</th>
            
         </tr>
     </thead>
@@ -19,12 +20,15 @@
                 <tr class="user-row" data-id="@user.Id">
                     <td>@user.UserName</td>
                     <td>@user.Email</td>
-                   
+                    <td>@user.PhoneNumber</td>
                 </tr>
             }
         }
         else
         {
+
+
+
             <tr><td colspan="3">Kullanıcı bulunamadı.</td></tr>
         }
     </tbody>
