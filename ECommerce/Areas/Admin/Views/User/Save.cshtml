@@ -51,14 +51,11 @@
                                 <tr>
                                     <td>@role.RoleName</td>
                                     <td class="text-center" style="width:60px">
-                                        <!-- Sil butonu -->
-                                        <form action="/Sil/Endpoint" method="post">
-                                            <input type="hidden" name="roleId" value="@role.RoleId" />
-                                            <button onclick="delete() type="submit" class="btn btn-danger btn-sm " style="width:50px">Sil</button>
-                                        </form>
+                                        <button type="button" onclick="deleteRole('1','2')" class="btn btn-danger btn-sm" style="width:50px">Sil</button>
                                     </td>
                                 </tr>
                             }
+
                         </tbody>
                     </table>
                 </div>
@@ -80,24 +77,34 @@
     </ul>
 }
 <script>
-      function saveEntryDetail() {
-        const roleSelect = document.getElementById("Id");
-        const selectedText = roleSelect.options[roleSelect.selectedIndex].text;
-        const selectedValue = roleSelect.value;
+    <script>
+      function deleteRole(userId, roleId) {
+          if (confirm("Bu rolü silmek istediğinize emin misiniz?")) {
+              const url = `/User/DeleteUserRole?userId=${encodeURIComponent(userId)}&roleId=${encodeURIComponent(roleId)}`;
 
-        document.getElementById("selectedRoleDisplay").value = selectedText;
-        document.getElementById("selectedRole").value = selectedValue;
-
-        var modal = bootstrap.Modal.getInstance(document.getElementById('roleModal'));
-        modal.hide();
-    }
-
-    function delete(){
-        alert ("Merhaba");
-        return false;
-    }
-    
+              fetch(url, {
+                  method: 'GET'
+              })
+              .then(response => {
+                  if (response.ok) {
+                      alert("Silme işlemi başarılı.");
+                      location.reload();
+                  } else {
+                      alert("Silme işlemi başarısız.");
+                  }
+              })
+              .catch(error => {
+                  console.error("Hata oluştu:", error);
+                  alert("Sunucu hatası.");
+              });
+          }
+      }
 </script>
+
+
+</script>
+
+
 
 
 @* <!-- Rol Seç Modal -->

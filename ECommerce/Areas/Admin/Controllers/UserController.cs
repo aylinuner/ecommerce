@@ -3,6 +3,7 @@ using ecommerce.Models.View;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Areas.Admin.Controllers
@@ -94,6 +95,35 @@ namespace ecommerce.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet]//class değil de değişken parametresi gönderdiğimiz için HttpGet olarak yazıypruz.
+
+        public async Task<IActionResult> DeleteUserRole(string userId, string roleId)
+        {
+            AppUser existUser = await _userManager.FindByIdAsync(userId);
+
+            if (existUser == null)
+                return NotFound("Kullanıcı bulunamadı");
+
+            IdentityRole role = await _roleManager.FindByIdAsync(roleId);
+
+            if (role == null)
+                return NotFound("Rol bulunamadı");
+
+            var result = await _userManager.RemoveFromRoleAsync(existUser, role.Name);
+
+            if (result.Succeeded)
+            {
+                // İstersen başarı mesajı verebilirsin
+                return Ok("Rol başarıyla silindi");
+            }
+            else
+            {
+                // Hataları loglayabilirsin
+                return BadRequest("Rol silinemedi");
+            }
+        }
+
     }
 }
 
