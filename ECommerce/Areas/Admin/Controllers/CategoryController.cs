@@ -2,12 +2,14 @@
 using ecommerce.Models;
 using ecommerce.Models.Db;
 using ecommerce.Models.View;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         #region Dependency Enjection (DI)

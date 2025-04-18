@@ -15,7 +15,10 @@
         public List<RoleViewModel> Roles { get; set; }
 
         // Eklendi:
-        public string SelectedRole { get; set; }
+        //public string SelectedRole { get; set; }
+        public List<string> SelectedRoles { get; set; } = new List<string>();
+        public List<string> NewRoles { get; set; } = new(); // Kaydet ile gönderilecek roller
+
     }
 
     public class RoleViewModel

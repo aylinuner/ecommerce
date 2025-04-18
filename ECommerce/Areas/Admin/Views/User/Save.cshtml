@@ -42,7 +42,7 @@
                         <thead>
                             <tr>
                                 <th>ROLLER</th>
-                                <th><button class="btn btn-primary">Yeni</button></th> <!-- Buton kısmı -->
+                                <th><button type="button" id="add-role-btn" class="btn btn-primary">Yeni</button></th> <!-- Buton kısmı -->
                             </tr>
                         </thead>
                         <tbody>
@@ -51,7 +51,7 @@
                                 <tr>
                                     <td>@role.RoleName</td>
                                     <td class="text-center" style="width:60px">
-                                        <button type="button" onclick="deleteRole('1','2')" class="btn btn-danger btn-sm" style="width:50px">Sil</button>
+                                        <button type="button" onclick="deleteRole('@Model.Id','@role.RoleId')" class="btn btn-danger btn-sm" style="width:50px">Sil</button>
                                     </td>
                                 </tr>
                             }
@@ -77,32 +77,86 @@
     </ul>
 }
 <script>
-    <script>
-      function deleteRole(userId, roleId) {
-          if (confirm("Bu rolü silmek istediğinize emin misiniz?")) {
-              const url = `/User/DeleteUserRole?userId=${encodeURIComponent(userId)}&roleId=${encodeURIComponent(roleId)}`;
+    function deleteRole(userId, roleId) {
+        if (confirm("Bu rolü silmek istediğinize emin misiniz?")) {
+            const url = `/Admin/User/DeleteUserRole?userId=${encodeURIComponent(userId)}&roleId=${encodeURIComponent(roleId)}`;
 
-              fetch(url, {
-                  method: 'GET'
-              })
-              .then(response => {
-                  if (response.ok) {
-                      alert("Silme işlemi başarılı.");
-                      location.reload();
-                  } else {
-                      alert("Silme işlemi başarısız.");
-                  }
-              })
-              .catch(error => {
-                  console.error("Hata oluştu:", error);
-                  alert("Sunucu hatası.");
-              });
-          }
-      }
+            fetch(url, {
+                method: 'GET'
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Silme işlemi başarılı.");
+                    location.reload();
+                } else {
+                    alert("Silme işlemi başarısız.");
+                }
+            })
+            .catch(error => {
+                console.error("Hata oluştu:", error);
+                alert("Sunucu hatası.");
+            });
+        }
+    }
+
+     document.getElementById("add-role-btn").addEventListener("click", function () {
+            const tbody = document.querySelector("table tbody");
+
+            // Eğer zaten eklenmişse tekrar eklemesin
+            // if (document.getElementById("new-role-row")) return;
+
+            // ViewBag.Roles kullanarak select'i Razor ile oluşturacağız
+            const row = document.createElement("tr");
+            row.id = "new-role-row";
+
+            row.innerHTML = `
+              <td>
+            <select name="NewRoles" class="form-select">
+    @foreach (var role in ViewBag.Roles as List<SelectListItem>)
+    {
+                    <option value="@role.Value">@role.Text</option>
+    }
+            </select>
+        </td>
+              @*  </td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-success btn-sm" onclick="assignRole('@Model.Id')">Ekle</button>
+                </td>*@
+            `;
+            tbody.appendChild(row);
+        });
+
+           function assignRole(userId) {
+        const roleId = document.getElementById("newRoleSelect").value;
+
+        const formData = new URLSearchParams();
+        formData.append("userId", userId);
+        formData.append("roleId", roleId);
+
+        fetch(`/Admin/User/AddUserRole`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData
+        })
+        .then(res => {
+            if (res.ok) {
+                alert("Rol eklendi.");
+                location.reload();
+            } else {
+                alert("Rol eklenemedi.");
+            }
+        })
+        .catch(err => {
+            console.error("Sunucu hatası:", err);
+            alert("Bir hata oluştu.");
+        });
+    }
+
 </script>
 
 
-</script>
 
 
 

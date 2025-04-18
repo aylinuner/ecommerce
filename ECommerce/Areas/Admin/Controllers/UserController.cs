@@ -1,14 +1,20 @@
 ﻿using ecommerce.Models.Custom;
 using ecommerce.Models.View;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Linq;
 
 namespace ecommerce.Areas.Admin.Controllers
 {
     [Area("Admin")]
+
+    [Authorize(Roles = "Admin")]
+
     public class UserController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
@@ -26,6 +32,7 @@ namespace ecommerce.Areas.Admin.Controllers
             ViewBag.Users = users;
             return View();
         }
+
         [HttpGet]
         public async Task<IActionResult> Save(string id)
         {
@@ -44,12 +51,16 @@ namespace ecommerce.Areas.Admin.Controllers
                 TwoFactorEnabled = user.TwoFactorEnabled,
                 Email = user.Email,
                 CreatedDate = user.CreatedDate,
-                Roles = allRoles.Select(role => new RoleViewModel
-                {
-                    RoleId = role.Id,
-                    RoleName = role.Name
-                }).ToList(),
-                SelectedRole = userRoles.FirstOrDefault() // varsa ilk rolü gösteriyoruz
+
+                Roles = allRoles
+                 .Where(role => userRoles.Contains(role.Name)) // sadece kullanıcının rolleri
+                 .Select(role => new RoleViewModel
+                 {
+                     RoleId = role.Id,
+                     RoleName = role.Name
+                 }).ToList(),
+
+                SelectedRoles = userRoles.ToList()
             };
 
             ViewBag.Roles = allRoles.Select(role => new SelectListItem
@@ -86,17 +97,18 @@ namespace ecommerce.Areas.Admin.Controllers
             }
 
             var currentRoles = await _userManager.GetRolesAsync(user);
-            if (!string.IsNullOrEmpty(model.SelectedRole) && !currentRoles.Contains(model.SelectedRole))
+            var newRoles = model.NewRoles ?? new List<string>();
+
+            foreach (var role in newRoles)
             {
-                // eski rolleri kaldır, yeni rolü ekle
-                await _userManager.RemoveFromRolesAsync(user, currentRoles);
-                await _userManager.AddToRoleAsync(user, model.SelectedRole);
+                if (!currentRoles.Contains(role))
+                    await _userManager.AddToRoleAsync(user, role);
             }
 
             return RedirectToAction("Index");
         }
 
-        [HttpGet]//class değil de değişken parametresi gönderdiğimiz için HttpGet olarak yazıypruz.
+        [HttpGet]//class değil de değişken parametresi gönderdiğimiz için HttpGet olarak yazıyruz.
 
         public async Task<IActionResult> DeleteUserRole(string userId, string roleId)
         {
@@ -123,6 +135,27 @@ namespace ecommerce.Areas.Admin.Controllers
                 return BadRequest("Rol silinemedi");
             }
         }
+
+        //[HttpPost]
+        //public async Task<IActionResult> AddUserRole(string userId, string roleId)
+        //{
+        //    var user = await _userManager.FindByIdAsync(userId);
+        //    var role = await _roleManager.FindByIdAsync(roleId);
+
+        //    if (user == null || role == null)
+        //        return NotFound(new { success = false, message = "Kullanıcı veya rol bulunamadı." });
+
+        //    if (await _userManager.IsInRoleAsync(user, role.Name))
+        //        return BadRequest(new { success = false, message = "Kullanıcı zaten bu rolde." });
+
+        //    var result = await _userManager.AddToRoleAsync(user, role.Name);
+
+        //    if (result.Succeeded)
+        //        return Ok(new { success = true, message = "Rol başarıyla eklendi." });
+
+        //    return BadRequest(new { success = false, message = result.Errors.FirstOrDefault()?.Description });
+        //}
+
 
     }
 }

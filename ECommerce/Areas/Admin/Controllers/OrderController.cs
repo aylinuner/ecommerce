@@ -1,5 +1,8 @@
 ﻿
 //using ecommerce.Models;
+//using ecommerce.Models.Db;
+//using ecommerce.Models.View;
+//using Microsoft.AspNetCore.Authorization;
 //using Microsoft.AspNetCore.Mvc;
 //using Microsoft.EntityFrameworkCore;
 
@@ -7,10 +10,11 @@
 //{
 //    [Area("Admin")]
 
+//    [Authorize(Roles = "Admin")]
 //    public class OrderController : Controller
 //    {
 //        private readonly _DbContext _context;
-      
+
 
 //        public OrderController(_DbContext context)
 //        {
@@ -23,7 +27,7 @@
 //        {
 //            try
 //            {
-//                List<order> orders = await _context.order.Include(a=>a.user_id).Include(b=>b.product).OrderBy(x => x.id).ToListAsync();
+//                List<Order> orders = await _context.Order.Include(a => a.UserId).Include(b => b.Product).OrderBy(x => x.Id).ToListAsync();
 //                ViewBag.orders = orders;
 //            }
 //            catch (Exception x)
@@ -32,67 +36,71 @@
 //            }
 //            return View();
 //        }
-//        //[HttpGet]
+//        [HttpGet]
 
-//        //public async Task<IActionResult> Save(int id)
-//        //{
-//        //    OrderViewModel model = new OrderViewModel();
+//        public async Task<IActionResult> Save(int Id)
+//        {
+//            OrderViewModel model = new OrderViewModel();
 
 
-//        //    if (id > 0)
-//        //    {
-//        //        order o = _context.orders.FirstOrDefault(x => x.id == id);
-//        //        model.id = o.id;
-//        //    //    model.order_id = o.order_id;
-//        //    //    model.user_id = o.user_id;
-//        //    //    model.total_amount = o.total_amount;
-//        //    //    model.payment_status = o.payment_status;
-//        //    //    model.delivery_adress = o.delivery_adress;
-//        //    //    model.upload_date = o.upload_date;
-//        //    //    model.payment_date = o.payment_date;
-//        //    //    model.create_date = DateTime.Now;
-//        //    //    model.update_date = o.update_date;
-//        //    //}
-//        //    return View(model);
-//        //}
-//        //[HttpPost]
-//        //public IActionResult Save(OrderViewModel data)
-//        //{
-//        //    order o = new order();
-//        //    o.id = data.id;
-//        //    o.order_id = data.order_id;
-//        //    o.user_id = data.user_id;
-//        //    o.total_amount = data.total_amount;
-//        //    o.payment_status = data.payment_status;
-//        //    o.delivery_adress = data.delivery_adress;
-//        //    o.upload_date = data.upload_date;
-//        //    o.payment_date = data.payment_date;
-//        //    o.create_date = DateTime.Now;
-//        //    o.update_date = data.update_date;
-//        //    if (o.id == 0)
-//        //    {
-//        //        _context.orders.Add(o);
-//        //    }
-//        //    else
-//        //    {
-//        //        _context.orders.Update(o);
-//        //    }
-//        //    _context.SaveChanges();
-//        //    return RedirectToAction("Index", "Order");
-//        //}
-//        //[HttpGet]
-//        //public IActionResult Delete(int id)
-//        //{
-//        //    order o = _context.orders.FirstOrDefault(x => x.id == id);
-//        //    _context.orders.Remove(o);
-//        //    _context.SaveChanges();
+//            if (Id > 0)
+//            {
+//                Order o = _context.Order.FirstOrDefault(x => x.Id == Id);
+//                model.Id = o.Id;
+//                //    model.order_id = o.order_id;
+//                //    model.user_id = o.user_id;
+//                //    model.total_amount = o.total_amount;
+//                //    model.payment_status = o.payment_status;
+//                //    model.delivery_adress = o.delivery_adress;
+//                //    model.upload_date = o.upload_date;
+//                //    model.payment_date = o.payment_date;
+//                //    model.create_date = DateTime.Now;
+//                //    model.update_date = o.update_date;
+//                //}
+//                return View(model);
+//            }
+//        }
+//            [HttpPost]
+//            public IActionResult Save(OrderViewModel data)
+//            {
+//                Order o = new Order();
+//                o.Id = data.Id;
+//                o.OrderId = data.OrderId;
+//                o.UserId = data.UserId;
+//                o.TotalAmount = data.TotalAmount;
+//                o.PaymentStatus = data.PaymentStatus;
+//                o.DeliveryAdress = data.DeliveryAdress;
+//                o.UploadDate = data.UploadDate;
+//                o.PaymentDate = data.PaymentDate;
+//                o.CreateDate = DateTime.Now;
+//                o.UpdateDate = data.UpdateDate;
 
-//        //    return RedirectToAction("Index", "Order");
-//        //}
-//        //public IActionResult List()
-//        //{
-//        //    return View();
-//        //}
+//                if (o.Id == 0)
+//                {
+//                    _context.Order.Add(o);
+//                }
+//                else
+//                {
+//                    _context.Order.Update(o);
+//                }
+
+//                _context.SaveChanges();
+//                return RedirectToAction("Index", "Order");
+//            }
+
+//            [HttpGet]
+//            public IActionResult Delete(int Id)
+//            {
+//                Order o = _context.Order.FirstOrDefault(x => x.Id == Id);
+//                _context.Order.Remove(o);
+//                _context.SaveChanges();
+
+//                return RedirectToAction("Index", "Order");
+//            }
+//        public IActionResult List()
+//        {
+//            return View();
+//        }
 //    }
 //}
 

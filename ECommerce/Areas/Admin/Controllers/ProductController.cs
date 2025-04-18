@@ -8,6 +8,9 @@
 //{
 //    [Area("Admin")]
 
+//[Authorize(Roles = "Admin")]
+
+
 //    public class ProductController : Controller
 //    //Controller'dan Product Controller'a miras verdik. (Yani Controller'ı soyadı gibi düşün.
 //    //O soyadına sahip olunca bütün her şeyden yararlanabiliyosun.

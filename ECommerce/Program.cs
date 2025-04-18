@@ -46,6 +46,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication(); // Kullanıcı doğrulama
+app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
@@ -60,7 +61,6 @@ app.UseEndpoints(endpoints =>
     );
 });
 
-app.UseAuthorization();
 
 
 

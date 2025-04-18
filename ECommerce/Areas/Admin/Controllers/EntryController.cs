@@ -2,6 +2,7 @@
 using ecommerce.Models.Custom;
 using ecommerce.Models.Db;
 using ecommerce.Models.View;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -13,6 +14,9 @@ using Microsoft.EntityFrameworkCore.Storage;
 namespace ecommerce.Areas.Admin.Controllers
 {
     [Area("Admin")]
+
+    [Authorize(Roles = "Admin")]
+
     //[Route("Admin")]
     //[ApiController]
     public class EntryController : Controller
