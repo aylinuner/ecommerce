@@ -21,6 +21,11 @@ builder.Services.AddIdentity<AppUser, AppRole>()
     .AddEntityFrameworkStores<_DbContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.AccessDeniedPath = "/Account/AccessDenied"; // Bu çok önemli
+});
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -65,6 +70,8 @@ app.UseEndpoints(endpoints =>
 
 
 app.Run();
+
+
 
 
 

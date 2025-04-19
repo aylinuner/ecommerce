@@ -1,5 +1,7 @@
 ﻿using ecommerce.Models;
+using ecommerce.Models.Custom;
 using ecommerce.Models.Db;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,26 +10,23 @@ namespace ecommerce.Controllers
     public class UserPanelController : Controller
     {
         private readonly _DbContext _context;
+        private readonly UserManager<AppUser> _userManager;
 
 
-        public UserPanelController(_DbContext context)
+        public UserPanelController(_DbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
+
         }
 
         public async Task<IActionResult> Membership()
         {
-            try
-            {
-                List<Membership> memberships = await _context.Membership.Include(u => u.Customer).OrderBy(x => x.Id).ToListAsync();
-                ViewBag.memberships = memberships;
-            }
-            catch (Exception x)
-            {
-                throw;
-            }
+            var user = await _userManager.GetUserAsync(User); // AppUser türünde
+            ViewBag.user = user;
             return View();
         }
+
         public async Task<IActionResult> Order()
         {
             try

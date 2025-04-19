@@ -237,7 +237,7 @@ namespace ecommerce.Controllers
                     //parametredeki viewmodeldeki verileri appuser nesnesine aktardým.
                     AppUser user = new()
                     {
-                        FullName="Aylin",
+                        FullName=model.name,
                         UserName = model.name,
                         Email = model.email,
                         NormalizedEmail = model.email.ToUpper(),

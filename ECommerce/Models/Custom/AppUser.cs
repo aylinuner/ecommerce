@@ -14,6 +14,13 @@ namespace ecommerce.Models.Custom
         [Required(ErrorMessage = "Zorunlu alan")]
         public string FullName { get; set; } // Örnek bir alan
 
+        public string? Name { get; set; }
+        public string? Surname { get; set; }
+        public string? Gender { get; set; }
+        public string? Tckn { get; set; }
+        public string? Vkn { get; set; }
+        public DateTime? BirthDate { get; set; }
+        public string? PhoneArea { get; set; }
         public AppUser()
         {
             CreatedDate = DateTime.UtcNow;
