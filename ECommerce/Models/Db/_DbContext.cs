@@ -27,6 +27,7 @@ namespace ecommerce.Models.Db
         public DbSet<Brand> Brand { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<City> City { get; set; }
+        public DbSet<Color> Color { get; set; }
         public DbSet<Company> Company { get; set; }
         public DbSet<Customer> Customer { get; set; }
         public DbSet<DeliveryType> DeliveryType { get; set; }
