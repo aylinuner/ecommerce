@@ -10,6 +10,5 @@ public partial class Color
     public string Name { get; set; }
     public DateTime CreateDate { get; set; }
     public DateTime UpdateDate { get; set; }
-    public virtual StockMaster StockMaster { get; set; } = null!;
 
 }
