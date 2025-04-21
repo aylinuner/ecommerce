@@ -1,0 +1,62 @@
+﻿@using ecommerce.Models.View
+
+
+<div class="d-flex justify-content-end align-items-center mb-3">
+    <div class="d-flex">
+        <input type="text" class="form-control me-2" placeholder="Ara..." style="width: 250px;" />
+        <button class="btn btn-outline-secondary me-2">Ara</button>
+        @Html.ActionLink("Yeni", "Save", "StockMaster", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+
+
+<table class="table table-striped table-bordered mt-3">
+
+    <thead class="table-dark">
+
+        <tr>
+            <th>Fotoğraf</th>
+            <th>Ad</th>
+            <th>Renk</th>
+            <th>Hafıza</th>
+            <th>Kod</th>
+            <th>Güncellenme Tarihi</th>
+            <th>Yüklenme Tarihi</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.stock_masters != null)
+        {
+            foreach (StockMaster item in ViewBag.stock_masters)
+            {
+                <tr class="StockMaster-row" data-id="@item.Id">
+
+                    <td class="">
+                        <a href="@item.ImageUrl" target="_blank">
+                            <img src="@item.ImageUrl" alt="@item.Name" height="70" />
+                        </a>
+                    </td>
+                    <td class="">@item.Name</td>
+                    <td class="">@item.Color.Name</td>
+                    <td class="">@item.Storage</td>
+                    <td class="">@item.Code</td>
+                    <td class="">@item.UpdateDate</td>
+                    <td class="">@item.CreateDate</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<script>
+             document.addEventListener("DOMContentLoaded", function () {
+         document.querySelectorAll(".StockMaster-row").forEach(row => {
+             row.addEventListener("dblclick", function () {
+                    var SotckMasterId = this.getAttribute("data-id");
+                 window.location.href = "/Admin/StockMaster/Save?id=" + SotckMasterId;
+             });
+         });
+    });
+</script>

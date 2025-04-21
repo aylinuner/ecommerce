@@ -5,7 +5,7 @@ namespace ecommerce.Models;
 
 public partial class StockMaster
 {
-    public string Id { get; set; }
+    public int Id { get; set; }
     public string Name { get; set; }
     public int ColorId { get; set; }
     public string Storage { get; set; }
@@ -13,6 +13,7 @@ public partial class StockMaster
     public string ImageUrl { get; set; }
     public DateTime CreateDate { get; set; }
     public DateTime UpdateDate { get; set; }
+    public virtual Color Color { get; set; } = null;
 
 }
 
