@@ -12,8 +12,8 @@ using ecommerce.Models.Db;
 namespace ecommerce.Migrations
 {
     [DbContext(typeof(_DbContext))]
-    [Migration("20250421104829_48")]
-    partial class _48
+    [Migration("20250421122058_60")]
+    partial class _60
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -266,10 +266,6 @@ namespace ecommerce.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Test2")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -779,8 +775,11 @@ namespace ecommerce.Migrations
 
             modelBuilder.Entity("ecommerce.Models.StockMaster", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -800,6 +799,10 @@ namespace ecommerce.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Namex")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Storage")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -808,6 +811,8 @@ namespace ecommerce.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ColorId");
 
                     b.ToTable("StockMaster");
                 });
@@ -999,6 +1004,17 @@ namespace ecommerce.Migrations
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ecommerce.Models.StockMaster", b =>
+                {
+                    b.HasOne("ecommerce.Models.Color", "Color")
+                        .WithMany()
+                        .HasForeignKey("ColorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Color");
                 });
 
             modelBuilder.Entity("ecommerce.Models.StockMovement", b =>

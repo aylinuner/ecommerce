@@ -12,8 +12,8 @@ using ecommerce.Models.Db;
 namespace ecommerce.Migrations
 {
     [DbContext(typeof(_DbContext))]
-    [Migration("20250421120217_59")]
-    partial class _59
+    [Migration("20250421122127_61")]
+    partial class _61
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

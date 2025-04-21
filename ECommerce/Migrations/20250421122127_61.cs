@@ -5,30 +5,25 @@
 namespace ecommerce.Migrations
 {
     /// <inheritdoc />
-    public partial class _48 : Migration
+    public partial class _61 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<int>(
-                name: "ColorId",
-                table: "StockMaster",
-                type: "int",
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(max)");
+            migrationBuilder.DropColumn(
+                name: "Namex",
+                table: "StockMaster");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<string>(
-                name: "ColorId",
+            migrationBuilder.AddColumn<string>(
+                name: "Namex",
                 table: "StockMaster",
                 type: "nvarchar(max)",
                 nullable: false,
-                oldClrType: typeof(int),
-                oldType: "int");
+                defaultValue: "");
         }
     }
 }

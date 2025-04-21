@@ -5,25 +5,18 @@
 namespace ecommerce.Migrations
 {
     /// <inheritdoc />
-    public partial class _43 : Migration
+    public partial class RecreateDeletedTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Test",
-                table: "Color",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
+
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Test",
-                table: "Color");
+
         }
     }
 }

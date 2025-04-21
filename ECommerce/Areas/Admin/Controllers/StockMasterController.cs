@@ -25,7 +25,7 @@ namespace ecommerce.Areas.Admin.Controllers
         {
             try
             {
-                List<StockMaster> stock_masters = await _context.StockMaster.Include(c => c.Color).OrderBy(x => x.Id).ToListAsync();
+                List<StockMaster> stock_masters = await _context.StockMaster.Include(c => c.Color).ToListAsync();
                 ViewBag.stock_masters = stock_masters;
             }
 
@@ -62,7 +62,7 @@ namespace ecommerce.Areas.Admin.Controllers
         {
             StockMaster sm = new StockMaster
             {
-                Id = data.Id,
+                //Id = data.Id,
                 Name = data.Name,
                 Color = data.Color,
                 Storage=data.Storage,
@@ -72,17 +72,17 @@ namespace ecommerce.Areas.Admin.Controllers
                 UpdateDate = DateTime.Now
             };
 
-            if (sm.Id == 0)
-            {
-                _context.StockMaster.Add(sm);
-            }
-            else if (sm.Id > 0)
-            {
-                _context.StockMaster.Update(sm);
-            }
+            //if (sm.Id == 0)
+            //{
+            //    _context.StockMaster.Add(sm);
+            //}
+            //else if (sm.Id > 0)
+            //{
+            //    _context.StockMaster.Update(sm);
+            //}
             await _context.SaveChangesAsync(); // Asenkron olarak kaydet
 
-            return RedirectToAction("Index", "Category", new { id = sm.Id });
+            return RedirectToAction("Index", "Category", new { id = 1 });
         }
 
     }

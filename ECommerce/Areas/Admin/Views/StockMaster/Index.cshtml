@@ -31,7 +31,8 @@
         {
             foreach (StockMaster item in ViewBag.stock_masters)
             {
-                <tr class="StockMaster-row" data-id="@item.Id">
+                @* <tr class="StockMaster-row" data-id="@item.Id"> *@
+                <tr class="StockMaster-row" >
 
                     <td class="">
                         <a href="@item.ImageUrl" target="_blank">
