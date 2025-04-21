@@ -3,6 +3,7 @@ using ecommerce.Models.Db;
 using ecommerce.Models.View;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Areas.Admin.Controllers
@@ -50,13 +51,20 @@ namespace ecommerce.Areas.Admin.Controllers
                 {
                     model.Id = sm.Id;
                     model.Name = sm.Name;
-                    //model.Color = sm.Color;
+                    model.ColorId = sm.ColorId;
                     model.Storage = sm.Storage;
                     model.Code = sm.Code;
                     model.ImageUrl = sm.ImageUrl;
                 }
-
             }
+
+            ViewBag.colors = await _context.Color.Select(c => new SelectListItem
+            {
+                Value = c.Id.ToString(),
+                Text = c.Name
+            }).ToListAsync();
+
+
             return View(model);
         }
 
@@ -67,10 +75,10 @@ namespace ecommerce.Areas.Admin.Controllers
             {
                 Id = data.Id,
                 Name = data.Name,
-                //Color = data.Color,
-                Storage=data.Storage,
-                Code=data.Code,
-                ImageUrl=data.ImageUrl,
+                ColorId = data.ColorId,
+                Storage = data.Storage,
+                Code = data.Code,
+                ImageUrl = data.ImageUrl,
                 CreateDate = DateTime.Now,
                 UpdateDate = DateTime.Now
             };
@@ -87,6 +95,16 @@ namespace ecommerce.Areas.Admin.Controllers
 
             return RedirectToAction("Index", "StockMaster", new { Id = sm.Id });
         }
+        [HttpGet]
+        public IActionResult Delete(int Id)
+        {
+            StockMaster sm = _context.StockMaster.FirstOrDefault(x => x.Id == Id);
+            _context.StockMaster.Remove(sm);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "StockMaster");
+        }
+       
 
     }
 }

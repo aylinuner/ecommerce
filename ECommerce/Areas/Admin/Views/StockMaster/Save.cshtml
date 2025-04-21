@@ -1,1 +1,64 @@
-﻿
+﻿@using ecommerce.Models.View
+@model StockMasterViewModel
+<div class="container mt-5">
+    <h2 class="mb-4">Ürün Ekle</h2>
+    <form method="post" action="/Admin/StockMaster/Save">
+        <input type="text" id="Id" asp-for="Id" hidden>
+
+
+        <div class="mb-3 row">
+            <label for="ImageUrl" class="col-sm-2 col-form-label"> Ürün Fotoğraf:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ImageUrl" placeholder="Ürün Fotoğrafı" asp-for="ImageUrl">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="name" class="col-sm-2 col-form-label">Ürün Adı:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Name" placeholder="Ürün adını girin" asp-for="Name">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="ColorId" class="col-sm-2 col-form-label">Renk</label>
+            <div class="col-sm-10">
+                <select asp-for="ColorId" asp-items="ViewBag.Colors" class="form-control">
+                    <option value="">-- Renk Seçiniz --</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="Storage" class="col-sm-2 col-form-label">Hafıza:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Storage" placeholder="Hafıza" asp-for="Storage">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="Code" class="col-sm-2 col-form-label">Kod:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Code" placeholder="Ürün Kodu" asp-for="Code">
+            </div>
+        </div>
+
+      
+
+
+        <div class="mb-3 row">
+            <div class="col-sm-10 offset-sm-2">
+
+                @Html.ActionLink("Geri", "Index", "StockMaster", null, new { @class = "btn btn-dark text-white" })
+                @* Silme butonu*@
+                @if (Model.Id != 0)
+                {
+
+                    @Html.ActionLink("Sil", "Delete", "StockMaster", new { Id = Model.Id }, new { @class = "btn btn-danger" })
+
+                }
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </form>
+</div>
