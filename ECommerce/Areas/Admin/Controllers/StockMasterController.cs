@@ -38,22 +38,25 @@ namespace ecommerce.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Save(string Id)
+        public async Task<IActionResult> Save(int Id)
         {
             StockMasterViewModel model = new StockMasterViewModel();
 
-            //if (Id > 0)
-            //{
+            if (Id > 0)
+            {
 
-            //    StockMaster sm = _context.StockMaster.FirstOrDefault(x => x.Id == Id);
-            //    if (sm != null) // Eğer kayıt bulunursa
-            //    {
-            //        model.Id = sm.Id;
-            //        model.Name = sm.Name;
-            //        model.Color = sm.Color;
-            //    }
+                StockMaster sm = _context.StockMaster.FirstOrDefault(x => x.Id == Id);
+                if (sm != null) // Eğer kayıt bulunursa
+                {
+                    model.Id = sm.Id;
+                    model.Name = sm.Name;
+                    //model.Color = sm.Color;
+                    model.Storage = sm.Storage;
+                    model.Code = sm.Code;
+                    model.ImageUrl = sm.ImageUrl;
+                }
 
-            //}
+            }
             return View(model);
         }
 
@@ -62,9 +65,9 @@ namespace ecommerce.Areas.Admin.Controllers
         {
             StockMaster sm = new StockMaster
             {
-                //Id = data.Id,
+                Id = data.Id,
                 Name = data.Name,
-                Color = data.Color,
+                //Color = data.Color,
                 Storage=data.Storage,
                 Code=data.Code,
                 ImageUrl=data.ImageUrl,
@@ -72,17 +75,17 @@ namespace ecommerce.Areas.Admin.Controllers
                 UpdateDate = DateTime.Now
             };
 
-            //if (sm.Id == 0)
-            //{
-            //    _context.StockMaster.Add(sm);
-            //}
-            //else if (sm.Id > 0)
-            //{
-            //    _context.StockMaster.Update(sm);
-            //}
-            await _context.SaveChangesAsync(); // Asenkron olarak kaydet
+            if (sm.Id == 0)
+            {
+                _context.StockMaster.Add(sm);
+            }
+            else if (sm.Id > 0)
+            {
+                _context.StockMaster.Update(sm);
+            }
+            await _context.SaveChangesAsync(); // Asenkron olarak kaydet    
 
-            return RedirectToAction("Index", "Category", new { id = 1 });
+            return RedirectToAction("Index", "StockMaster", new { Id = sm.Id });
         }
 
     }
