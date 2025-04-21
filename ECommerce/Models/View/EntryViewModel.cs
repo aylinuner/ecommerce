@@ -32,6 +32,8 @@ namespace ecommerce.Models.View
 
         public int ProductId { get; set; }
 
+        public int StockMasterId { get; set; }
+
         public string ProductName { get; set; } = null!;
 
         public int Quantity { get; set; }
@@ -49,5 +51,7 @@ namespace ecommerce.Models.View
         public int EntryMasterId { get; set; }
 
         public Product Product { get; set; }
+        public StockMaster StockMaster { get; set; }
+
     }
 }

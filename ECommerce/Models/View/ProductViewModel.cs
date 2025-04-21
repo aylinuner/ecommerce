@@ -2,14 +2,14 @@
 {
     public class ProductViewModel
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string code { get; set; }
-        public int price { get; set; }
-        public string image_url { get; set; }
-        public string description { get; set; }
-        public int category_id { get; set; }
-        public DateTime create_date { get; set; }
-        public DateTime update_date { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Code { get; set; }
+        public int Price { get; set; }
+        public string ImageUrl { get; set; }
+        public string Description { get; set; }
+        public int CategoryId { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime UpdateDate { get; set; }
     }
 }
