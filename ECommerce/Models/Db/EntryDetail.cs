@@ -6,12 +6,12 @@
 
         public int CategoryId { get; set; }
 
-        public string CategoryName { get; set; } = null!;
+        //public string CategoryName { get; set; } = null!;
 
         //public int ProductId { get; set; }     
         public int StockId { get; set; }
 
-        public string ProductName { get; set; } = null!;
+        //public string ProductName { get; set; } = null!;
 
         public int Quantity { get; set; }
 

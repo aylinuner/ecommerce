@@ -38,7 +38,6 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Data\" />
-    <Folder Include="Migrations\" />
     <Folder Include="ImageUrl\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />

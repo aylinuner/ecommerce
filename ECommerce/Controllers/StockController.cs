@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Controllers
 {
-    public class ProductController : Controller
+    public class StockController : Controller
     {
         private readonly _DbContext _context;
 
-        public ProductController(_DbContext context)
+        public StockController(_DbContext context)
         {
             _context = context;
         }
@@ -19,7 +19,7 @@ namespace ecommerce.Controllers
             try
             {
                 List<StockMaster> stocks = await _context.StockMaster.OrderBy(x => x.Id).ToListAsync();
-                ViewBag.products = stocks;
+                ViewBag.stocks = stocks;
             }
             catch (Exception x)
             {

@@ -80,6 +80,8 @@ namespace ecommerce.Areas.Admin.Controllers
 
 
                     }).ToList();
+
+                  
                 }
             }
             //Tedarikçi firmaları getir.
@@ -99,11 +101,12 @@ namespace ecommerce.Areas.Admin.Controllers
                 Text = u.UserName
             }).ToList();
 
-            ViewBag.stocks = await _context.StockMaster.Select(p => new SelectListItem
+            List<StockMaster> stocks = await _context.StockMaster.ToListAsync();
+            ViewBag.stocks = stocks.Select(p => new SelectListItem
             {
                 Value = p.Id.ToString(),
                 Text = p.Name
-            }).ToListAsync();
+            }).ToList();
 
             return View(vm);
         }

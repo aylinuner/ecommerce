@@ -9,7 +9,7 @@ public partial class Company
 
     public string Name { get; set; } = null!;
 
-    public string Vkn { get; set; } = null!;
+    public string? Vkn { get; set; } = null!;
 
     public DateTime CreateDate { get; set; }
 

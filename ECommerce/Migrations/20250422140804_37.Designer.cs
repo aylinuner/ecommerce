@@ -12,8 +12,8 @@ using ecommerce.Models.Db;
 namespace ecommerce.Migrations
 {
     [DbContext(typeof(_DbContext))]
-    [Migration("20250422100949_30")]
-    partial class _30
+    [Migration("20250422140804_37")]
+    partial class _37
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -296,7 +296,6 @@ namespace ecommerce.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Vkn")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -502,19 +501,11 @@ namespace ecommerce.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("CategoryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("EntryMasterId")
                         .HasColumnType("int");
-
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -770,7 +761,7 @@ namespace ecommerce.Migrations
 
                     b.HasIndex("ColorId");
 
-                    b.ToTable("Stock");
+                    b.ToTable("StockMaster");
                 });
 
             modelBuilder.Entity("ecommerce.Models.StockMovement", b =>

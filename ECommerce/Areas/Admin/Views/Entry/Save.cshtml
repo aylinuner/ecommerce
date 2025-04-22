@@ -70,27 +70,27 @@
                 {
                     <tr class="entry_detail-row" data-id="@Model.EntryDetails[i].Id" ondblclick="dblclick">
                         <td>
-                            @* @Model.entry_details[i].product.name *@
-                            <input type="hidden" name="entry_details[@i].StockId" value="@Model.EntryDetails[i].StockId" />
+                            @Model.EntryDetails[i].Stock.Name
+                            <input type="hidden" name="EntryDetails[@i].StockId" value="@Model.EntryDetails[i].StockId" />
 
-                            <input type="hidden" name="entry_details[@i].id" value="@Model.EntryDetails[i].Id" />
+                            <input type="hidden" name="EntryDetails[@i].id" value="@Model.EntryDetails[i].Id" />
                         </td>
 
                         <td>
                             @Model.EntryDetails[i].Quantity
-                            <input type="hidden" name="entry_details[@i].quantity" value="@Model.EntryDetails[i].Quantity" class="form-control" />
+                            <input type="hidden" name="EntryDetails[@i].Quantity" value="@Model.EntryDetails[i].Quantity" class="form-control" />
                         </td>
                         <td>
                             @Model.EntryDetails[i].Amount
-                            <input type="hidden" step="0.01" name="entry_details[@i].amount" value="@Model.EntryDetails[i].Amount" class="form-control" />
+                            <input type="hidden" step="0.01" name="EntryDetails[@i].Amount" value="@Model.EntryDetails[i].Amount" class="form-control" />
                         </td>
                         <td>
                             @Model.EntryDetails[i].TotalAmount
-                            <input type="hidden" step="0.01" name="entry_details[@i].total_amount" value="@Model.EntryDetails[i].TotalAmount" class="form-control" />
+                            <input type="hidden" step="0.01" name="EntryDetails[@i].TotalAmount" value="@Model.EntryDetails[i].TotalAmount" class="form-control" />
                         </td>
                         <td>
                             @Model.EntryDetails[i].Weight
-                            <input type="hidden" step="0.01" name="entry_details[@i].weight" value="@Model.EntryDetails[i].Weight" class="form-control" />
+                            <input type="hidden" step="0.01" name="EntryDetails[@i].Weight" value="@Model.EntryDetails[i].Weight" class="form-control" />
                         </td>
                     </tr>
                 }
@@ -100,7 +100,7 @@
         <div class="mb-3 row">
             <div class="col-sm-10 offset-sm-2">
                 @Html.ActionLink("Geri", "Index", "Entry", new { area = "Admin" }, new { @class = "btn btn-dark text-white" })
-                <button type="button" class="btn btn-success" id="newProductButton" data-bs-toggle="modal" data-bs-target="#entry_detailModal">
+                <button type="button" class="btn btn-success" id="newProductButton" data-bs-toggle="modal" data-bs-target="#EntryDetailModal">
                     Yeni Ürün Ekle
                 </button>
                 <button type="submit" class="btn btn-primary">Kaydet</button>
@@ -123,11 +123,11 @@
 
                     <div class="mb-3">
                         <label class="form-label">Ürün</label>
-                        <select class="form-control" id="ProductId">
+                        <select class="form-control" id="StockSelect">
                             <option value="">Ürün Seçiniz</option>
-                            @foreach (var product in ViewBag.products ?? new List<SelectListItem>())
+                            @foreach (var stock in ViewBag.stocks ?? new List<SelectListItem>())
                             {
-                                <option value="@product.Value">@product.Text</option>
+                                <option value="@stock.Value">@stock.Text</option>
                             }
                         </select>
                     </div>
@@ -164,11 +164,11 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data) {
-                        document.getElementById("EntryDetailId").value = data.id;
-                        document.getElementById("ProductId").value = data.product_id;
-                        document.getElementById("Quantity").value = data.quantity;
-                        document.getElementById("Amount").value = data.amount;
-                        document.getElementById("Weight").value = data.weight;
+                        document.getElementById("EntryDetailId").value = data.Id;
+                        document.getElementById("StockId").value = data.StockId;
+                        document.getElementById("Quantity").value = data.Quantity;
+                        document.getElementById("Amount").value = data.Amount;
+                        document.getElementById("Weight").value = data.Weight;
                     }
 
                     // Modalı aç
@@ -182,7 +182,7 @@
     // "Yeni Ürün Ekle" butonuna basılınca boş modal aç
     document.getElementById("newProductButton").addEventListener("click", function () {
         document.getElementById("EntryDetailId").value = "";
-        document.getElementById("ProductId").value = "";
+        document.getElementById("StockId").value = "";
         document.getElementById("Quantity").value = "";
         document.getElementById("Amount").value = "";
         document.getElementById("Weight").value = "";
@@ -192,13 +192,13 @@
     });
 
         function saveEntryDetail() {
-        let product_name = document.getElementById("ProductId");
-        let quantity = document.getElementById("Quantity").value;
-        let amount = document.getElementById("Amount").value;
-        let total_amount = (Quantity * Amount).toFixed(2);
-        let weight = document.getElementById("Weight").value;
+        let StockSelect = document.getElementById("StockSelect");
+        let Quantity = document.getElementById("Quantity").value;
+        let Amount = document.getElementById("Amount").value;
+        let TotalAmount = (Quantity * Amount).toFixed(2);
+        let Weight = document.getElementById("Weight").value;
 
-        if (!ProductName.value || Quantity <= 0 || Amount <= 0 || Weight <= 0) {
+        if (!StockSelect.value || Quantity <= 0 || Amount <= 0 || Weight <= 0) {
             alert("Lütfen tüm alanları doğru şekilde doldurun!");
             return;
         }
@@ -209,15 +209,28 @@
             return;
         }
 
-        let newRow = `
-            <tr>
-                <td>${ProductName.options[ProductName.selectedIndex].text}</td>
-                <td>${Quantity}</td>
-                <td>${Amount}</td>
-                <td>${TotalAmount}</td>
-                <td>${Weight}</td>
-            </tr>
-        `;
+        let index = tableBody.rows.length;
+
+         let newRow = `
+    <tr>
+        <td>${StockSelect.options[StockSelect.selectedIndex].text}
+            <input type="hidden" name="EntryDetails[${index}].StockId" value="${StockSelect.value}" />
+        </td>
+        <td>${Quantity}
+            <input type="hidden" name="EntryDetails[${index}].Quantity" value="${Quantity}" />
+        </td>
+        <td>${Amount}
+            <input type="hidden" name="EntryDetails[${index}].Amount" value="${Amount}" />
+        </td>
+        <td>${TotalAmount}
+            <input type="hidden" name="EntryDetails[${index}].TotalAmount" value="${TotalAmount}" />
+        </td>
+        <td>${Weight}
+            <input type="hidden" name="EntryDetails[${index}].Weight" value="${Weight}" />
+        </td>
+    </tr>
+    `;
+
         tableBody.insertAdjacentHTML("beforeend", newRow);
 
         document.getElementById("EntryDetailForm").reset();

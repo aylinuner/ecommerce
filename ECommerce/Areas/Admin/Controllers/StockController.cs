@@ -11,12 +11,12 @@ namespace ecommerce.Areas.Admin.Controllers
 
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
-    public class StockMasterController : Controller
+    public class StockController : Controller
     {
         #region Dependency Enjection (DI)
         private readonly _DbContext _context;
 
-        public StockMasterController(_DbContext context)
+        public StockController(_DbContext context)
         {
             _context = context;
         }
