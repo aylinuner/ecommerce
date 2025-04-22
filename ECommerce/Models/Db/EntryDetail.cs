@@ -27,8 +27,8 @@
 
         public int EntryMasterId { get; set; }
 
-        //public Product Product { get; set; }
-        public StockMaster StockMaster { get; set; }
+        public virtual StockMaster Stock { get; set; } = null;
+
 
     }
 }

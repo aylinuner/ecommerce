@@ -51,7 +51,7 @@ namespace ecommerce.Areas.Admin.Controllers
             if (id > 0)
             {
                 //veritabanındaki giriş kaydı. entyr_master içindeki entry_detail include ettik onunda içindeki product'ı include(dahil) ettik.
-                EntryMaster em = _context.EntryMaster.Include(x => x.EntryDetail).ThenInclude(ed => ed.StockMaster).FirstOrDefault(x => x.Id == id);
+                EntryMaster em = _context.EntryMaster.Include(x => x.EntryDetail).ThenInclude(ed => ed.Stock).FirstOrDefault(x => x.Id == id);
 
                 if (em != null) // Eğer kayıt bulunursa
                 {
@@ -69,7 +69,7 @@ namespace ecommerce.Areas.Admin.Controllers
                     {
                         Id = d.Id,
                         StockId = d.StockId,
-                        StockMaster = d.StockMaster,
+                        Stock = d.Stock,
                         Quantity = d.Quantity,
                         Amount = d.Amount,
                         TotalAmount = d.TotalAmount,
