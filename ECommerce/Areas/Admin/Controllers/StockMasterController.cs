@@ -26,7 +26,7 @@ namespace ecommerce.Areas.Admin.Controllers
         {
             try
             {
-                List<StockMaster> stock_masters = await _context.StockMaster.Include(c => c.Color).ToListAsync();
+                List<StockMaster> stock_masters = await _context.Stock.Include(c => c.Color).ToListAsync();
                 ViewBag.stock_masters = stock_masters;
             }
 
@@ -46,7 +46,7 @@ namespace ecommerce.Areas.Admin.Controllers
             if (Id > 0)
             {
 
-                StockMaster sm = _context.StockMaster.FirstOrDefault(x => x.Id == Id);
+                StockMaster sm = _context.Stock.FirstOrDefault(x => x.Id == Id);
                 if (sm != null) // Eğer kayıt bulunursa
                 {
                     model.Id = sm.Id;
@@ -85,26 +85,26 @@ namespace ecommerce.Areas.Admin.Controllers
 
             if (sm.Id == 0)
             {
-                _context.StockMaster.Add(sm);
+                _context.Stock.Add(sm);
             }
             else if (sm.Id > 0)
             {
-                _context.StockMaster.Update(sm);
+                _context.Stock.Update(sm);
             }
             await _context.SaveChangesAsync(); // Asenkron olarak kaydet    
 
-            return RedirectToAction("Index", "StockMaster", new { Id = sm.Id });
+            return RedirectToAction("Index", "Stock", new { Id = sm.Id });
         }
         [HttpGet]
         public IActionResult Delete(int Id)
         {
-            StockMaster sm = _context.StockMaster.FirstOrDefault(x => x.Id == Id);
-            _context.StockMaster.Remove(sm);
+            StockMaster sm = _context.Stock.FirstOrDefault(x => x.Id == Id);
+            _context.Stock.Remove(sm);
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "StockMaster");
+            return RedirectToAction("Index", "Stock");
         }
-       
+
 
     }
 }

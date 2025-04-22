@@ -3,7 +3,7 @@
         <!-- Sol taraf: Filtreleme -->
         <div class="col-md-3">
             <h4>Filtreleme</h4>
-            <form method="get" action="@Url.Action("Index", "Product")">
+            <form method="get" action="@Url.Action("Index", "Stock")">
 
                 <!-- Kategori Filtreleme -->
                 <div class="form-group">
@@ -125,10 +125,10 @@
         <!-- Sağ taraf: Ürün listesi -->
         <div class="col-md-9">
             <div class="row">
-                @if (ViewBag.products != null)
+                @if (ViewBag.stocks != null)
                 {
 
-                    @foreach (Product item in ViewBag.products)
+                    @foreach (StockMaster item in ViewBag.stocks)
                     {
                         <div class="col-md-4 mb-4">
                             <div class="card">

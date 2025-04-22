@@ -1,35 +1,35 @@
-﻿using ecommerce.Models;
-using ecommerce.Models.Db;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿//using ecommerce.Models;
+//using ecommerce.Models.Db;
+//using Microsoft.AspNetCore.Mvc;
+//using Microsoft.EntityFrameworkCore;
 
-namespace ecommerce.Controllers
-{
-    public class ProductController : Controller
-    {
-        private readonly _DbContext _context;
+//namespace ecommerce.Controllers
+//{
+//    public class ProductController : Controller
+//    {
+//        private readonly _DbContext _context;
 
-        public ProductController(_DbContext context)
-        {
-            _context = context;
-        }
-        public async Task<IActionResult> Index()
-        {
-            // Veritabanından ürünleri çek
-            try
-            {
-                List<Product> products = await _context.Product.OrderBy(x => x.Id).ToListAsync();
-                ViewBag.products = products;
-            }
-            catch (Exception x)
-            {
+//        public ProductController(_DbContext context)
+//        {
+//            _context = context;
+//        }
+//        public async Task<IActionResult> Index()
+//        {
+//            // Veritabanından ürünleri çek
+//            try
+//            {
+//                List<Product> products = await _context.Product.OrderBy(x => x.Id).ToListAsync();
+//                ViewBag.products = products;
+//            }
+//            catch (Exception x)
+//            {
 
-                throw;
-            }
+//                throw;
+//            }
 
-            // Ürün listesini View'e gönder
-            return View();
-        }
+//            // Ürün listesini View'e gönder
+//            return View();
+//        }
 
-    }
-}
+//    }
+//}

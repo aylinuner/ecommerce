@@ -19,5 +19,5 @@ public partial class Home
 
     public int? ProductId { get; set; }
 
-    public virtual Product? Product { get; set; }
+    //public virtual Product? Product { get; set; }
 }

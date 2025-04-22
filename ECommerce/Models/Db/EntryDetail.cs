@@ -26,7 +26,7 @@
 
         public int EntryMasterId { get; set; }
 
-        public Product Product { get; set; }
+        //public Product Product { get; set; }
 
     }
 }

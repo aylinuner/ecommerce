@@ -30,7 +30,7 @@ namespace ecommerce.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-      
+
             try
             {
                 List<EntryMaster> entry_masters = await _context.EntryMaster.OrderBy(x => x.Id).ToListAsync();
@@ -51,7 +51,7 @@ namespace ecommerce.Areas.Admin.Controllers
             if (id > 0)
             {
                 //veritabanındaki giriş kaydı. entyr_master içindeki entry_detail include ettik onunda içindeki product'ı include(dahil) ettik.
-                EntryMaster em = _context.EntryMaster.Include(x => x.EntryDetail).ThenInclude(ed => ed.Product).FirstOrDefault(x => x.Id == id);
+                EntryMaster em = _context.EntryMaster.Include(x => x.EntryDetail).ThenInclude(ed => ed.).FirstOrDefault(x => x.Id == id);
 
                 if (em != null) // Eğer kayıt bulunursa
                 {
@@ -99,11 +99,11 @@ namespace ecommerce.Areas.Admin.Controllers
                 Text = u.UserName
             }).ToList();
 
-            ViewBag.products = await _context.Product.Select(p => new SelectListItem
-            {
-                Value = p.Id.ToString(),
-                Text = p.Name
-            }).ToListAsync();
+            //ViewBag.products = await _context.Product.Select(p => new SelectListItem
+            //{
+            //    Value = p.Id.ToString(),
+            //    Text = p.Name
+            //}).ToListAsync();
 
             return View(vm);
         }

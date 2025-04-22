@@ -1,21 +1,21 @@
 ﻿@using ecommerce.Models.View
-@model ProductViewModel 
+@model StockMasterViewModel 
     <div class="container mt-5">
     <h2 class="mb-4">Ürün Ekle</h2>
     <form method="post" action="/Admin/Product/Save">
         <div class="mb-3 row">
             <label for="name" class="col-sm-2 col-form-label">Ürün Adı:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" placeholder="Ürün adını girin" asp-for="name">
+                <input type="text" class="form-control" id="Name" placeholder="Ürün adını girin" asp-for="Name">
             </div>
         </div>
 
-        <div class="mb-3 row">
+       @*  <div class="mb-3 row">
             <label for="price" class="col-sm-2 col-form-label">Fiyat:</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="price" placeholder="Ürün fiyatını girin" asp-for="price">
+                <input type="number" class="form-control" id="Price" placeholder="Ürün fiyatını girin" asp-for="Price">
             </div>
-        </div>
+        </div> *@
 
         @* <div class="mb-3 row">
             <label for="productCategory" class="col-sm-2 col-form-label">Kategori:</label>
@@ -29,12 +29,12 @@
             </div>
         </div> *@
 
-        <div class="mb-3 row">
+       @*  <div class="mb-3 row">
             <label for="description" class="col-sm-2 col-form-label">Açıklama:</label>
             <div class="col-sm-10">
-                <textarea class="form-control" id="description" rows="3" placeholder="Ürün açıklaması" asp-for="description"></textarea>
+                <textarea class="form-control" id="description" rows="3" placeholder="Ürün açıklaması" asp-for="Description"></textarea>
             </div>
-        </div>
+        </div> *@
 
        @*  <div class="mb-3 row">
             <label for="productImage" class="col-sm-2 col-form-label">Resim Yükle:</label>
@@ -49,9 +49,9 @@
                 @Html.ActionLink("Geri", "Index", "Product", new { area = "Admin" }, new { @class = "btn btn-dark text-white" })
 
                 @* Silme butonu *@
-                @if (Model.id != 0)
+                @if (Model.Id != 0)
                 {
-                    @Html.ActionLink("Sil", "Delete", "Product", new { area = "Admin", id = Model.id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Sil", "Delete", "Product", new { area = "Admin", id = Model.Id }, new { @class = "btn btn-danger" })
 
                 }
                 <button type="submit" class="btn btn-primary">Kaydet</button>

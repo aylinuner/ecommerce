@@ -23,7 +23,7 @@ public partial class Order
 
     public virtual Basket Basket { get; set; } = null!;
 
-    public virtual Product Product { get; set; } = null!;
+    //public virtual Product Product { get; set; } = null!;
 
     public virtual ICollection<StockMovement> StockMovement { get; set; } = new List<StockMovement>();
 }

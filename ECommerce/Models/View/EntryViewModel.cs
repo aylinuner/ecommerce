@@ -30,7 +30,9 @@ namespace ecommerce.Models.View
 
         public string CategoryName { get; set; } = null!;
 
-        public int ProductId { get; set; }
+        //public int ProductId { get; set; }    
+
+        public int StockId { get; set; }
 
         public int StockMasterId { get; set; }
 
@@ -50,8 +52,8 @@ namespace ecommerce.Models.View
 
         public int EntryMasterId { get; set; }
 
-        public Product Product { get; set; }
-        public StockMaster StockMaster { get; set; }
+        //public Product Product { get; set; }
+        public StockMaster Stock { get; set; }
 
     }
 }
