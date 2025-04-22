@@ -12,8 +12,8 @@ using ecommerce.Models.Db;
 namespace ecommerce.Migrations
 {
     [DbContext(typeof(_DbContext))]
-    [Migration("20250420221303_41")]
-    partial class _41
+    [Migration("20250422100949_30")]
+    partial class _30
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -512,14 +512,14 @@ namespace ecommerce.Migrations
                     b.Property<int>("EntryMasterId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockId")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalAmount")
@@ -535,7 +535,7 @@ namespace ecommerce.Migrations
 
                     b.HasIndex("EntryMasterId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("StockId");
 
                     b.ToTable("EntryDetail");
                 });
@@ -658,8 +658,6 @@ namespace ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
-
                     b.ToTable("Home");
                 });
 
@@ -725,12 +723,10 @@ namespace ecommerce.Migrations
 
                     b.HasIndex("BasketId");
 
-                    b.HasIndex("ProductId");
-
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("ecommerce.Models.Product", b =>
+            modelBuilder.Entity("ecommerce.Models.StockMaster", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -738,12 +734,12 @@ namespace ecommerce.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ColorId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -760,42 +756,8 @@ namespace ecommerce.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime?>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Product");
-                });
-
-            modelBuilder.Entity("ecommerce.Models.StockMaster", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ColorId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.Property<string>("Storage")
                         .IsRequired()
@@ -806,7 +768,9 @@ namespace ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StockMaster");
+                    b.HasIndex("ColorId");
+
+                    b.ToTable("Stock");
                 });
 
             modelBuilder.Entity("ecommerce.Models.StockMovement", b =>
@@ -838,8 +802,6 @@ namespace ecommerce.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("StockMovement");
                 });
@@ -941,22 +903,13 @@ namespace ecommerce.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ecommerce.Models.Product", "Product")
+                    b.HasOne("ecommerce.Models.StockMaster", "Stock")
                         .WithMany()
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("StockId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("ecommerce.Models.Home", b =>
-                {
-                    b.HasOne("ecommerce.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId");
-
-                    b.Navigation("Product");
+                    b.Navigation("Stock");
                 });
 
             modelBuilder.Entity("ecommerce.Models.Membership", b =>
@@ -978,24 +931,18 @@ namespace ecommerce.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ecommerce.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Basket");
-
-                    b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("ecommerce.Models.Product", b =>
+            modelBuilder.Entity("ecommerce.Models.StockMaster", b =>
                 {
-                    b.HasOne("ecommerce.Models.Category", null)
-                        .WithMany("Product")
-                        .HasForeignKey("CategoryId")
+                    b.HasOne("ecommerce.Models.Color", "Color")
+                        .WithMany()
+                        .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Color");
                 });
 
             modelBuilder.Entity("ecommerce.Models.StockMovement", b =>
@@ -1004,15 +951,7 @@ namespace ecommerce.Migrations
                         .WithMany("StockMovement")
                         .HasForeignKey("OrderId");
 
-                    b.HasOne("ecommerce.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Order");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ecommerce.Models.UserAddress", b =>
@@ -1032,11 +971,6 @@ namespace ecommerce.Migrations
                     b.Navigation("City");
 
                     b.Navigation("District");
-                });
-
-            modelBuilder.Entity("ecommerce.Models.Category", b =>
-                {
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ecommerce.Models.City", b =>

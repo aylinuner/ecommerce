@@ -8,7 +8,8 @@
 
         public string CategoryName { get; set; } = null!;
 
-        public int ProductId { get; set; }
+        //public int ProductId { get; set; }     
+        public int StockId { get; set; }
 
         public string ProductName { get; set; } = null!;
 
@@ -27,6 +28,7 @@
         public int EntryMasterId { get; set; }
 
         //public Product Product { get; set; }
+        public StockMaster StockMaster { get; set; }
 
     }
 }

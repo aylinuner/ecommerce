@@ -53,7 +53,7 @@ namespace ecommerce.Models.View
         public int EntryMasterId { get; set; }
 
         //public Product Product { get; set; }
-        public StockMaster Stock { get; set; }
+        public StockMaster StockMaster { get; set; }
 
     }
 }

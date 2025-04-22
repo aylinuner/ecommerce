@@ -509,14 +509,14 @@ namespace ecommerce.Migrations
                     b.Property<int>("EntryMasterId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockId")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalAmount")
@@ -531,6 +531,8 @@ namespace ecommerce.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("EntryMasterId");
+
+                    b.HasIndex("StockId");
 
                     b.ToTable("EntryDetail");
                 });
@@ -721,7 +723,7 @@ namespace ecommerce.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("ecommerce.Models.Stock", b =>
+            modelBuilder.Entity("ecommerce.Models.StockMaster", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -897,6 +899,14 @@ namespace ecommerce.Migrations
                         .HasForeignKey("EntryMasterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("ecommerce.Models.StockMaster", "Stock")
+                        .WithMany()
+                        .HasForeignKey("StockId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Stock");
                 });
 
             modelBuilder.Entity("ecommerce.Models.Membership", b =>
@@ -921,7 +931,7 @@ namespace ecommerce.Migrations
                     b.Navigation("Basket");
                 });
 
-            modelBuilder.Entity("ecommerce.Models.Stock", b =>
+            modelBuilder.Entity("ecommerce.Models.StockMaster", b =>
                 {
                     b.HasOne("ecommerce.Models.Color", "Color")
                         .WithMany()

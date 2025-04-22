@@ -38,7 +38,7 @@ namespace ecommerce.Models.Db
         public DbSet<Membership> Membership { get; set; }
         public DbSet<Order> Order { get; set; }
         //public DbSet<Product> Product { get; set; }
-        public DbSet<StockMaster> Stock{ get; set; }
+        public DbSet<StockMaster> StockMaster{ get; set; }
         public DbSet<StockMovement> StockMovement { get; set; }
         public DbSet<UserAddress> UserAddress { get; set; }
         //public DbSet<AppUserProfile> AppUserProfile { get; set; }

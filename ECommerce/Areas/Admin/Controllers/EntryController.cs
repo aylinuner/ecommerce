@@ -51,7 +51,7 @@ namespace ecommerce.Areas.Admin.Controllers
             if (id > 0)
             {
                 //veritabanındaki giriş kaydı. entyr_master içindeki entry_detail include ettik onunda içindeki product'ı include(dahil) ettik.
-                EntryMaster em = _context.EntryMaster.Include(x => x.EntryDetail).ThenInclude(ed => ed.).FirstOrDefault(x => x.Id == id);
+                EntryMaster em = _context.EntryMaster.Include(x => x.EntryDetail).ThenInclude(ed => ed.StockMaster).FirstOrDefault(x => x.Id == id);
 
                 if (em != null) // Eğer kayıt bulunursa
                 {
@@ -68,8 +68,8 @@ namespace ecommerce.Areas.Admin.Controllers
                     vm.EntryDetails = em.EntryDetail.Select(d => new EntryDetailViewModel
                     {
                         Id = d.Id,
-                        ProductId = d.ProductId,
-                        Product = d.Product,
+                        StockId = d.StockId,
+                        StockMaster = d.StockMaster,
                         Quantity = d.Quantity,
                         Amount = d.Amount,
                         TotalAmount = d.TotalAmount,
@@ -99,11 +99,11 @@ namespace ecommerce.Areas.Admin.Controllers
                 Text = u.UserName
             }).ToList();
 
-            //ViewBag.products = await _context.Product.Select(p => new SelectListItem
-            //{
-            //    Value = p.Id.ToString(),
-            //    Text = p.Name
-            //}).ToListAsync();
+            ViewBag.stocks = await _context.StockMaster.Select(p => new SelectListItem
+            {
+                Value = p.Id.ToString(),
+                Text = p.Name
+            }).ToListAsync();
 
             return View(vm);
         }
@@ -133,7 +133,7 @@ namespace ecommerce.Areas.Admin.Controllers
                 {
                     EntryMasterId = em.Id,
                     Id = item.Id,
-                    ProductId = item.ProductId,
+                    StockId = item.StockId,
                     Quantity = item.Quantity,
                     Amount = item.Amount,
                     TotalAmount = item.TotalAmount,
@@ -170,7 +170,7 @@ namespace ecommerce.Areas.Admin.Controllers
                 .Select(p => new
                 {
                     id = p.Id,
-                    product_id = p.ProductId,
+                    product_id = p.StockId,
                     quantity = p.Quantity,
                     amount = p.Amount,
                     total_amount = p.TotalAmount,
