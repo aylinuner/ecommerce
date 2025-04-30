@@ -1,4 +1,73 @@
-﻿aşağıdaki kod veritabanı scaffold kodudur.
+﻿
+E-Commerce Web Application
+Bu proje, temel e-ticaret işlemlerinin gerçekleştirilebildiği, kullanıcı dostu bir web uygulamasıdır. ASP.NET Core MVC mimarisi ile geliştirilmiş olup, katmanlı yapı, Entity Framework Core ve Identity kullanılarak modern yazılım geliştirme prensiplerine uygun olarak tasarlanmıştır.
+
+KULLANILAN TEKNOLOJİLER
+
+ASP.NET Core MVC
+
+C#
+
+Entity Framework Core
+
+SQL Server
+
+Identity (Kullanıcı kimlik doğrulama ve yetkilendirme)
+
+HTML / CSS / JavaScript
+
+Bootstrap
+
+LINQ
+
+Layered Architecture (Katmanlı Mimari)
+
+Repository Pattern
+
+
+
+ÖZELLİKLER
+
+Kullanıcı kayıt, giriş ve çıkış işlemleri
+
+Rol bazlı yetkilendirme (Admin ve kullanıcı rolleri)
+
+Ürün listeleme, detay görüntüleme
+
+Sepete ürün ekleme, çıkarma
+
+Sipariş oluşturma ve geçmiş siparişleri görüntüleme
+
+Admin panel üzerinden:
+
+Ürün ekleme, düzenleme, silme
+
+Kategori yönetimi
+
+Kullanıcı yönetimi ve rol atama
+
+Sipariş takibi
+
+
+
+PROJE YAPISI
+
+Entities: Veritabanı varlıkları
+
+DataAccess: Veritabanı işlemleri
+
+Business: İş mantığı
+
+UI: MVC Controller, View ve ViewModel'leri
+
+Models: Gerekli veri transfer modelleri
+
+ViewModels: Sayfalara özel veri taşıma yapıları
+
+
+
+Notlar:
+aşağıdaki kod veritabanı scaffold kodudur.
 veritabanındaki bilgilerin en güncel halinin buraya klonlanması işlemine diyoruz.
 dotnet ef dbcontext scaffold "Server=AYLIN;Database=ecommerce;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c EcommerceDbContext --force --use-database-names
 
