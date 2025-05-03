@@ -54,8 +54,7 @@
               "RelativeToolTip": "Areas\\Admin\\Controllers\\EntryController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T06:56:04.003Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T06:56:04.003Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "Areas\\Admin\\Views\\Entry\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-30T06:55:35.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T06:55:35.052Z"
             },
             {
               "$type": "Document",
@@ -93,8 +91,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T06:44:26.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T06:44:26.166Z"
             },
             {
               "$type": "Document",
@@ -106,8 +103,7 @@
               "RelativeToolTip": "Views\\User\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-30T06:53:30.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T06:53:30.095Z"
             }
           ]
         }

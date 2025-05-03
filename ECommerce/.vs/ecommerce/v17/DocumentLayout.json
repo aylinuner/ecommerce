@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\projeler\\ecommerce\\ECommerce\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projeler\\ecommerce\\ecommerce\\ekran g\u00F6r\u00FCnt\u00FCleri\\ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 095220.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:ekran g\u00F6r\u00FCnt\u00FCleri\\ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 095220.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projeler\\ecommerce\\ecommerce\\ekran g\u00F6r\u00FCnt\u00FCleri\\ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 094943.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:ekran g\u00F6r\u00FCnt\u00FCleri\\ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 094943.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|c:\\projeler\\ecommerce\\ecommerce\\areas\\admin\\views\\entry\\save.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7C712747-B217-4C78-8212-E5C9617CFBDD}|ecommerce.csproj|solutionrelative:areas\\admin\\views\\entry\\save.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -30,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +54,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 095220.png - PNG [1365x721, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\projeler\\ecommerce\\ECommerce\\Ekran G\u00F6r\u00FCnt\u00FCleri\\Ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 095220.png",
+              "RelativeDocumentMoniker": "Ekran G\u00F6r\u00FCnt\u00FCleri\\Ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 095220.png",
+              "ToolTip": "C:\\projeler\\ecommerce\\ECommerce\\Ekran G\u00F6r\u00FCnt\u00FCleri\\Ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 095220.png - PNG [1365x721, 32 bit, PNG]",
+              "RelativeToolTip": "Ekran G\u00F6r\u00FCnt\u00FCleri\\Ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 095220.png - PNG [1365x721, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-05-03T14:36:21.759Z",
+              "EditorCaption": " - PNG [1365x721, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 094943.png - PNG [1365x717, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\projeler\\ecommerce\\ECommerce\\Ekran G\u00F6r\u00FCnt\u00FCleri\\Ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 094943.png",
+              "RelativeDocumentMoniker": "Ekran G\u00F6r\u00FCnt\u00FCleri\\Ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 094943.png",
+              "ToolTip": "C:\\projeler\\ecommerce\\ECommerce\\Ekran G\u00F6r\u00FCnt\u00FCleri\\Ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 094943.png - PNG [1365x717, 32 bit, PNG]",
+              "RelativeToolTip": "Ekran G\u00F6r\u00FCnt\u00FCleri\\Ekran g\u00F6r\u00FCnt\u00FCs\u00FC 2025-04-30 094943.png - PNG [1365x717, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-05-03T14:36:19.418Z",
+              "EditorCaption": " - PNG [1365x717, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "EntryController.cs",
               "DocumentMoniker": "C:\\projeler\\ecommerce\\ECommerce\\Areas\\Admin\\Controllers\\EntryController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\EntryController.cs",
@@ -58,7 +90,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Save.cshtml",
               "DocumentMoniker": "C:\\projeler\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Entry\\Save.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Entry\\Save.cshtml",
@@ -71,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\projeler\\ecommerce\\ECommerce\\Areas\\Admin\\Views\\Entry\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Entry\\Index.cshtml",
@@ -83,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\projeler\\ecommerce\\ECommerce\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -95,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\projeler\\ecommerce\\ECommerce\\Views\\User\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\User\\Login.cshtml",
